@@ -3,3 +3,8 @@
 !.gitignore
 !.gitmodules
 !README.md
+
+#fluxbox
+!/.fluxbox/
+/.fluxbox/*
+!/.fluxbox/styles/
