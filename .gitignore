@@ -3,3 +3,11 @@
 !.gitignore
 !.gitmodules
 !README.md
+
+# vim backup files
+*.swp
+*.swo
+   
+# bin / src 
+!/share/
+/share/*
