@@ -4,7 +4,15 @@
 !.gitmodules
 !README.md
 
-#fluxbox
+# vim backup files
+*.swp
+*.swo
+   
+# bin / src 
+!/share/
+/share/*
+
+# fluxbox
 !/.fluxbox/
 /.fluxbox/*
 !/.fluxbox/styles/
