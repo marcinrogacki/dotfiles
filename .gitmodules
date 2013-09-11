@@ -1,0 +1,4 @@
+[submodule "share/ctags/src"]
+	path = share/ctags/src
+	url = git@github.com:fishman/ctags.git
+	ignore = dirty

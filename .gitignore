@@ -11,3 +11,9 @@
 # bin / src 
 !/share/
 /share/*
+
+# ctags
+!/share/ctags/
+/share/ctags/*.(swp|swo)
+/share/ctags/bin/
+/share/ctags/share/
