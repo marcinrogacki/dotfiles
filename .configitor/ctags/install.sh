@@ -1,18 +1,19 @@
 #!/bin/sh
 
-install_dir=`pwd`
+current_dir=pwd
+install_dir=$HOME/share/ctags
 
 case "${1:-''}" in
 	 'configure')
-		cd src
+		cd $install_dir/src
 		./configure --prefix=$install_dir
-		cd ..
+		cd - 
 	 	;;
 	 'make')
-	 	make -C src
+	 	make -C "$install_dir/src"
     	;;
      'install')
-	 	make -C src install
+	 	make -C "$install_dir/src" install
        	;;
      'alias')
 		home_relative_path=${install_dir#$HOME}/bin/ctags
