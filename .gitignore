@@ -3,6 +3,7 @@
 !.gitignore
 !.gitmodules
 !README.md
+!.configitor/
 
 # vim backup files
 *.swp
