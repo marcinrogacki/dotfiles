@@ -17,3 +17,6 @@
 !/.fluxbox/
 /.fluxbox/*
 !/.fluxbox/styles/
+!/.fluxbox/pixmap/
+/.fluxbox/pixmap/*
+!/.fluxbox/pixmap/wallpaper
