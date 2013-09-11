@@ -4,6 +4,11 @@ current_dir=pwd
 install_dir=$HOME/share/ctags
 
 case "${1:-''}" in
+	 'download')
+	 	cd ~
+		git submodule update
+		cd -
+	 	;;
 	 'configure')
 		cd $install_dir/src
 		./configure --prefix=$install_dir
@@ -43,12 +48,14 @@ case "${1:-''}" in
      'help'|*)
        echo "Usage: $0 <PARAM>"
        echo 
+       echo "download		download the sources"
        echo "configure		./configure --prefix=~/share/ctags"
        echo "make			do make command"	
        echo "install 		do make install command"
-       echo "alias 		    add alias 'ctags-exuberant' .bash_aliases"
+       echo "alias			add alias 'ctags-exuberant' .bash_aliases"
        echo 
 	   echo "Run respectively:"
+	   echo "sh install.sh download"
 	   echo "sh install.sh configure"
 	   echo "sh install.sh make"
 	   echo "sh install.sh install"
