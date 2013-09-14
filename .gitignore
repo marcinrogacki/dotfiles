@@ -13,6 +13,9 @@
 !/share/
 /share/*
 
+# bash
+!.bash/
+
 # fluxbox
 !/.fluxbox/
 /.fluxbox/*
