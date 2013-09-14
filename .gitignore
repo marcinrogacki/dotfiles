@@ -12,3 +12,6 @@
 # bin / src 
 !/share/
 /share/*
+
+# bash
+!.bash/
