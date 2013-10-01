@@ -1,9 +1,13 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
+
 set expandtab
 set tabstop=4
 set shiftwidth=4
 set autoindent
 set smartindent
+
+" colors
+colorscheme candystripe
 
 " linux like command ident
 set wildmode=longest,list,full
