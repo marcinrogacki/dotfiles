@@ -1,0 +1,1 @@
+phpcolors/colors/candystripe.vim
