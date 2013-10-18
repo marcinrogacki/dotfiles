@@ -1,0 +1,25 @@
+/*
+/*/
+!.gitignore
+!.gitmodules
+!README.md
+!.configitor/
+
+# vim backup files
+*.swp
+*.swo
+   
+# bin / src 
+!/share/
+/share/*
+
+# bash
+!.bash/
+
+# fluxbox
+!/.fluxbox/
+/.fluxbox/*
+!/.fluxbox/styles/
+!/.fluxbox/pixmap/
+/.fluxbox/pixmap/*
+!/.fluxbox/pixmap/wallpaper
