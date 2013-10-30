@@ -5,7 +5,6 @@ source_dir=$script_dir/src
 
 source $script_dir/../abstract.sh
 
-
 case "${1:-''}" in
   'install')
     compile_soft

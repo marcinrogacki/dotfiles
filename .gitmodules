@@ -2,3 +2,7 @@
 	path = python/src
 	url = git@github.com:python/cpython.git
     ignore = dirty
+[submodule "ctags/src"]
+	path = ctags/src
+	url = git@github.com:fishman/ctags.git
+    ignore = dirty

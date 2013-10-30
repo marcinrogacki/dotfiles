@@ -45,19 +45,24 @@ function compile_soft() {
 
     if [ ! -d $install_dir ]; then mkdir $install_dir; fi
     if [ ! -d $var_dir ];     then mkdir $var_dir;     fi
+    touch $var_dir/configure.log
+    touch $var_dir/configure.error
+    touch $var_dir/make.log
+    touch $var_dir/make.error
+    touch $var_dir/install.log
+    touch $var_dir/install.error
 
     c_log "Please wait, installing. Logs in '$var_dir' dir"
     
     c_log "configure"
-    
     cd $source_dir
-#    ./configure --prefix=$install_dir 1> $var_dir/configure.log 2> $var_dir/configure.error
+    ./configure --prefix=$install_dir 1> $var_dir/configure.log 2> $var_dir/configure.error
     cd - 1> /dev/null
 
     c_log "make"
-    #make -C $source_dir 1> $log_dir/make 2> $error_dir/make
+    make -C $source_dir 1> $var_dir/make.log 2> $var_dir/make.error
     
     c_log "install"
-    #make -C $source_dir install 1> $log_dir/install 2> $error_dir/install
+    make -C $source_dir install 1> $var_dir/install.log 2> $var_dir/install.error
 }
 
