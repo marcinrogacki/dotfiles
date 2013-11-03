@@ -1,5 +1,9 @@
 #!/bin/sh
 
+################################################################################
+#                                COLORS
+################################################################################
+
 RCol='\e[0m'    # Text Reset
 
 # Regular           Bold                Underline           High Intensity      BoldHigh Intens     Background          High Intensity Backgrounds
@@ -11,6 +15,19 @@ Blu='\e[0;34m';     BBlu='\e[1;34m';    UBlu='\e[4;34m';    IBlu='\e[0;94m';    
 Pur='\e[0;35m';     BPur='\e[1;35m';    UPur='\e[4;35m';    IPur='\e[0;95m';    BIPur='\e[1;95m';   On_Pur='\e[45m';    On_IPur='\e[0;105m';
 Cya='\e[0;36m';     BCya='\e[1;36m';    UCya='\e[4;36m';    ICya='\e[0;96m';    BICya='\e[1;96m';   On_Cya='\e[46m';    On_ICya='\e[0;106m';
 Whi='\e[0;37m';     BWhi='\e[1;37m';    UWhi='\e[4;37m';    IWhi='\e[0;97m';    BIWhi='\e[1;97m';   On_Whi='\e[47m';    On_IWhi='\e[0;107m';
+
+
+################################################################################
+#                                GLOBAL VARS
+################################################################################
+
+source_dir=$script_dir/src
+install_dir=$script_dir/bin
+var_dir=$script_dir/var
+
+################################################################################
+#                                   METHODS
+################################################################################
 
 function _log() {
     soft_name=$(cd `dirname $0` && echo ${PWD##*/})
@@ -35,9 +52,6 @@ function c_error() {
 }
 
 function compile_soft() {
-
-    install_dir=$script_dir/bin
-    var_dir=$script_dir/var
 
     if [ ! -f $source_dir/configure ]; then
         c_error "Missing sources (configure file) in $source_dir"
@@ -65,4 +79,3 @@ function compile_soft() {
     c_log "install"
     make -C $source_dir install 1> $var_dir/install.log 2> $var_dir/install.error
 }
-
