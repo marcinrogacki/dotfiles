@@ -2,10 +2,12 @@
 
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-for dir in $script_dir/*/
+source $script_dir/order.sh
+
+for soft in $software_order
 do
-  dir=${dir%*/}
-  soft_dir=$script_dir/${dir##*/}
+  script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+  soft_dir=$script_dir/$soft
   if [ -f "$soft_dir/bashrc" ]; then
     . "$soft_dir/bashrc"
   fi

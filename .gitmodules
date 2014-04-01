@@ -1,8 +1,52 @@
-[submodule "python/src"]
-	path = python/src
-	url = git@github.com:python/cpython.git
-    ignore = dirty
 [submodule "ctags/src"]
 	path = ctags/src
 	url = git@github.com:fishman/ctags.git
+    ignore = dirty
+[submodule "vim/src"]
+	path = vim/src
+	url = git@github.com:marcinrogacki/vim.git
+    ignore = dirty
+[submodule "python/src"]
+	path = python/src
+	url = https://github.com/python-git/python.git
+    ignore = dirty
+[submodule "vim/.vim/bundle/vim-pathogen"]
+	path = vim/.vim/bundle/vim-pathogen
+	url = git@github.com:tpope/vim-pathogen.git
+    ignore = dirty
+[submodule "vim/.vim/bundle/tlib_vim"]
+	path = vim/.vim/bundle/tlib_vim
+	url = git@github.com:tomtom/tlib_vim.git
+    ignore = dirty
+[submodule "vim/.vim/bundle/vim-addon-mw-utils"]
+	path = vim/.vim/bundle/vim-addon-mw-utils
+	url = git@github.com:MarcWeber/vim-addon-mw-utils.git
+    ignore = dirty
+[submodule "vim/.vim/bundle/vim-snipmate"]
+	path = vim/.vim/bundle/vim-snipmate
+	url = git@github.com:garbas/vim-snipmate.git
+    ignore = dirty
+[submodule "vim/.vim/bundle/l9"]
+	path = vim/.vim/bundle/l9
+	url = git@github.com:git-mirror/vim-l9.git
+    ignore = dirty
+[submodule "vim/.vim/bundle/nerdtree"]
+	path = vim/.vim/bundle/nerdtree
+	url = git@github.com:scrooloose/nerdtree.git
+    ignore = dirty
+[submodule "vim/.vim/bundle/phpcomplete.vim"]
+	path = vim/.vim/bundle/phpcomplete.vim
+	url = git@github.com:shawncplus/phpcomplete.vim.git
+    ignore = dirty
+[submodule "vim/.vim/bundle/fuzzyfinder"]
+	path = vim/.vim/bundle/fuzzyfinder
+	url = git@github.com:vim-scripts/FuzzyFinder.git
+    ignore = dirty
+[submodule "vim/.vim/bundle/vim-unimpaired"]
+	path = vim/.vim/bundle/vim-unimpaired
+	url = git@github.com:tpope/vim-unimpaired.git
+    ignore = dirty
+[submodule "vim/.vim/bundle/phpcolors"]
+	path = vim/.vim/bundle/phpcolors
+	url = git@github.com:modess/vim-phpcolors.git
     ignore = dirty

@@ -62,6 +62,17 @@ function c_error() {
     exit 1
 }
 
+function create_backup_dir() {
+    if [ -f $script_dir/backup ]; then
+        rm -fr $script_dir/backup
+        c_info 'Removed backup file (should be dir).'
+    fi
+    if [ ! -d $script_dir/backup ]; then
+        mkdir $script_dir/backup
+        c_success 'Created backup dir.'
+    fi
+}
+
 function compile_soft() {
 
     if [ ! -f $source_dir/configure ]; then
@@ -80,13 +91,14 @@ function compile_soft() {
     c_log "Please wait, installing. Logs in '$log_dir' dir"
     
     c_log "configure"
+    configure_params=$1
     cd $source_dir
-    ./configure --prefix=$install_dir 1> $log_dir/configure.log 2> $log_dir/configure.error
+#    ./configure $configure_params --prefix=$install_dir 1> $log_dir/configure.log 2> $log_dir/configure.error
     cd - 1> /dev/null
 
     c_log "make"
-   make -C $source_dir 1> $log_dir/make.log 2> $log_dir/make.error
+#    make -C $source_dir 1> $log_dir/make.log 2> $log_dir/make.error
     
     c_log "install"
-    make -C $source_dir install 1> $log_dir/install.log 2> $log_dir/install.error
+#    make -C $source_dir install 1> $log_dir/install.log 2> $log_dir/install.error
 }

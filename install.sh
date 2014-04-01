@@ -4,12 +4,26 @@ script_dir=$(cd `dirname $0` && pwd)
 source $script_dir/abstract.sh
 
 # run all install.sh scripts founded in subdirectories
-for dir in $script_dir/*/
+
+include="$1"
+source $script_dir/order.sh
+for soft in $software_order
 do
-  dir=${dir%*/}
-  if [ -f "$dir/install.sh" ]; then
-    sh "$dir/install.sh"
-  fi
+    should_i_install_soft=`echo ,$include, | grep $soft`
+    if [ -z "$include" ] || [ -n "$should_i_install_soft" ]; then
+        dir=$script_dir/$soft 
+        if [ -f $dir/requirments.sh ]; then
+            sh $dir/requirments.sh
+        fi
+
+        if [ -f "$dir/install.sh" ]; then
+          sh "$dir/install.sh"
+        fi
+
+        if [ -f $dir/test.sh ]; then
+            sh $dir/test.sh
+        fi
+    fi
 done
 
 # include bashrc stuff
@@ -18,7 +32,6 @@ if [ ! -f $bashrc ]; then
   touch $bashrc
   c_info "Created .bashrc file for user '`whoami`'."
 fi
-
 
 configitor_bash_file="bashrc.configitor"
 load_bashrc_command="if [ -f $script_dir/$configitor_bash_file ]; then . $script_dir/$configitor_bash_file; fi"
