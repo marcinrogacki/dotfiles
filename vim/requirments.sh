@@ -3,7 +3,7 @@ script_dir=$(cd `dirname $0` && pwd)
 source $script_dir/../abstract.sh
 
 source $script_dir/../ctags/bashrc
-info=`ctags --version`
+info=`ctags --version 2>/dev/null`
 if ! echo $info | grep -q 'Compiled'; then
     c_error "Ctags not found"
 fi

@@ -73,6 +73,13 @@ function create_backup_dir() {
     fi
 }
 
+function fetch_by_git() {
+    info=`git submodule update --init $script_dir/$1 | grep -o $1`
+    if [ -n "$info" ]; then
+        c_info 'Updated submodule: '$script_dir/$1
+    fi 
+}
+
 function compile_soft() {
 
     if [ ! -f $source_dir/configure ]; then
@@ -80,7 +87,7 @@ function compile_soft() {
     fi
 
     if [ ! -d $install_dir ]; then mkdir $install_dir; fi
-    if [ ! -d $log_dir ];     then mkdir -p $log_dir ;     fi
+    if [ ! -d $log_dir ]; then mkdir -p $log_dir ; fi
     touch $log_dir/configure.log
     touch $log_dir/configure.error
     touch $log_dir/make.log
@@ -93,12 +100,12 @@ function compile_soft() {
     c_log "configure"
     configure_params=$1
     cd $source_dir
-#    ./configure $configure_params --prefix=$install_dir 1> $log_dir/configure.log 2> $log_dir/configure.error
+    ./configure $configure_params --prefix=$install_dir 1> $log_dir/configure.log 2> $log_dir/configure.error
     cd - 1> /dev/null
 
     c_log "make"
-#    make -C $source_dir 1> $log_dir/make.log 2> $log_dir/make.error
+    make -C $source_dir 1> $log_dir/make.log 2> $log_dir/make.error
     
     c_log "install"
-#    make -C $source_dir install 1> $log_dir/install.log 2> $log_dir/install.error
+    make -C $source_dir install 1> $log_dir/install.log 2> $log_dir/install.error
 }

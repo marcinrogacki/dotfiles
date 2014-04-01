@@ -2,3 +2,5 @@ var/
 bin/
 sed.tmp
 backup/
+*.swp
+*.swo

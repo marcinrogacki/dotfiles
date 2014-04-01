@@ -3,7 +3,7 @@
 script_dir=$(cd `dirname $0` && pwd)
 source $script_dir/../abstract.sh
 
-git submodule update $script_dir/src
+fetch_by_git 'src'
 python_config="$script_dir/../python/bin/lib/python3.4/config-3.4m"
 compile_soft '--enable-pythoninterp --with-python-config-dir='${python_config}
 
@@ -32,13 +32,13 @@ ln -s $script_dir/.vimrc
 ln -s $script_dir/.vim
 cd - 1>/dev/null
 
-git submodule update $script_dir/.vim/bundle/fuzzyfinder
-git submodule update $script_dir/.vim/bundle/l9
-git submodule update $script_dir/.vim/bundle/nerdtree
-git submodule update $script_dir/.vim/bundle/phpcolors
-git submodule update $script_dir/.vim/bundle/phpcomplete.vim
-git submodule update $script_dir/.vim/bundle/tlib_vim
-git submodule update $script_dir/.vim/bundle/vim-addon-mw-utils
-git submodule update $script_dir/.vim/bundle/vim-pathogen
-git submodule update $script_dir/.vim/bundle/vim-snipmate
-git submodule update $script_dir/.vim/bundle/vim-unimpaired
+fetch_by_git '.vim/bundle/fuzzyfinder'
+fetch_by_git '.vim/bundle/l9'
+fetch_by_git '.vim/bundle/nerdtree'
+fetch_by_git '.vim/bundle/phpcolors'
+fetch_by_git '.vim/bundle/phpcomplete.vim'
+fetch_by_git '.vim/bundle/tlib_vim'
+fetch_by_git '.vim/bundle/vim-addon-mw-utils'
+fetch_by_git '.vim/bundle/vim-pathogen'
+fetch_by_git '.vim/bundle/vim-snipmate'
+fetch_by_git '.vim/bundle/vim-unimpaired'

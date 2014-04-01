@@ -8,7 +8,7 @@
     ignore = dirty
 [submodule "python/src"]
 	path = python/src
-	url = https://github.com/python-git/python.git
+	url = git@github.com:python-git/python.git
     ignore = dirty
 [submodule "vim/.vim/bundle/vim-pathogen"]
 	path = vim/.vim/bundle/vim-pathogen
