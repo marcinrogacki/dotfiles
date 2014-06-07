@@ -1,0 +1,1 @@
+../../python/posttest/10-config-is-accessible.sh

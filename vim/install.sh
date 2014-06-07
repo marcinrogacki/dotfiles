@@ -1,44 +1,37 @@
 #!/bin/sh
 
-script_dir=$(cd `dirname $0` && pwd)
-source $script_dir/../abstract.sh
+source $CONFIGITOR_BASE_DIR/.configitor/abstract.sh
 
-fetch_by_git 'src'
-python_config="$script_dir/../python/bin/lib/python3.4/config-3.4m"
-compile_soft '--enable-pythoninterp --with-python-config-dir='${python_config}
+soft_dir=$CONFIGITOR_BASE_DIR/vim
+git_module="src"
 
+fetch_by_git "$soft_dir" "$git_module"
 
-if [ ! -h ~/.vimrc ] && [ -f ~/.vimrc ]; then
-    create_backup_dir
-#    mv ~/.vimrc $script_dir/backup
-    c_info 'A .vimrc file has beed moved to '$script_dir'/backup'
-fi
+source_dir=$soft_dir/src
+install_dir=$soft_dir/bin
+python_config="$CONFIGITOR_BASE_DIR/python/bin/lib/python3.4/config-3.4m"
+configure_params='--enable-pythoninterp --with-python-config-dir='$python_config
+compile_soft "$soft_dir" "$source_dir" "$install_dir"
 
-if [ ! -h ~/.vim ] && [ -d ~/.vim ]; then
-    create_backup_dir
-#    mv ~/.vim $script_dir/backup
-    c_info 'A .vim dir has beed moved to '$script_dir'/backup'
-fi
+original_vim_config_file=~/.vimrc
+create_backup "vim" "$original_vim_config_file"
 
-if [ -h ~/.vimrc ]; then
-    unlink ~/.vimrc
-fi
-if [ -h ~/.vim ]; then
-    unlink ~/.vim
-fi
+original_vim_config_dir=~/.vim
+create_backup "vim" "$original_vim_config_dir"
 
-cd ~/
-ln -s $script_dir/.vimrc
-ln -s $script_dir/.vim
-cd - 1>/dev/null
+vim_config_file=$CONFIGITOR_BASE_DIR/vim/.vimrc
+make_symbolic_link ~ '.vimrc' "$vim_config_file" 
 
-fetch_by_git '.vim/bundle/fuzzyfinder'
-fetch_by_git '.vim/bundle/l9'
-fetch_by_git '.vim/bundle/nerdtree'
-fetch_by_git '.vim/bundle/phpcolors'
-fetch_by_git '.vim/bundle/phpcomplete.vim'
-fetch_by_git '.vim/bundle/tlib_vim'
-fetch_by_git '.vim/bundle/vim-addon-mw-utils'
-fetch_by_git '.vim/bundle/vim-pathogen'
-fetch_by_git '.vim/bundle/vim-snipmate'
-fetch_by_git '.vim/bundle/vim-unimpaired'
+vim_config_dir=$CONFIGITOR_BASE_DIR/vim/.vim
+make_symbolic_link ~ ".vim" "$vim_config_dir" 
+
+fetch_by_git "$soft_dir" '.vim/bundle/fuzzyfinder'
+fetch_by_git "$soft_dir" '.vim/bundle/l9'
+fetch_by_git "$soft_dir" '.vim/bundle/nerdtree'
+fetch_by_git "$soft_dir" '.vim/bundle/phpcolors'
+fetch_by_git "$soft_dir" '.vim/bundle/phpcomplete.vim'
+fetch_by_git "$soft_dir" '.vim/bundle/tlib_vim'
+fetch_by_git "$soft_dir" '.vim/bundle/vim-addon-mw-utils'
+fetch_by_git "$soft_dir" '.vim/bundle/vim-pathogen'
+fetch_by_git "$soft_dir" '.vim/bundle/vim-snipmate'
+fetch_by_git "$soft_dir" '.vim/bundle/vim-unimpaired'

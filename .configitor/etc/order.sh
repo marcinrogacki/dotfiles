@@ -1,0 +1,4 @@
+ctags
+python
+vim
+configitor

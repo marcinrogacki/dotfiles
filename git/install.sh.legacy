@@ -1,5 +1,9 @@
 #!/bin/sh
 
+script_dir=$(cd `dirname $0` && pwd)
+source $script_dir/../.configitor/abstract.sh
+set_current_soft_name 'git'
+
 bash_profile=$HOME/.bash_profile
 if [ ! -f $bash_profile ]; then
 	touch $bash_profile
