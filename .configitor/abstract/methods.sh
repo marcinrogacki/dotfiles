@@ -17,8 +17,8 @@ function _log() {
 #    soft_name=$global_soft_name
     current_dir=$(cd `dirname $0` && pwd)
     while read soft; do
-        is_valid_soft=`echo $current_dir | grep "/$soft"`
-        if [ -n "$is_valid_soft" ]; then
+        is_valid_soft=`echo $current_dir | grep "configitor/$soft"`
+        if [ -n "$is_valid_soft" ] ; then
             soft_name="$soft"
         fi
     done < `get_available_soft_file_path`
