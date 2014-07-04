@@ -4,6 +4,13 @@ source $CONFIGITOR_BASE_DIR/.configitor/abstract.sh
 
 fluxbox_styles_dir=~/.fluxbox/styles
 
+if [ -f "$fluxbox_styles_dir" ]; then
+    rm "$fluxbox_styles_dir"
+fi
+if [ ! -d "$fluxbox_styles_dir" ]; then
+    mkdir -p "$fluxbox_styles_dir"
+fi
+
 for check_style in $fluxbox_styles_dir/*; do
     file=`readlink "$check_style"`
     if [ -h "$check_style" ] && [ ! -e "$file" ]; then

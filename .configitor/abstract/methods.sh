@@ -83,12 +83,12 @@ function fetch_by_git() {
     dir_where_is_submodule=$1
     module=$2
 
-    c_log "Checking git submodule '$module', please wait."
+    c_log "Downloading '$module' (git submodule), please wait."
 
     cd "$dir_where_is_submodule"
-    info=`git submodule update --init $module | grep -o $module`
+    info=`git submodule update --init $module 2>/dev/null | grep -o $module`
     if [ -n "$info" ]; then
-        c_info 'Updated submodule: '$module
+        c_info 'Done: '$module
     fi 
     cd - 1>/dev/null
 }
