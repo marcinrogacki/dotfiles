@@ -1,9 +1,8 @@
 #!/bin/sh
 
-script_dir=$(cd `dirname $0` && pwd)
-source $script_dir/../abstract.sh
+. $CONFIGITOR_BASE_DIR/.configitor/abstract.sh
 
-function show_help() {
+show_help() {
     echo "Usage: sh `basename $0` [option]
 
 option:
@@ -15,7 +14,7 @@ help                        this message"
 }
 
 # @param $1 pretest|posttest
-function run_test() {
+run_test() {
     type=$1
     is_type_supported=`echo ,pretest,posttest, | grep ",${type},"`
     if [ -z "is_type_supported" ]; then
@@ -61,4 +60,4 @@ while read soft; do
             run_test posttest 
         fi
     fi
-done < $script_dir/../etc/order.sh
+done < $CONFIGITOR_BASE_DIR/.configitor/etc/order.sh

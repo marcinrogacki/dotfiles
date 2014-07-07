@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source $CONFIGITOR_BASE_DIR/.configitor/abstract.sh
+. $CONFIGITOR_BASE_DIR/.configitor/abstract.sh
 
 soft_dir=$CONFIGITOR_BASE_DIR/python
 git_module="src"

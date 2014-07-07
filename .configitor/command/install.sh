@@ -1,9 +1,9 @@
 #!/bin/sh
 
 script_dir=$(cd `dirname $0` && pwd)
-source $script_dir/../abstract.sh
+. $script_dir/../abstract.sh
 
-function show_help() {
+show_help() {
 echo "
 Usage: sh `basename $0` [option]
     

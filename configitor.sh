@@ -12,7 +12,7 @@ if [ ! -f $CONFIGITOR_BASE_DIR/.configitor/abstract.sh ]; then
     exit 1
 fi
 
-source $CONFIGITOR_BASE_DIR/.configitor/abstract.sh
+. $CONFIGITOR_BASE_DIR/.configitor/abstract.sh
 
 function show_help() {
     echo "Usage: sh `basename $0` [option]

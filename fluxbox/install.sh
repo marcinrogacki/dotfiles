@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source $CONFIGITOR_BASE_DIR/.configitor/abstract.sh
+. $CONFIGITOR_BASE_DIR/.configitor/abstract.sh
 
 fluxbox_styles_dir=~/.fluxbox/styles
 

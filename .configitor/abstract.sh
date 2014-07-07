@@ -13,6 +13,6 @@ if [ ! -f $CONFIGITOR_BASE_DIR/.configitor/abstract.sh ]; then
 fi
 
 current_dir=`dirname "$BASH_SOURCE"`
-source $current_dir/abstract/methods.sh
-source $current_dir/abstract/variables/static.sh
-source $current_dir/abstract/variables/global.sh
+. $CONFIGITOR_BASE_DIR/.configitor/abstract/methods.sh
+. $CONFIGITOR_BASE_DIR/.configitor/abstract/variables/static.sh
+. $CONFIGITOR_BASE_DIR/.configitor/abstract/variables/global.sh

@@ -12,7 +12,7 @@ get_available_soft_file_path() {
     echo "$CONFIGITOR_BASE_DIR/.configitor/etc/soft_available.sh"
 }
 
-function _log() {
+_log() {
 #    soft_name=$(cd `dirname $0` && echo ${PWD##*/})
 #    soft_name=$global_soft_name
     current_dir=$(cd `dirname $0` && pwd)
@@ -28,29 +28,29 @@ function _log() {
     echo -e "${1} <$soft_name> ${2}${3}${RCol}"
 }
 
-function c_log() {
+c_log() {
     _log "[L]" "" "$1"
 }
 
-function c_success() {
+c_success() {
     _log "[S]" $Gre "$1"
 }
 
-function c_info() {
+c_info() {
     _log "[I]" $Yel "$1"
 }
 
-function c_error() {
+c_error() {
     _log "[E]" $Red "$1"
     exit 1
 }
 
-function get_current_backup_dir_path() {
+get_current_backup_dir_path() {
     backup_path=$HOME/.configitor.backup
     echo "$backup_path"
 }
 
-function create_backup() {
+create_backup() {
     soft=$1
     source=$2
     backup_path=`get_current_backup_dir_path`/$soft/$configitor_current_timestamp
@@ -79,7 +79,7 @@ make_symbolic_link() {
     fi
 }
 
-function fetch_by_git() {
+fetch_by_git() {
     dir_where_is_submodule=$1
     module=$2
 
@@ -93,7 +93,7 @@ function fetch_by_git() {
     cd - 1>/dev/null
 }
 
-function compile_soft() {
+compile_soft() {
     soft_dir=$1
     source_dir=$2
     install_dir=$3

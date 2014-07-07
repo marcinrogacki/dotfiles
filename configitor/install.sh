@@ -1,8 +1,8 @@
 #!/bin/sh
 
-source $CONFIGITOR_BASE_DIR/.configitor/abstract.sh
+. $CONFIGITOR_BASE_DIR/.configitor/abstract.sh
 
-function show_help() {
+show_help() {
 echo "Usage: sh `basename $0`
 
 Installs aliases for softs."
