@@ -1,9 +1,17 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
+syntax on
+set background=dark
+set hls
+set number
+set nopaste
 set expandtab
 set tabstop=4
 set shiftwidth=4
 set autoindent
 set smartindent
+if filereadable(".ctags")
+    set tags=.ctags
+endif
 
 " linux like command ident
 set wildmode=longest,list,full
