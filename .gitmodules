@@ -50,3 +50,7 @@
 	path = vim/.vim/bundle/phpcolors
 	url = git@github.com:modess/vim-phpcolors.git
     ignore = dirty
+[submodule "vim/.vim/bundle/linediff.vim"]
+	path = vim/.vim/bundle/linediff.vim
+	url = git@github.com:AndrewRadev/linediff.vim.git
+    ignore = dirty
