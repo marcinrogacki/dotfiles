@@ -37,11 +37,18 @@ imap <C-@> <C-Space>
 :map <C-s> :w <Enter>
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-
 let mapleader = ","
 nmap <leader>nt :NERDTree<cr>
 nmap <leader>nm :NERDTreeMirror<cr>
 nmap <leader>nf :NERDTreeFind<cr>
+
+" push =json in visual mode and json file will be formatted
+nmap =json :%!python -m json.tool<CR>
+" [o]pposite [d]elete in (v)isual mode
+vmap od ygg"_dGP
+" [m]agento var/log/system.log format json
+nmap =mjson f{v%od0=json
+
 "au VimEnter *  NERDTree
 
 " ex command for toggling hex mode - define mapping if desired
