@@ -1,5 +1,7 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
+
 syntax on
+
 set background=dark
 set hls
 set number
@@ -10,6 +12,7 @@ set shiftwidth=4
 set autoindent
 set smartindent
 set backspace=2 " make backspace work like most other apps
+
 if filereadable(".ctags")
     set tags=.ctags
 endif
@@ -21,6 +24,15 @@ set wildmenu
 " set backupdir=/tmp/vim
 
 execute pathogen#infect()
+
+" remove trailing whitespace when saving a file
+function! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 filetype on
