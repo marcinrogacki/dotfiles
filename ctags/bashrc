@@ -1,5 +1,0 @@
-script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-if [ -f $script_dir/bin/bin/ctags ]; then 
-  alias ctags=$script_dir'/bin/bin/ctags'
-fi

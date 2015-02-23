@@ -1,5 +1,0 @@
-script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-if [ -f $script_dir/bin/bin/vim ]; then 
-  alias vim=$script_dir'/bin/bin/vim'
-fi

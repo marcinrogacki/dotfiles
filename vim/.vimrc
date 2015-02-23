@@ -1,4 +1,4 @@
-runtime bundle/vim-pathogen/autoload/pathogen.vim
+runtime bundle/vim-pathogen.git/autoload/pathogen.vim
 
 syntax on
 
