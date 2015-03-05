@@ -1,0 +1,8 @@
+URxvt*transparent: true
+URxvt*shading: 15
+URxvt*foreground: White
+URxvt*background: Black
+URxvt*scrollBar: false
+URxvt*scrollBar_right: false
+URxvt*scrollstyle: rxvt
+URxvt.font: 9x15
