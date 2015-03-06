@@ -34,3 +34,12 @@
 [submodule "vim/.vim/bundle/linediff.vim.git"]
 	path = vim/.vim/bundle/linediff.vim.git
 	url = https://github.com/AndrewRadev/linediff.vim.git
+[submodule "tmux/.tmux/tmux-copycat.git"]
+	path = tmux/.tmux/tmux-copycat.git
+	url = https://github.com/tmux-plugins/tmux-copycat.git
+[submodule "tmux/.tmux/tmux-yank.git"]
+	path = tmux/.tmux/tmux-yank.git
+	url = https://github.com/tmux-plugins/tmux-yank.git
+[submodule "tmux/.tmux/tmux-open.git"]
+	path = tmux/.tmux/tmux-open.git
+	url = https://github.com/tmux-plugins/tmux-open.git

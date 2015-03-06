@@ -3,12 +3,6 @@ About
 
 Dotofiles managed by GNU stow.
 
-Requirements
-============
-
-* tmux
-    - xclip
-
 Install
 =======
 
@@ -35,3 +29,18 @@ stow -t ~ vim
 ```
 
 A `install.stow.sh` is a simple script to install all at once.
+
+Details
+=======
+
+### tmux
+Requirments:
+
+* xclip
+
+Features:
+
+* Smart search (+ highlight): https://github.com/tmux-plugins/tmux-copycat#search
+* Open file/url utility: https://github.com/tmux-plugins/tmux-open#examples
+* Copy clipboard: https://github.com/tmux-plugins/tmux-yank
+
