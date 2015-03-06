@@ -3,6 +3,12 @@ About
 
 Dotofiles managed by GNU stow.
 
+Requirements
+============
+
+* tmux
+    - xclip
+
 Install
 =======
 
