@@ -12,6 +12,7 @@ set shiftwidth=4
 set autoindent
 set smartindent
 set backspace=2 " make backspace work like most other apps
+set noswapfile
 
 if filereadable(".ctags")
     set tags=.ctags
