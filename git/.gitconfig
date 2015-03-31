@@ -1,13 +1,14 @@
 [user]
-        email = rogacki.m@gmail.com
-        name = Marcin Rogacki
+    email = rogacki.m@gmail.com
+    name = Marcin Rogacki
 [color]
-        ui = true
+    ui = true
 [core]
-        editor = vim
-        filemode = false
-        autocrlf = false
+    editor = vim
+    filemode = false
+    autocrlf = false
+	excludesfile = /home/marcin/.gitignore_global
 [credential]
-        helper = cache --timeout=36000
+    helper = cache --timeout=36000
 [push]
-        default = matching
+    default = matching
