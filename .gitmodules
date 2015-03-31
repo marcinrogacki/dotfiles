@@ -43,3 +43,6 @@
 [submodule "tmux/.tmux/tmux-open.git"]
 	path = tmux/.tmux/tmux-open.git
 	url = https://github.com/tmux-plugins/tmux-open.git
+[submodule "vim/.vim/bundle/hexmode.git"]
+	path = vim/.vim/bundle/hexmode.git
+	url = https://github.com/fidian/hexmode.git
