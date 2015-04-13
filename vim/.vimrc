@@ -24,7 +24,6 @@ endif
 
 filetype on
 filetype plugin indent on
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP filetype=php
 
 :map <C-s> :w <Enter>
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
@@ -36,11 +35,14 @@ nmap =json :%!python -m json.tool<CR>
 " [o]pposite [d]elete in (v)isual mode
 vmap od ygg"_dGP
 
-" nerdtree.git plugin config
+" nerdtree.git plugin
 let mapleader = ","
 nmap <leader>nt :NERDTree<cr>
 nmap <leader>nm :NERDTreeMirror<cr>
 nmap <leader>nf :NERDTreeFind<cr>
 
-" vim-better-whitespace.git plugin config
+" vim-better-whitespace.git plugin
 autocmd VimEnter * ToggleStripWhitespaceOnSave
+
+" phpcomplete.vim.git plugin
+" autocmd FileType php set omnifunc=phpcomplete#CompletePHP filetype=php
