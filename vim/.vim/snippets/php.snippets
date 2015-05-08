@@ -1,5 +1,19 @@
-snippet m
-	${1:public} function ${2:foo}(${3})
+snippet dataprovider
+	/**
+	 * @return array
+	 */
+	public function ${1}()
 	{
-		${4}
+		return [
+			[],
+		];
 	}
+
+snippet vardump
+	var_dump(${1});
+
+snippet getclass
+	get_class(${1});
+
+snippet classdump
+	var_dump(get_class(${1}));
