@@ -17,6 +17,7 @@ set noswapfile
 set wildmenu
 set backspace=2 " make backspace work like most other apps
 set wildmode=longest,list,full " linux like command ident
+set colorcolumn=80
 
 if filereadable(".ctags")
     set tags=.ctags
