@@ -36,11 +36,12 @@ nmap =json :%!python -m json.tool<CR>
 " [o]pposite [d]elete in (v)isual mode
 vmap od ygg"_dGP
 
-" nerdtree.git plugin
 let mapleader = ","
+" nerdtree.git plugin
 nmap <leader>nt :NERDTree<cr>
-nmap <leader>nm :NERDTreeMirror<cr>
 nmap <leader>nf :NERDTreeFind<cr>
+" tagbar.git plugin
+nmap <leader>tb :TagbarOpenAutoClose<cr>
 
 " vim-better-whitespace.git plugin
 autocmd VimEnter * ToggleStripWhitespaceOnSave
