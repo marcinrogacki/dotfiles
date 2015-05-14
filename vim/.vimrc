@@ -15,6 +15,7 @@ set autoindent
 set smartindent
 set noswapfile
 set wildmenu
+set nowrap
 set backspace=2 " make backspace work like most other apps
 set wildmode=longest,list,full " linux like command ident
 " 80 line margin customization
