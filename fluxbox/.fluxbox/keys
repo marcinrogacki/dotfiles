@@ -91,8 +91,8 @@ Mod4 Left :SendToPrevWorkspace
 Mod4 Right :SendToNextWorkspace
 
 # send the current window and follow it to previous/next workspace
-Control Mod4 Left :TakeToPrevWorkspace
-Control Mod4 Right :TakeToNextWorkspace
+Control Mod1 Shift Left :TakeToPrevWorkspace
+Control Mod1 Shift Right :TakeToNextWorkspace
 
 # change to a specific workspace
 Control F1 :Workspace 1
