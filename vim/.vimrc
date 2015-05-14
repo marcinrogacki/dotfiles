@@ -17,7 +17,10 @@ set noswapfile
 set wildmenu
 set backspace=2 " make backspace work like most other apps
 set wildmode=longest,list,full " linux like command ident
+" 80 line margin customization
 set colorcolumn=80
+let &colorcolumn="80,".join(range(120,999),",")
+hi ColorColumn ctermbg=DarkRed
 
 if filereadable(".ctags")
     set tags=.ctags
