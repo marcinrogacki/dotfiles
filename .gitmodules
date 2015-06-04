@@ -16,6 +16,7 @@
 [submodule "vim/.vim/bundle/vim-l9.git"]
 	path = vim/.vim/bundle/vim-l9.git
 	url = https://github.com/git-mirror/vim-l9.git
+    ignore = dirty
 [submodule "vim/.vim/bundle/nerdtree.git"]
 	path = vim/.vim/bundle/nerdtree.git
 	url = https://github.com/scrooloose/nerdtree.git
@@ -25,6 +26,7 @@
 [submodule "vim/.vim/bundle/FuzzyFinder.git"]
 	path = vim/.vim/bundle/FuzzyFinder.git
 	url = https://github.com/vim-scripts/FuzzyFinder.git
+    ignore = dirty
 [submodule "vim/.vim/bundle/vim-unimpaired.git"]
 	path = vim/.vim/bundle/vim-unimpaired.git
 	url = https://github.com/tpope/vim-unimpaired.git
@@ -55,3 +57,6 @@
 [submodule "vim/.vim/bundle/tagbar.git"]
 	path = vim/.vim/bundle/tagbar.git
 	url = git@github.com:majutsushi/tagbar.git
+[submodule "vim/.vim/bundle/vdebug.git"]
+	path = vim/.vim/bundle/vdebug.git
+	url = https://github.com/joonty/vdebug.git

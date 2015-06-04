@@ -52,3 +52,11 @@ autocmd VimEnter * ToggleStripWhitespaceOnSave
 
 " phpcomplete.vim.git plugin
 " autocmd FileType php set omnifunc=phpcomplete#CompletePHP filetype=php
+"
+
+let g:vdebug_options= {
+\    "port" : 9000,
+\    "server" : 'localhost',
+\    "timeout" : 20,
+\    "ide_key" : 'mrogacki'
+\}
