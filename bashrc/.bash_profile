@@ -1,4 +1,5 @@
 export EDYTOR=vim
+export STEAM_FRAME_FORCE_CLOSE=1
 
 # load bashrc on tmux session
 case $- in *i*) . ~/.bashrc;; esac
