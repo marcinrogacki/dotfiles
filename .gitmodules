@@ -53,10 +53,11 @@
 	url = https://github.com/ntpeters/vim-better-whitespace.git
 [submodule "vim/.vim/bundle/vim-autotag.git"]
 	path = vim/.vim/bundle/vim-autotag.git
-	url = git@github.com:craigemery/vim-autotag.git
+	url = https://github.com/craigemery/vim-autotag.git
 [submodule "vim/.vim/bundle/tagbar.git"]
 	path = vim/.vim/bundle/tagbar.git
-	url = git@github.com:majutsushi/tagbar.git
+	url = https://github.com/majutsushi/tagbar.git
+    ignore = dirty
 [submodule "vim/.vim/bundle/vdebug.git"]
 	path = vim/.vim/bundle/vdebug.git
 	url = https://github.com/joonty/vdebug.git
