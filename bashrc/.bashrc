@@ -33,7 +33,13 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 # format and color prompt
-PS1='\[\033[01;32m\]\u: \[\033[01;34m\]\w\[\033[00m\] \$ '
+if [ "$(id -u)" != "0" ]; then
+    # user
+    PS1='\[\033[00;37m\]\t \[\033[00;32m\]\u\[\033[00;37m\]@\h \[\033[00;36m\]\w\[\033[00m\] \$ '
+else
+    # root
+    PS1='\[\033[00;37m\]\t \[\033[01;31m\]\u\[\033[00;37m\]@\h \[\033[00;36m\]\w\[\033[00m\] \$ '
+fi
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -71,3 +77,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+d=.dircolors
+test -r $d && eval "$(dircolors $d)"
