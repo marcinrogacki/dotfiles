@@ -35,11 +35,20 @@ fi
 # format and color prompt
 if [ "$(id -u)" != "0" ]; then
     # user
-    PS1='\[\033[00;37m\]\t \[\033[00;32m\]\u\[\033[00;37m\]@\h \[\033[00;36m\]\w\[\033[00m\] \$ '
+    ps_user_color='00;32'
 else
     # root
-    PS1='\[\033[00;37m\]\t \[\033[01;31m\]\u\[\033[00;37m\]@\h \[\033[00;36m\]\w\[\033[00m\] \$ '
+    ps_user_color='01;33'
 fi
+if [ -z "$SSH_CLIENT" ]; then
+    # local
+    ps_host_color='01;31'
+else
+    # ssh
+    ps_host_color='0'
+fi
+
+PS1="\[\033[00;37m\]\t \[\033[${ps_user_color}m\]\u\[\033[${ps_host_color}m\]@\h \[\033[00;36m\]\w\[\033[00m\] \$ "
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
