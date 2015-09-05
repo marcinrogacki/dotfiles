@@ -1,7 +1,1 @@
-var/
-bin/
-sed.tmp
-backup/
-*.swp
-*.swo
 fluxbox/.fluxbox/init
