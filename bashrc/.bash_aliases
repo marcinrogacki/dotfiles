@@ -3,6 +3,6 @@ if [ -f ~/.gitautocomplete ]; then
 fi
 
 # load not public stuff
-if [ -f ~/.private/bashrc/bash_aliases ]; then
-    . ~/.private/bashrc/bash_aliases
+if [ -f ~/.slash/home/bash_aliases ]; then
+    . ~/.slash/home/bash_aliases
 fi
