@@ -1,0 +1,26 @@
+"xbindkeystibiatoggle.sh"
+    XF86Tools
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Up"
+    w
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Down"
+    s
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Left"
+    a
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Right"
+    d
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key KP_Home"
+    q
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key KP_Prior"
+    e
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key KP_End"
+    z
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key KP_Next"
+    c

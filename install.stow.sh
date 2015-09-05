@@ -6,3 +6,5 @@ stow -t ~ git
 stow -t ~ vim
 stow -t ~ tmux
 stow -t ~ Xdefaults
+stow -t ~ xbindkeys
+stow -t ~ xinitrc
