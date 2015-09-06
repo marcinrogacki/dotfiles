@@ -24,3 +24,83 @@
 
 "xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key KP_Next"
     c
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Ctrl+Up"
+    Control + w
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Ctrl+Down"
+    Control + s
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Ctrl+Left"
+    Control + a
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Ctrl+Right"
+    Control + d
+
+
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key F1"
+    1
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key F2"
+    2
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key F3"
+    3
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key F4"
+    4
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key F5"
+    r
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key F6"
+    f
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key F7"
+    v
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key F8"
+    5
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key F9"
+    t
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key F10"
+    g
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key F11"
+    b
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Shift+F1"
+    Shift+1
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Shift+F2"
+    Shift+2
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Shift+F3"
+    Shift+3
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Shift+F4"
+    Shift+4
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Shift+F5"
+    Shift+r
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Shift+F6"
+    Shift+f
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Shift+F7"
+    Shift+v
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Shift+F8"
+    Shift+5
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Shift+F9"
+    Shift+t
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Shift+F10"
+    Shift+g
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Shift+F11"
+    Shift+b
