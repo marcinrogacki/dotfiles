@@ -1,6 +1,9 @@
 "xbindkeystibiatoggle.sh"
     XF86Tools
 
+"xbindkeystibiatoggle.sh"
+    Pause
+
 "xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Up"
     w
 
