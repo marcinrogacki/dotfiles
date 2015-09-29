@@ -26,17 +26,28 @@
     c
 
 "xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Ctrl+Up"
-    Control + w
+    Shift+w
 
 "xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Ctrl+Down"
-    Control + s
+    Shift+s
 
 "xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Ctrl+Left"
-    Control + a
+    Shift+a
 
 "xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Ctrl+Right"
-    Control + d
+    Shift+d
 
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Ctrl+Up"
+    Control+w
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Ctrl+Down"
+    Control+s
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Ctrl+Left"
+    Control+a
+
+"xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Ctrl+Right"
+    Control+d
 
 
 "xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key F1"
