@@ -46,7 +46,6 @@ Mod1 Shift Tab :PrevWindow {groups} (workspace=[current])
 # by any other program
 Mod1 Shift F1 :SetStyle ~/.fluxbox/styles/current
 Mod1 Shift F2 :SetStyle ~/.fluxbox/styles/dynamic
-Mod1 r :Restart
 
 # cycle through tabs in the current window
 Mod4 Tab :NextTab
