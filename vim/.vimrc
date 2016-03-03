@@ -44,15 +44,15 @@ let mapleader = ","
 " nerdtree.git plugin
 nmap <leader>nt :NERDTree<cr>
 nmap <leader>nf :NERDTreeFind<cr>
+let NERDTreeShowHidden=1
 " tagbar.git plugin
 nmap <leader>tb :TagbarOpenAutoClose<cr>
 
-" vim-better-whitespace.git plugin
+" enable vim-better-whitespace.git plugin (removes whitespaces at EOL) on save
 autocmd VimEnter * ToggleStripWhitespaceOnSave
 
 " phpcomplete.vim.git plugin
 " autocmd FileType php set omnifunc=phpcomplete#CompletePHP filetype=php
-"
 
 let g:vdebug_options= {
 \    "port" : 9000,

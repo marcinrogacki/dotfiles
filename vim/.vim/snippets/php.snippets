@@ -8,12 +8,23 @@ snippet dataprovider
 			[],
 		];
 	}
-
 snippet vardump
 	var_dump(${1});
-
 snippet getclass
 	get_class(${1});
-
 snippet classdump
 	var_dump(get_class(${1}));
+snippet fileputcontents
+	file_put_contents('/tmp/mrogacki.log', ${1}.PHP_EOL, FILE_APPEND);
+snippet fileputcontentsarray
+	file_put_contents('/tmp/mrogacki.log', print_r(${1}, true).PHP_EOL, FILE_APPEND);
+snippet fileputcontentsclass
+	file_put_contents('/tmp/mrogacki.log', get_class(${1}).PHP_EOL, FILE_APPEND);
+snippet magentogetmodel
+	Mage::getModel(${1});
+snippet magentohelper
+	Mage::helper(${1});
+snippet magentogetsingleton
+	Mage::getSingleton(${1});
+snippet magentogetresource
+	Mage::getResourceModel(${1});
