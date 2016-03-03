@@ -7,6 +7,7 @@ syntax on
 set background=dark
 set hls
 set number
+set relativenumber " counts line numbers from cursor current posision
 set nopaste
 set expandtab
 set tabstop=4
@@ -18,9 +19,8 @@ set wildmenu
 set nowrap
 set backspace=2 " make backspace work like most other apps
 set wildmode=longest,list,full " linux like command ident
-" 80 line margin customization
 set colorcolumn=80
-let &colorcolumn="80,".join(range(120,999),",")
+let &colorcolumn="80,".join(range(120,999),",") " show border for lines after 120 characters
 hi ColorColumn ctermbg=DarkRed
 
 if filereadable(".ctags")
