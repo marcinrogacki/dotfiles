@@ -20,6 +20,9 @@ snippet fileputcontentsarray
 	file_put_contents('/tmp/mrogacki.log', print_r(${1}, true).PHP_EOL, FILE_APPEND);
 snippet fileputcontentsclass
 	file_put_contents('/tmp/mrogacki.log', get_class(${1}).PHP_EOL, FILE_APPEND);
+snippet fileputcontentstrace
+	$eee = new Exception();
+	file_put_contents('/tmp/mrogacki.log', $eee->getTraceAsString().PHP_EOL, FILE_APPEND);
 snippet magentogetmodel
 	Mage::getModel(${1});
 snippet magentohelper
