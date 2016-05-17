@@ -7,20 +7,27 @@ syntax on
 set background=dark
 set hls
 set number
-set relativenumber " counts line numbers from cursor current posision
+" counts line numbers from cursor current posision
+set relativenumber
 set nopaste
 set expandtab
 set tabstop=4
 set shiftwidth=4
 set autoindent
 set smartindent
+" scroll horizontally by small amount of text char instead of half of page
+" (usefull for NERDTree)
+set sidescroll=1
 set noswapfile
 set wildmenu
 set nowrap
-set backspace=2 " make backspace work like most other apps
-set wildmode=longest,list,full " linux like command ident
+" make backspace work like most other apps
+set backspace=2
+" linux like command ident
+set wildmode=longest,list,full
 set colorcolumn=80
-let &colorcolumn="80,".join(range(120,999),",") " show border for lines after 120 characters
+" show border for lines after 120 characters
+let &colorcolumn="80,".join(range(120,999),",")
 hi ColorColumn ctermbg=DarkRed
 
 if filereadable(".ctags")
