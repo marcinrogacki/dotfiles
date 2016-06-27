@@ -61,3 +61,6 @@
 [submodule "vim/.vim/bundle/vdebug.git"]
 	path = vim/.vim/bundle/vdebug.git
 	url = https://github.com/joonty/vdebug.git
+[submodule "vim/.vim/bundle/indentLine.git"]
+	path = vim/.vim/bundle/indentLine.git
+	url = git@github.com:Yggdroot/indentLine.git
