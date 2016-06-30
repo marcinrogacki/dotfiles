@@ -2,6 +2,7 @@ export EDYTOR=vim
 export STEAM_FRAME_FORCE_CLOSE=1
 export GOPATH=$HOME/workspace/go
 export PATH=$PATH:$HOME/.slash/usr/bin:$GOPATH/bin
+export URXVT_PERL_LIB=$HOME/.urxvt/ext/
 
 # load bashrc on tmux session
 case $- in *i*) . ~/.bashrc;; esac

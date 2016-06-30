@@ -1,3 +1,4 @@
+!! layout
 URxvt*transparent: true
 URxvt*shading: 15
 URxvt*foreground: White
@@ -6,4 +7,10 @@ URxvt*scrollBar: false
 URxvt*scrollBar_right: false
 URxvt*scrollstyle: rxvt
 URxvt.font: 9x15
-URxvt.keysym.M-minus:    command:\033]710;xft:Tamzen:pixelsize=14\007
+!! ext
+URxvt.perl-ext-common:  resize-font
+!! Larger history limit
+URxvt.saveLines: 1000000
+!! resize-font config
+URxvt.resize-font.smaller: C-Down
+URxvt.resize-font.bigger: C-Up
