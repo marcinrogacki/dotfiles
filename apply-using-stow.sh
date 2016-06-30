@@ -5,6 +5,5 @@ stow -t ~ fluxbox
 stow -t ~ git
 stow -t ~ vim
 stow -t ~ tmux
-stow -t ~ Xdefaults
-stow -t ~ xinitrc
+stow -t ~ X11
 stow -t ~ games
