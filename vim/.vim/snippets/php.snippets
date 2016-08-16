@@ -9,11 +9,15 @@ snippet dataprovider
 		];
 	}
 snippet vardump
-	var_dump(${1});
+	var_dump(${1});die;
 snippet getclass
-	get_class(${1});
+	get_class(${1});die;
 snippet classdump
-	var_dump(get_class(${1}));
+	var_dump(get_class(${1}));die;
+snippet predump
+	echo '<pre>';
+	var_dump(${1});die;
+	echo '</pre>';
 snippet fileputcontents
 	file_put_contents('/tmp/mrogacki.log', ${1}.PHP_EOL, FILE_APPEND);
 snippet fileputcontentsarray
