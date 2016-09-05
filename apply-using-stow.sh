@@ -7,3 +7,4 @@ stow -t ~ vim
 stow -t ~ tmux
 stow -t ~ X11
 stow -t ~ games
+stow -t ~ synergy
