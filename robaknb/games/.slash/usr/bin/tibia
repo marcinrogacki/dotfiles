@@ -1,0 +1,3 @@
+#!/bin/sh
+cd /home/robak/.slash/usr/src/Tibia;
+./Tibia
