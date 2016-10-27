@@ -25,9 +25,6 @@ set nowrap
 set backspace=2
 " linux like command ident
 set wildmode=longest,list,full
-set colorcolumn=80
-" show border for lines after 120 characters
-let &colorcolumn="80,".join(range(120,999),",")
 hi ColorColumn ctermbg=DarkRed
 
 if filereadable(".ctags")
@@ -67,3 +64,14 @@ let g:vdebug_options= {
 \    "timeout" : 20,
 \    "ide_key" : 'mrogacki'
 \}
+
+func! ToggleColumnIndicator()
+	if &colorcolumn
+		setlocal colorcolumn=""
+	else
+	    " show border for line 80 and lines after (inclusive) 120 characters
+		let &colorcolumn="80,".join(range(120,999),",")
+	endif
+endfu
+
+call ToggleColumnIndicator()
