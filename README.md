@@ -36,7 +36,13 @@ Details
 ### tmux
 Requirments:
 
-* xclip
+#### pc
+- tmux
+    * xclip
+
+#### netbook
+- fluxbox
+    * cbatticon
 
 Features:
 
