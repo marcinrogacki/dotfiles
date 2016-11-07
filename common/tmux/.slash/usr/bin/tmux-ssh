@@ -1,0 +1,32 @@
+#!/bin/sh
+
+function display_usage() {
+cat << USAGE
+Usage: `basename "$0"` <PARAMS>
+
+Will read server form tmux session name and try to connect to it.
+Requires properly configured ~/.ssh/config (mapped sessions names to servers)
+which is private and not provided with script.
+
+PARAMS
+    -h|--help  display this message
+USAGE
+}
+
+for arg in "$@"; do
+	if [[ "$arg" == '-h' ]] || [[ "$arg" == '--help' ]]; then
+		display_usage
+		exit
+	fi
+done
+
+server=`tmux display-message -p '#S'`
+
+if [ -z "$server" ]; then
+    echo "None server provided. Are you using tmux?"
+    echo
+    display_usage
+    exit 1
+fi
+
+ssh $server

@@ -1,0 +1,3 @@
+new-session -s project -n vim
+new-window -n db
+new-window -n console

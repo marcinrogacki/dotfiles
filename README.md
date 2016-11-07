@@ -21,10 +21,14 @@ Requirments
     * tmux
 - tmux
     * xclip
+    * ssh
 
 #### netbook
 - bash
     * tmux
+- tmux
+    * xclip
+    * ssh
 - fluxbox
     * cbatticon
 
@@ -39,3 +43,4 @@ Handles user startup scripts and behaviours
 * Smart search (+ highlight): https://github.com/tmux-plugins/tmux-copycat#search
 * Open file/url utility: https://github.com/tmux-plugins/tmux-open#examples
 * Copy clipboard: https://github.com/tmux-plugins/tmux-yank
+* [command] tmux-ssh - get's server from tmux session name and try connect using ssh
