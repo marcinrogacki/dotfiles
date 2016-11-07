@@ -1,0 +1,47 @@
+#!/bin/sh
+
+function display_usage() {
+cat << USAGE
+Usage: `basename "$0"` <SERVER>
+
+COMMAND
+    server     softgallery@devmrogacki
+               softgallery@nanterreprep
+               N3@tenwadev
+               N3@tenwaprep
+    -h|--help  display this message
+USAGE
+}
+
+for arg in "$@"; do
+	if [[ "$arg" == '-h' ]] || [[ "$arg" == '--help' ]]; then
+		display_usage
+		exit
+	fi
+done
+
+server="$1"
+
+if [ -z "$server" ]; then
+    server=`tmux display-message -p '#S'`
+fi
+
+case "$server" in
+    "softgallery@devmrogacki")
+        ssh tfr@devmrogacki
+        ;;
+    "softgallery@nanterreprep")
+		ssh maintenance@nanterreprep
+        ;;
+    "N3@tenwadev")
+        ssh marcin@master.pl.nexway.build
+        ;;
+    "N3@tenwaprep")
+        ssh marcin@prep.pl.nexway.build
+        ;;
+	*)
+        echo "Unknown server '$server'"
+        echo
+		display_usage
+        ;;
+esac

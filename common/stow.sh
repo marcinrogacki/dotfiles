@@ -9,6 +9,7 @@ stow -t ~ vim
 stow -t ~ tmux
 stow -t ~ X11
 stow -t ~ games
+stow -t ~ nexway
 if [ -f ./stow-env.sh ]; then
     sh ./stow-env.sh
 fi
