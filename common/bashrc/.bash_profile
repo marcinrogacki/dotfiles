@@ -7,6 +7,13 @@ export URXVT_PERL_LIB=$HOME/.urxvt/ext/
 # load bashrc on tmux session
 case $- in *i*) . ~/.bashrc;; esac
 
+if test -d ~/.slash/etc/profile.d/; then
+	for profile in ~/.slash/etc/profile.d/*.sh; do
+		test -r "$profile" && . "$profile"
+	done
+	unset profile
+fi
+
 # load not public stuff
 if [ -f ~/.slash/home/bash_profile ]; then
     . ~/.slash/home/bash_profile
