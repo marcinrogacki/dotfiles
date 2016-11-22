@@ -18,3 +18,7 @@ fi
 if [ -f ~/.slash/home/bash_profile ]; then
     . ~/.slash/home/bash_profile
 fi
+
+if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
+  exec startx
+fi
