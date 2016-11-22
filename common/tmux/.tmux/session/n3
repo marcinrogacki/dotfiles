@@ -1,0 +1,3 @@
+new-session -s n3 -n vim -c workspace/softgallery 'vim'
+new-window -n db
+new-window -n console
