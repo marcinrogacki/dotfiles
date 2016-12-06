@@ -67,3 +67,6 @@
 [submodule "X11/.urxvt/ext/urxvt-resize-font.git"]
     path = common/X11/.urxvt/ext/urxvt-resize-font.git
     url = https://github.com/simmel/urxvt-resize-font.git
+[submodule "common/vim/.vim/bundle/syntastic.git"]
+	path = common/vim/.vim/bundle/syntastic.git
+	url = https://github.com/vim-syntastic/syntastic.git

@@ -65,6 +65,8 @@ let g:vdebug_options= {
 \    "ide_key" : 'mrogacki'
 \}
 
+let g:syntastic_php_checkers = ['php']
+
 func! ToggleColumnIndicator()
 	if &colorcolumn
 		setlocal colorcolumn=""
