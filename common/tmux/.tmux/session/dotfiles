@@ -1,2 +1,2 @@
-new-session -s dotfiles -n vim -c workspace/dotfiles 'vim'
+new-session -s dotfiles -n vim -c workspace/dotfiles
 new-window -n console
