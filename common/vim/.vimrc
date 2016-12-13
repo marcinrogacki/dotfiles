@@ -23,6 +23,7 @@ set wildmenu
 set nowrap
 " make backspace work like most other apps
 set backspace=2
+set history=1000
 " linux like command ident
 set wildmode=longest,list,full
 hi ColorColumn ctermbg=DarkRed
