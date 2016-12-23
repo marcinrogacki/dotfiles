@@ -4,6 +4,9 @@
 "xbindkeystibiatoggle.sh"
     Alt + Escape
 
+"xbindkeystibiatoggle.sh"
+    VoidSymbol
+
 "xdotool search --onlyvisible --name TibiaAnUniqueWindowNameWhichIsEasilyFoundByXdotool key Up"
     w
 
