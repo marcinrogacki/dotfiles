@@ -87,8 +87,8 @@ Mod1 F11 :Fullscreen
 # open the window menu
 Mod1 space :WindowMenu
 
-# exit fluxbox
 Control Mod1 Delete :Exit
+Control Mod1 Backspace:Restart
 
 # change to previous/next workspace
 Control Mod1 Left :PrevWorkspace
@@ -101,3 +101,4 @@ Control Mod1 Shift Right :TakeToNextWorkspace
 # switch display
 Control F1 :Exec dvi
 Control F2 :Exec hdmi
+Control F3 :Exec hdmifullhd
