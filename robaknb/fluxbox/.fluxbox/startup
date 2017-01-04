@@ -6,7 +6,7 @@
 # MAKE SURE THAT APPS THAT KEEP RUNNING HAVE AN ''&'' AT THE END.
 
 # battery statuc systray icon
-cbatticon &
+cbatticon -l 13 -c 6 &
 # notification server
 dunst -to 5 &
 
