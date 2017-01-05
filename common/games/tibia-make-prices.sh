@@ -1,7 +1,7 @@
 #!/bin/sh
 
-url='http://tibia.wikia.com/wiki/Ham'
-#while read url; do
+url='http://tibia.wikia.com/wiki/Dragon_Shield'
+#  while read url; do
     name=`echo "$url" | sed 's/.*\///' | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]' | sed 's/27//'`
     echo "$name"
 
@@ -35,9 +35,18 @@ url='http://tibia.wikia.com/wiki/Ham'
 
     prices=`paste $OUT/buy_prices $OUT/sell_prices | column -s $'\t' -t`
 
+	check=`echo "$prices" | grep -i 'NahBob'`
+	if [ -n "$check" ]; then
+		prices="$prices"$'\n'$'\n''NahBob - Blue djinns'
+	fi
+	check=`echo "$prices" | grep -i 'Alesar\|Yaman'`
+	if [ -n "$check" ]; then
+		prices="$prices"$'\n'$'\n''Alesar|Yaman - Green djinns'
+	fi
+
     content="$desc"$'\n'$'\n'"$prices"
     mkdir .slash/usr/bin/tibiaprices -p
     echo "notify-send '$content'" > .slash/usr/bin/tibiaprices/tibia$name
     sed -i "s/'/\"/" .slash/usr/bin/tibiaprices/tibia$name
     chmod +x .slash/usr/bin/tibiaprices/tibia$name
-#done < tibia-item-urls
+#  done < tibia-item-urls

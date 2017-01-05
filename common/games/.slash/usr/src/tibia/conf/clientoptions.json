@@ -24,9 +24,9 @@
         "clientWindowIsMaximized": true,
         "clientWindowPositionX": 1,
         "clientWindowPositionY": 22,
-        "clientWindowScreenName": "eDP1",
+        "clientWindowScreenName": "DVI-I-1",
         "clientWindowWidth": 800,
-        "mapWindowHeight": 707,
+        "mapWindowHeight": 506,
         "minimapZoomLevel": 100
     },
     "generalOptions": {
@@ -706,12 +706,6 @@
                     },
                     {
                         "actionsetting": {
-                            "action": "ShowDefaultChannel"
-                        },
-                        "keysequence": "Alt+D"
-                    },
-                    {
-                        "actionsetting": {
                             "action": "ChatModeOff"
                         },
                         "keysequence": "Ctrl+Backspace"
@@ -756,13 +750,13 @@
                         "actionsetting": {
                             "action": "SetCombatModeDefensive"
                         },
-                        "keysequence": "Ctrl+Down"
+                        "keysequence": "Alt+D"
                     },
                     {
                         "actionsetting": {
                             "action": "SetCombatModeOffensive"
                         },
-                        "keysequence": "Ctrl+Up"
+                        "keysequence": "Alt+A"
                     },
                     {
                         "actionsetting": {
@@ -852,7 +846,13 @@
                         "actionsetting": {
                             "action": "ChangeCharacter"
                         },
-                        "keysequence": "Ctrl+G"
+                        "keysequence": "Alt+G"
+                    },
+                    {
+                        "actionsetting": {
+                            "action": "RequestOutfitsFromServer"
+                        },
+                        "keysequence": "Alt+O"
                     },
                     {
                         "actionsetting": {
@@ -2647,7 +2647,7 @@
         "sortFieldWhenSelling": "amount"
     },
     "panelOptions": {
-        "controllButtonsVisible": false
+        "controllButtonsVisible": true
     },
     "playerOptions": {
         "chaseModeEnabled": false,
@@ -2667,7 +2667,7 @@
     },
     "sidebarWidgetsMangerOptions": {
         "openWidgetsOrder": [
-            "skills"
+            "battleList"
         ]
     },
     "skillsWidgetOptions": {
@@ -2695,7 +2695,7 @@
         "status": 2
     },
     "vipWidgetOptions": {
-        "contentHeight": 181,
+        "contentHeight": 46,
         "hideOfflineVips": false,
         "vipSortOrder": [
             "byState",
