@@ -4,16 +4,16 @@
             "byAgeAscending",
             "byAgeAscending"
         ],
-        "contentHeight": 0,
+        "contentHeight": 64,
         "showFilters": true,
         "showMonsters": true,
-        "showNPCs": true,
-        "showNonSkulledPlayers": true,
+        "showNPCs": false,
+        "showNonSkulledPlayers": false,
         "showPartyMembers": true,
         "showPlayers": true
     },
     "chatOptions": {
-        "chatModeOn": true,
+        "chatModeOn": false,
         "openChannels": [
         ]
     },
@@ -26,8 +26,8 @@
         "clientWindowPositionY": 22,
         "clientWindowScreenName": "eDP1",
         "clientWindowWidth": 800,
-        "mapWindowHeight": 622,
-        "minimapZoomLevel": 200
+        "mapWindowHeight": 707,
+        "minimapZoomLevel": 100
     },
     "generalOptions": {
         "animatedMouseCursor": true,
@@ -742,9 +742,27 @@
                     },
                     {
                         "actionsetting": {
+                            "action": "SelectAll"
+                        },
+                        "keysequence": "Ctrl+A"
+                    },
+                    {
+                        "actionsetting": {
                             "action": "ToggleShowServermessagesInCurrentChannel"
                         },
                         "keysequence": "Ctrl+M"
+                    },
+                    {
+                        "actionsetting": {
+                            "action": "SetCombatModeDefensive"
+                        },
+                        "keysequence": "Ctrl+Down"
+                    },
+                    {
+                        "actionsetting": {
+                            "action": "SetCombatModeOffensive"
+                        },
+                        "keysequence": "Ctrl+Up"
                     },
                     {
                         "actionsetting": {
@@ -2633,7 +2651,7 @@
     },
     "playerOptions": {
         "chaseModeEnabled": false,
-        "combatMode": 2,
+        "combatMode": 3,
         "minimizeInventory": false
     },
     "preyWidgetOptions": {
@@ -2649,10 +2667,11 @@
     },
     "sidebarWidgetsMangerOptions": {
         "openWidgetsOrder": [
+            "skills"
         ]
     },
     "skillsWidgetOptions": {
-        "contentHeight": 0,
+        "contentHeight": 300,
         "invisibleProgressBars": [
         ]
     },
@@ -2676,12 +2695,12 @@
         "status": 2
     },
     "vipWidgetOptions": {
-        "contentHeight": 0,
+        "contentHeight": 181,
         "hideOfflineVips": false,
         "vipSortOrder": [
+            "byState",
             "byType",
-            "byName",
-            "byState"
+            "byName"
         ]
     },
     "whiteBlacklistOptions": {
