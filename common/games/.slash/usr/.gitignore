@@ -4,4 +4,4 @@ src/*
 src/tibia/*
 !src/tibia/conf/
 src/tibia/conf/*
-!src/tibia/conf/clientoptions.dist.json
+!src/tibia/conf/clientoptions.json

@@ -8,7 +8,7 @@
 # battery statuc systray icon
 cbatticon -l 13 -c 6 &
 # notification server
-dunst -to 5 &
+dunst -conf ~/.config/dunst/dunstr &
 
 # And last but not least we start fluxbox.
 # Because it is the last app you have to run it with ''exec'' before it.
