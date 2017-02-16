@@ -1,5 +1,5 @@
 [user]
-    email = rogacki.m@gmail.com
+    email = mrogacki@nexway.com
     name = Marcin Rogacki
 [color]
     ui = true
@@ -14,3 +14,7 @@
     default = matching
 [alias]
     delete-merged-branches = !sh -c 'git branch --merged master | grep -v master | xargs -r -n 1 git branch -d'
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
