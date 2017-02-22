@@ -1,0 +1,3 @@
+new-session -s nexway-ladefense-devmrogacki
+new-window -n sshtunel
+previous-window
