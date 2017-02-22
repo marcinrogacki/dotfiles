@@ -1,5 +1,3 @@
 new-session -s n3 -n vim -c workspace/N3
 new-window -n db
 new-window -n console
-new-window -n sshtunel
-previous-window

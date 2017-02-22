@@ -1,0 +1,3 @@
+new-session -s goboard -n vim -c workspace/goboard
+new-window -n db
+new-window -n console

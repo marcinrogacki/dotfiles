@@ -1,1 +1,3 @@
 new-session -s nexway-katowice-prep
+new-window -n sshtunel
+previous-window

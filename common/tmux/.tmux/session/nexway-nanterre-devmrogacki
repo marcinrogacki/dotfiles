@@ -1,1 +1,3 @@
 new-session -s nexway-nanterre-devmrogacki
+new-window -n sshtunel
+previous-window
