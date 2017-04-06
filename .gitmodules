@@ -66,3 +66,6 @@
 [submodule "common/vim/.vim/bundle/vim-indexed-search.git"]
 	path = common/vim/.vim/bundle/vim-indexed-search.git
 	url = https://github.com/henrik/vim-indexed-search.git
+[submodule "common/vim/.vim/bundle/ctrlp.vim.git"]
+	path = common/vim/.vim/bundle/ctrlp.vim.git
+	url = https://github.com/ctrlpvim/ctrlp.vim.git

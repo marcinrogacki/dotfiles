@@ -53,6 +53,15 @@ let NERDTreeShowHidden=1
 " tagbar.git plugin
 nmap <leader>tb :TagbarOpenAutoClose<cr>
 
+" for plugin: ctrlp.vim
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
 " enable vim-better-whitespace.git plugin (removes whitespaces at EOL) on save
 autocmd VimEnter * ToggleStripWhitespaceOnSave
 
