@@ -53,6 +53,9 @@ let NERDTreeShowHidden=1
 " tagbar.git plugin
 nmap <leader>tb :TagbarOpenAutoClose<cr>
 
+"" plugin: indentLine.vim
+command ToggleIndentLines IndentLinesToggle
+
 "" plugin: ctrlp.vim
 " use 'ag' instead 'grep' to boost serach performance
 if executable('ag')
