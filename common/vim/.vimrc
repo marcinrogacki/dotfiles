@@ -53,7 +53,8 @@ let NERDTreeShowHidden=1
 " tagbar.git plugin
 nmap <leader>tb :TagbarOpenAutoClose<cr>
 
-" for plugin: ctrlp.vim
+"" plugin: ctrlp.vim
+" use 'ag' instead 'grep' to boost serach performance
 if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
@@ -77,13 +78,13 @@ let g:vdebug_options= {
 
 let g:syntastic_php_checkers = ['php']
 
-func! ToggleColumnIndicator()
+" show border for line 80 and lines after (inclusive) 120 characters
+function! ToggleColumnIndicator()
 	if &colorcolumn
 		setlocal colorcolumn=""
 	else
-	    " show border for line 80 and lines after (inclusive) 120 characters
 		let &colorcolumn="80,".join(range(120,999),",")
 	endif
 endfu
-
-call ToggleColumnIndicator()
+command! ToggleColumnIndicator call ToggleColumnIndicator()
+autocmd BufReadPost * call ToggleColumnIndicator()
