@@ -80,9 +80,10 @@ autocmd VimEnter * ToggleStripWhitespaceOnSave
 "" phpcomplete.vim.git plugin
 " autocmd FileType php set omnifunc=phpcomplete#CompletePHP filetype=php
 
+"" plugin: syntastic.git - syntax checker
 let g:syntastic_php_checkers = ['php']
 
-" show border for line 80 and lines after (inclusive) 120 characters
+"" show border for line 80 and lines after (inclusive) 120 characters
 function! ToggleColumnIndicator()
 	if &colorcolumn
 		setlocal colorcolumn=""
@@ -90,5 +91,9 @@ function! ToggleColumnIndicator()
 		let &colorcolumn="80,".join(range(120,999),",")
 	endif
 endfu
+" define shortcut for toggle collorcolumn
 command! ToggleColumnIndicator call ToggleColumnIndicator()
+" set nice colorcolumn color
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+" show colorcolumn at the startup (by exec function)
 autocmd BufReadPost * call ToggleColumnIndicator()
