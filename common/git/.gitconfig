@@ -11,7 +11,7 @@
 [credential]
     helper = cache --timeout=36000
 [push]
-    default = matching
+	default = simple
 [alias]
     delete-merged-branches = !sh -c 'git branch --merged master | grep -v master | xargs -r -n 1 git branch -d'
 [diff]
