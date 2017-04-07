@@ -69,3 +69,9 @@
 [submodule "common/vim/.vim/bundle/ctrlp.vim.git"]
 	path = common/vim/.vim/bundle/ctrlp.vim.git
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "common/vim/.vim/bundle/vim-airline.git"]
+	path = common/vim/.vim/bundle/vim-airline.git
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "common/vim/.vim/bundle/vim-airline-themes.git"]
+	path = common/vim/.vim/bundle/vim-airline-themes.git
+	url = https://github.com/vim-airline/vim-airline-themes.git
