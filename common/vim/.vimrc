@@ -96,4 +96,4 @@ command! ToggleColumnIndicator call ToggleColumnIndicator()
 " set nice colorcolumn color
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 " show colorcolumn at the startup (by exec function)
-autocmd BufReadPost * call ToggleColumnIndicator()
+autocmd VimEnter * call ToggleColumnIndicator()
