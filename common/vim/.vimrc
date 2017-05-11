@@ -30,7 +30,17 @@ set term=screen-256color
 hi ColorColumn ctermbg=DarkRed
 
 if filereadable(".ctags")
-    set tags=.ctags
+  set tags=.ctags
+endif
+
+" allows using ctrl+[ (tags) to jump to function definition (only when cscope
+" is available)
+if has('cscope')
+  set cscopetag cscopeverbose
+  " add cscope database
+  if filereadable(".vim/cscope/cscope.out")
+    silent cs add .vim/cscope/cscope.out
+  endif
 endif
 
 filetype on
