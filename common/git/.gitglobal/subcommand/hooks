@@ -1,5 +1,5 @@
 #!/bin/bash
-all_scripts=`find ~/.git_template/hooks -type f`
+all_scripts=`find ~/.gitglobal/hooks -type f`
 for script_absolute_path in $all_scripts; do
     script_basename=`basename "$script_absolute_path"`
     category=$(basename $(dirname $script_absolute_path))
