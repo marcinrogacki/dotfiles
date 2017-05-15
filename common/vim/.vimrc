@@ -29,9 +29,32 @@ set wildmode=longest,list,full
 set term=screen-256color
 hi ColorColumn ctermbg=DarkRed
 
+"" ctags
 if filereadable(".tags")
   set tags=.tags
 endif
+
+" deletes all entries of certain file in .tags
+function! DelTagOfFile(file)
+  let fullpath = a:file
+  let cwd = getcwd()
+  let tagfilename = cwd . "/.tags"
+  let f = substitute(fullpath, cwd . "/", "", "")
+  let f = escape(f, './')
+  let cmd = 'sed -i "/' . f . '/d" "' . tagfilename . '"'
+  let resp = system(cmd)
+endfunction
+
+" updates tags of current selected file
+function! UpdateTags()
+  let f = expand("%:p")
+  let cwd = getcwd()
+  let cmd = 'ctags -a "' . f . '"'
+  call DelTagOfFile(f)
+  let resp = system(cmd)
+endfunction
+" call update tags of current file on each write
+autocmd BufWritePost * call UpdateTags()
 
 " allows using ctrl+[ (tags) to jump to function definition (only when cscope
 " is available)
