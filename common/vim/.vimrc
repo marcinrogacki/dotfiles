@@ -54,7 +54,7 @@ function! UpdateTags()
   let resp = system(cmd)
 endfunction
 " call update tags of current file on each write
-autocmd BufWritePost * call UpdateTags()
+" autocmd BufWritePost * call UpdateTags()
 
 " allows using ctrl+[ (tags) to jump to function definition (only when cscope
 " is available)
