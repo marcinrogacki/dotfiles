@@ -29,8 +29,8 @@ set wildmode=longest,list,full
 set term=screen-256color
 hi ColorColumn ctermbg=DarkRed
 
-if filereadable(".ctags")
-  set tags=.ctags
+if filereadable(".tags")
+  set tags=.tags
 endif
 
 " allows using ctrl+[ (tags) to jump to function definition (only when cscope
