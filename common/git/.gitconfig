@@ -14,7 +14,10 @@
 	default = simple
 [alias]
     delete-merged-branches = !sh -c 'git branch --merged master | grep -v master | xargs -r -n 1 git branch -d'
+	hooks = !~/.git_template/hooks_install
 [diff]
 	tool = vimdiff
 [merge]
 	tool = vimdiff
+[init]
+	templatedir = ~/.git_template

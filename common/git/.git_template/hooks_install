@@ -1,0 +1,22 @@
+#!/bin/bash
+all_scripts=`find ~/.git_template/hooks -type f`
+for script_absolute_path in $all_scripts; do
+    script_basename=`basename "$script_absolute_path"`
+    category=$(basename $(dirname $script_absolute_path))
+    hook=$(basename $(dirname $(dirname $script_absolute_path)))
+    hook_script_name="$hook/$category/$script_basename"
+
+    if grep -q "$hook_script_name" .git/hooks/"$hook" 2>/dev/null; then
+        echo "Already installed: $hook_script_name"
+    else
+        prompt_message="Install: $hook_script_name? [y/N]"
+
+        echo -n $prompt_message
+        read -n 1 prompt
+        echo
+
+        if [[ $prompt == "Y" || $prompt == "y" ]]; then
+            echo "$script_absolute_path" >> .git/hooks/"$hook"
+        fi
+    fi
+done
