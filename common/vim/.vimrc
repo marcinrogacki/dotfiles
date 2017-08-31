@@ -15,9 +15,6 @@ set tabstop=4
 set shiftwidth=4
 set autoindent
 set smartindent
-" scroll horizontally by small amount of text char instead of half of page
-" (usefull for NERDTree)
-set sidescroll=1
 set noswapfile
 set wildmenu
 set nowrap
@@ -84,6 +81,14 @@ let mapleader = ","
 nmap <leader>nt :NERDTree<cr>
 nmap <leader>nf :NERDTreeFind<cr>
 let NERDTreeShowHidden=1
+" scroll horizontally by small amount of text char instead of half of page
+" (usefull for NERDTree)
+set sidescroll=1
+" enable line numbers
+let NERDTreeShowLineNumbers=1
+" " make sure relative line numbers are used
+autocmd FileType nerdtree setlocal relativenumber
+
 " tagbar.git plugin
 nmap <leader>tb :TagbarOpenAutoClose<cr>
 
