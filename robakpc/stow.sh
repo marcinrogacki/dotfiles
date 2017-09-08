@@ -1,1 +1,4 @@
-../common/stow.sh
+#!/bin/sh
+
+stow -t ~ synergy
+sh ../common/stow.sh

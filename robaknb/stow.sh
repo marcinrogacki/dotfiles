@@ -1,1 +1,3 @@
-../common/stow.sh
+#!/bin/sh
+
+sh ../common/stow.sh
