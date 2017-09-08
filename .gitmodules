@@ -31,7 +31,7 @@
     url = https://github.com/AndrewRadev/linediff.vim.git
 [submodule "tmux/.tmux/tmux-copycat.git"]
     path = common/tmux/.tmux/tmux-copycat.git
-    url = https://github.com/tmux-plugins/tmux-copycat.git
+    url = https://github.com/thalesmello/tmux-copycat.git
 [submodule "tmux/.tmux/tmux-yank.git"]
     path = common/tmux/.tmux/tmux-yank.git
     url = https://github.com/tmux-plugins/tmux-yank.git
