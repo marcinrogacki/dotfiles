@@ -1,14 +1,3 @@
-# Allows kill a program by searching a string in process list (e.g. by parameter)
-function akill() {
-    program_name="$1"
-
-    if [[ -z "${program_name// }" ]]; then
-        (>&2 echo "Program name cannot be empty. Please provide program name in parameters.")
-    else
-        ps aux | grep -i "$program_name" | grep -v grep | awk '{print $2}' | xargs kill -9
-    fi
-}
-
 # Allows check a program i/o by searching a string in process list (e.g. by parameter)
 function ioproc {
     program_name="$1"

@@ -1,0 +1,31 @@
+#!/bin/sh
+
+function display_usage() {
+cat << USAGE
+Usage: `basename $0` <PROGRAM>|[COMMAND]"
+
+Allows kill a program by searching a string in process list (e.g. by parameter)
+
+PROGRAM
+    A program partial or full name.
+
+COMMAND
+    -h|--help       display this message
+USAGE
+}
+
+for arg in "$@"; do
+    if [[ "$arg" == '-h' ]] || [[ "$arg" == '--help' ]]; then
+        display_usage
+        exit
+    fi
+done
+
+
+program_name="$1"
+
+if [[ -z "${program_name// }" ]]; then
+    (>&2 echo "Program name cannot be empty. Please provide program name in parameters.")
+else
+    ps aux | grep -i "$program_name" | grep -v grep | awk '{print $2}' | xargs kill -9
+fi
