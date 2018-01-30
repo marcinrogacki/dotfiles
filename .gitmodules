@@ -32,6 +32,7 @@
 [submodule "tmux/.tmux/tmux-copycat.git"]
     path = common/tmux/.tmux/tmux-copycat.git
     url = https://github.com/thalesmello/tmux-copycat.git
+    ignore = dirty
 [submodule "tmux/.tmux/tmux-yank.git"]
     path = common/tmux/.tmux/tmux-yank.git
     url = https://github.com/tmux-plugins/tmux-yank.git
