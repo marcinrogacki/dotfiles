@@ -1,6 +1,6 @@
 #!/bin/sh
 
-function display_usage() {
+display_usage() {
 cat << USAGE
 Usage: `basename $0` <PROGRAM>|[COMMAND]"
 
@@ -15,7 +15,7 @@ USAGE
 }
 
 for arg in "$@"; do
-    if [[ "$arg" == '-h' ]] || [[ "$arg" == '--help' ]]; then
+    if [ "$arg" = "-h" -o "$arg" = "--help" ]; then
         display_usage
         exit
     fi
@@ -24,8 +24,9 @@ done
 
 program_name="$1"
 
-if [[ -z "${program_name// }" ]]; then
+if [ -z "$program_name" ]; then
     (>&2 echo "Program name cannot be empty. Please provide program name in parameters.")
 else
-    ps aux | grep -i "$program_name" | grep -v grep | awk '{print $2}' | xargs kill -9
+    ps aux | grep -i "$program_name" | grep -v 'grep\|akill'
+    ps aux | grep -i "$program_name" | grep -v 'grep\|akill' | awk '{print $2}' | xargs kill -9
 fi
