@@ -78,4 +78,4 @@
 	url = https://github.com/vim-airline/vim-airline-themes.git
 [submodule "common/vim/.vim/bundle/file-line.git"]
 	path = common/vim/.vim/bundle/file-line.git
-	url = git@github.com:bogado/file-line.git
+	url = https://github.com/bogado/file-line.git
