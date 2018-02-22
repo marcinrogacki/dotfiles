@@ -31,7 +31,8 @@
     url = https://github.com/AndrewRadev/linediff.vim.git
 [submodule "tmux/.tmux/tmux-copycat.git"]
     path = common/tmux/.tmux/tmux-copycat.git
-    url = https://github.com/thalesmello/tmux-copycat.git
+    url = https://github.com/tmux-plugins/tmux-copycat.git
+    ignore = dirty
 [submodule "tmux/.tmux/tmux-yank.git"]
     path = common/tmux/.tmux/tmux-yank.git
     url = https://github.com/tmux-plugins/tmux-yank.git
@@ -75,3 +76,6 @@
 [submodule "common/vim/.vim/bundle/vim-airline-themes.git"]
 	path = common/vim/.vim/bundle/vim-airline-themes.git
 	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "common/vim/.vim/bundle/file-line.git"]
+	path = common/vim/.vim/bundle/file-line.git
+	url = https://github.com/bogado/file-line.git

@@ -31,7 +31,7 @@
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
-    alignment = left
+    alignment = right
 
     # The frequency with wich text that is longer than the notification
     # window allows bounces back and forth.
@@ -64,7 +64,8 @@
     # the top and down respectevly.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-#    geometry = "300x5-30+20"
+    #(format: [{width}][x{height}][+/-{x}[+/-{y}]], default: "0x0+0-0")
+    geometry = "0x0-0-25"
 
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
@@ -139,7 +140,7 @@
     dmenu = /usr/bin/dmenu -p dunst:
 
     # Browser for opening urls in context menu.
-    browser = /usr/bin/firefox -new-tab
+    browser = /usr/bin/chromium -new-tab
 
     # Align icons left/right/off
     icon_position = off
