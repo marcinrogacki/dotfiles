@@ -6,11 +6,11 @@ URxvt*background: Black
 URxvt*scrollBar: false
 URxvt*scrollBar_right: false
 URxvt*scrollstyle: rxvt
-URxvt.font: 9x15
-!! ext
+!! URxvt.font: 9x15
+!! !! ext
 URxvt.perl-ext-common: resize-font
 !! Larger history limit
 URxvt.saveLines: 1000000
-!! resize-font config
+!! !! resize-font config
 URxvt.resize-font.smaller: C-Down
 URxvt.resize-font.bigger: C-Up
