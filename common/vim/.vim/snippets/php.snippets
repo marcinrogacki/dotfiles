@@ -27,6 +27,8 @@ snippet fileputcontentsclass
 snippet fileputcontentstrace
 	$eee = new \Exception();
 	file_put_contents('/tmp/mrogacki.log', $eee->getTraceAsString().PHP_EOL, FILE_APPEND);
+snippet fileputcontentsmethod
+	file_put_contents('/tmp/mrogacki.log', __METHOD__.PHP_EOL, FILE_APPEND);
 snippet magentogetmodel
 	Mage::getModel(${1});
 snippet magentohelper
