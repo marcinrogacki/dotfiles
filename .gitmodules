@@ -79,3 +79,6 @@
 [submodule "common/vim/.vim/bundle/file-line.git"]
 	path = common/vim/.vim/bundle/file-line.git
 	url = https://github.com/bogado/file-line.git
+[submodule "common/tmuxifier/.slash/lib/tmuxifier"]
+	path = common/tmuxifier/.slash/lib/tmuxifier
+	url = https://github.com/jimeh/tmuxifier.git
