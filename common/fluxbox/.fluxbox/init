@@ -1,6 +1,6 @@
 session.screen0.clientMenu.usePixmap:	true
-session.screen0.titlebar.left:	Stick 
-session.screen0.titlebar.right:	Minimize Maximize Close 
+session.screen0.titlebar.left:	Stick
+session.screen0.titlebar.right:	Minimize Maximize Close
 session.screen0.tabs.usePixmap:	true
 session.screen0.tabs.maxOver:	false
 session.screen0.tabs.intitlebar:	true
@@ -39,7 +39,7 @@ session.screen0.fullMaximization:	false
 session.screen0.windowMenu:	/home/robak/.fluxbox/windowmenu
 session.screen0.rowPlacementDirection:	LeftToRight
 session.screen0.maxDisableResize:	false
-session.screen0.strftimeFormat:	%k:%M
+session.screen0.strftimeFormat:	%y-%m-%d %k:%M
 session.screen0.focusSameHead:	false
 session.screen0.tooltipDelay:	500
 session.screen0.clickRaises:	true
