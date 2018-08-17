@@ -17,7 +17,7 @@ for dir in */; do
             stow -Dt ~ $dir
             ;;
         *)
-            stow -t ~ $dir
+            stow --ignore='dep.pacman' -t ~ $dir
             ;;
     esac
 done

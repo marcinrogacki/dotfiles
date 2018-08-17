@@ -1,46 +1,28 @@
 About
 =====
 
-Dotofiles managed by GNU stow.
+Dotofiles managed by GNU stow https://www.gnu.org/software/stow/
 
 Install
 =======
 
-GNU Stow is a *symlink farm manager which takes distinct packages of software
-and/or data located in separate directories on the filesystem, and makes them
-appear to be installed in the same place.*
+Go to one of <user>@<host> directory and run `sh stow.sh`.
 
-
-Usually launch `stow.sh` which will install dotfiles.
-
-Requirments
+Terminology
 ===========
+ENVIROMENT - A <user>@<host> directory which contains read set of dotfiles.
 
-#### pc
-- bash
-    * tmux
-- tmux
-    * xclip
-    * ssh
+Structure
+=========
 
-#### netbook
-- bash
-    * tmux
-- tmux
-    * xclip
-    * ssh
-- fluxbox
-    * cbatticon
+dotfiles/common - A repository of configurations. Contains all available dotfiles. Not intended to install.
+dotfiles/<user>@<host> - An ENVIROMENT. Contains a set of dotfiles for target user on specific host.
+pacman.sh - A script to automatically install ENVIROMENT's package dependencies. Must be executed from
+ENVIROMENT top directory. Ignored by stow (does not link it).
+dep.pacman - A list of dependencies (pacman only) for certain dotfile directory. Ignored by stow (does not link it).
 
-Description
-===========
+Dependencies
+============
 
-### bash
-Handles user startup scripts and behaviours
-* .slash/etc/profile.d - same purpose like /etc/profile.d
-
-### tmux
-* Smart search (+ highlight): https://github.com/tmux-plugins/tmux-copycat#search
-* Open file/url utility: https://github.com/tmux-plugins/tmux-open#examples
-* Copy clipboard: https://github.com/tmux-plugins/tmux-yank
-* [command] tmux-ssh - get's server from tmux session name and try connect using ssh
+System dependency packages can be installed by using `sh pacman.sh`. Only Pacman
+package manager is supported at the moment.
