@@ -1,4 +1,4 @@
-!! layout
+!layout
 URxvt*transparent: true
 URxvt*shading: 15
 URxvt*foreground: White
@@ -6,11 +6,19 @@ URxvt*background: Black
 URxvt*scrollBar: false
 URxvt*scrollBar_right: false
 URxvt*scrollstyle: rxvt
-!! URxvt.font: 9x15
-!! !! ext
-URxvt.perl-ext-common: resize-font
-!! Larger history limit
+! Correct fonts must be set. List of available fonts can be found by using
+! command fc-list ("fc-list : family" will group by family). A fontviewer (AUR)
+! software can be used to preview fonts.
+! Know issues when font is inncorect:
+! - Error message: "urxvt: unable to load base fontset, please specify a valid one using -fn, aborting."
+! - Fonts are too bold and unreadable.
+URxvt*font: xft:DEC Terminal
+! Enable when fonts are to wide (takes to much horizontal space).
+!URxvt*letterSpace: -1
+!Larger history limit
 URxvt.saveLines: 1000000
-!! !! resize-font config
+!ext
+URxvt.perl-ext-common: resize-font
+!resize-font config
 URxvt.resize-font.smaller: C-Down
 URxvt.resize-font.bigger: C-Up
