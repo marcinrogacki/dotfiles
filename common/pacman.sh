@@ -1,9 +1,22 @@
 #!/bin/sh
 
-echo -e "\e[32mINSTALL STOW SOFTWARES FOR: COMMON\e[0m"
-pacman -S synergy xscreensaver libnotify dunst the_silver_searcher ctags
+display_usage() {
+cat << USAGE
+Usage: sh `basename $0`
 
-if [ -f ./pacman-env.sh ]; then
-    echo -e "\e[32mINSTALL STOW SOFTWARES FOR: ENV\e[0m"
-    sh ./pacman-env.sh
-fi
+Searches recursively current directory for dep.pacman files and installs packages listed within them.
+User must be granted to run pacman command.
+
+COMMAND
+    -h|--help       display this message
+USAGE
+}
+
+for arg in "$@"; do
+    if [ "$arg" = "-h" -o "$arg" = "--help" ]; then
+        display_usage
+        exit
+    fi
+done
+
+pacman -S --needed $(find -L . -name dep.pacman | xargs cat | sort -u)

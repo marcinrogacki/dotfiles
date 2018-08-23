@@ -6,7 +6,7 @@
 
 # Change your keymap:
 xmodmap "/home/mrogacki/.Xmodmap"
-solaar &
+# solaar &
 dunst -conf ~/.config/dunst/dunstr &
 
 # Applications you want to run with fluxbox.
