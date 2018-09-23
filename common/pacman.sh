@@ -19,4 +19,4 @@ for arg in "$@"; do
     fi
 done
 
-pacman -S --needed $(find -L . -name dep.pacman | xargs cat | sort -u)
+pacman -S --needed $(find -L . -name dep.pacman | xargs cat | grep -v '^#' | sort -u)
