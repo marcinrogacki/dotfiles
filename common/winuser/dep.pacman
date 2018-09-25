@@ -3,6 +3,5 @@ alsa
 alsa-utils
 pulseaudio
 pulseaudio-alsa
-#display
+# display
 xfce4
-##    others
