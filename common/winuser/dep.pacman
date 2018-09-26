@@ -5,3 +5,4 @@ pulseaudio
 pulseaudio-alsa
 # display
 xfce4
+network-manager-applet
