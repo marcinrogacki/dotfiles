@@ -1,3 +1,6 @@
 xorg-xinit
 xorg-xrdb
 rxvt-unicode
+# install "DEC Terminal" fonts
+xorg-fonts-75dpi
+xorg-fonts-100dpi
