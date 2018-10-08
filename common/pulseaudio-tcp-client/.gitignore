@@ -1,0 +1,5 @@
+.config/*
+!.config/pulse
+.config/pulse/*
+!.config/pulse/client.conf
+!.config/pulse/default.pa
