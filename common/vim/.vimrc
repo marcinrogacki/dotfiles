@@ -121,6 +121,13 @@ autocmd VimEnter * ToggleStripWhitespaceOnSave
 "" plugin: syntastic.git - syntax checker
 let g:syntastic_php_checkers = ['php']
 
+"" Converts table from mysql to csv
+function! MysqltableToCsv()
+    normal Gdd3Gdd1Gdd
+    %s/^| */"/g | %s/ *|$/"/g |  %s/ *| */","/g
+endfu
+
+
 "" show border for line 80 and lines after (inclusive) 120 characters
 function! ToggleColumnIndicator()
 	if &colorcolumn
