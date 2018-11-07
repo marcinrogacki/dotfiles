@@ -6,7 +6,7 @@ Dotofiles managed by GNU stow https://www.gnu.org/software/stow/
 Install
 =======
 
-Go to one of <user>@<host> directory and run `sh stow.sh`.
+Use `stow.sh` script.
 
 Terminology
 ===========
