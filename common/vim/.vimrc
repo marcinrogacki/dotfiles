@@ -121,6 +121,12 @@ autocmd VimEnter * ToggleStripWhitespaceOnSave
 "" plugin: syntastic.git - syntax checker
 let g:syntastic_php_checkers = ['php']
 
+"" plugin: vim-mark.git
+" Remove the default overriding of * and #. Conflicts with IndexedSearch.vim
+" plugin
+nmap <Plug>IgnoreMarkSearchNext <Plug>MarkSearchNext
+nmap <Plug>IgnoreMarkSearchPrev <Plug>MarkSearchPrev
+
 "" Converts table from mysql to csv
 function! MysqltableToCsv()
     normal Gdd3Gdd1Gdd

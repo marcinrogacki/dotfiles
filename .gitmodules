@@ -82,3 +82,9 @@
 [submodule "common/tmuxifier/.slash/lib/tmuxifier"]
 	path = common/tmuxifier/.slash/lib/tmuxifier
 	url = https://github.com/jimeh/tmuxifier.git
+[submodule "common/vim/.vim/bundle/vim-ingo-library.git"]
+	path = common/vim/.vim/bundle/vim-ingo-library.git
+	url = git@github.com:inkarkat/vim-ingo-library.git
+[submodule "common/vim/.vim/bundle/vim-mark.git"]
+	path = common/vim/.vim/bundle/vim-mark.git
+	url = git@github.com:inkarkat/vim-mark.git
