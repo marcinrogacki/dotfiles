@@ -6,9 +6,9 @@ syntax on
 
 set background=dark
 set hls
+set nowrapscan " do not jump to top when searched the last word
 set number
-" counts line numbers from cursor current posision
-set relativenumber
+set relativenumber " counts line numbers from cursor current posision
 set nopaste
 set expandtab
 set tabstop=4
@@ -18,11 +18,9 @@ set smartindent
 set noswapfile
 set wildmenu
 set nowrap
-" make backspace work like most other apps
-set backspace=2
+set backspace=2 " make backspace work like most other apps
 set history=1000
-" linux like command ident
-set wildmode=longest,list,full
+set wildmode=longest,list,full " linux like command ident
 set term=screen-256color
 hi ColorColumn ctermbg=DarkRed
 
