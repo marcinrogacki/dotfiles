@@ -41,7 +41,9 @@ load-module module-switch-on-port-available
 #load-module module-oss-mmap device="/dev/dsp" sink_name=output source_name=input
 #load-module module-null-sink
 #load-module module-pipe-sink
-load-module module-alsa-sink device=hw:2,7
+#Load HDMI for TV (silly solution cus it's requires hardcoded channel)
+#Blocked cus it seems TV started to work without it.
+#load-module module-alsa-sink device=hw:2,7
 
 ### Automatically load driver modules depending on the hardware available
 .ifexists module-udev-detect.so
