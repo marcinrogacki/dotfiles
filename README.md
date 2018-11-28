@@ -4,8 +4,10 @@ Dotofiles managed by GNU stow https://www.gnu.org/software/stow/
 
 # USAGE
 
-* stow.sh   - install dotfiles from given environment.
-* pacman.sh - install system packages needed for given environment.
+* stow.sh       - install dotfiles from given environment.
+* pacman.sh     - install system packages needed for given environment.
+* repository.sh - link dotfile into repository along with handling dependencies
+                  to other dotfiles
 
 # Structure
 
