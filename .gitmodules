@@ -1,90 +1,90 @@
-[submodule "vim/.vim/bundle/vim-pathogen.git"]
-    path = common/vim/.vim/bundle/vim-pathogen.git
+[submodule "repository/vim/.vim/bundle/vim-pathogen.git"]
+    path = repository/vim/.vim/bundle/vim-pathogen.git
     url = https://github.com/tpope/vim-pathogen.git
-[submodule "vim/.vim/bundle/tlib_vim.git"]
-    path = common/vim/.vim/bundle/tlib_vim.git
+[submodule "repository/vim/.vim/bundle/tlib_vim.git"]
+    path = repository/vim/.vim/bundle/tlib_vim.git
     url = https://github.com/tomtom/tlib_vim.git
-[submodule "vim/.vim/bundle/vim-addon-mw-utils.git"]
-    path = common/vim/.vim/bundle/vim-addon-mw-utils.git
+[submodule "repository/vim/.vim/bundle/vim-addon-mw-utils.git"]
+    path = repository/vim/.vim/bundle/vim-addon-mw-utils.git
     url = https://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "vim/.vim/bundle/vim-snipmate.git"]
-    path = common/vim/.vim/bundle/vim-snipmate.git
+[submodule "repository/vim/.vim/bundle/vim-snipmate.git"]
+    path = repository/vim/.vim/bundle/vim-snipmate.git
     url = https://github.com/garbas/vim-snipmate.git
-[submodule "vim/.vim/bundle/vim-l9.git"]
-    path = common/vim/.vim/bundle/vim-l9.git
+[submodule "repository/vim/.vim/bundle/vim-l9.git"]
+    path = repository/vim/.vim/bundle/vim-l9.git
     url = https://github.com/git-mirror/vim-l9.git
     ignore = dirty
-[submodule "vim/.vim/bundle/nerdtree.git"]
-    path = common/vim/.vim/bundle/nerdtree.git
+[submodule "repository/vim/.vim/bundle/nerdtree.git"]
+    path = repository/vim/.vim/bundle/nerdtree.git
     url = https://github.com/scrooloose/nerdtree.git
-[submodule "vim/.vim/bundle/phpcomplete.vim.git"]
-    path = common/vim/.vim/bundle/phpcomplete.vim.git
+[submodule "repository/vim/.vim/bundle/phpcomplete.vim.git"]
+    path = repository/vim/.vim/bundle/phpcomplete.vim.git
     url = https://github.com/shawncplus/phpcomplete.vim.git
-[submodule "vim/.vim/bundle/vim-unimpaired.git"]
-    path = common/vim/.vim/bundle/vim-unimpaired.git
+[submodule "repository/vim/.vim/bundle/vim-unimpaired.git"]
+    path = repository/vim/.vim/bundle/vim-unimpaired.git
     url = https://github.com/tpope/vim-unimpaired.git
-[submodule "vim/.vim/bundle/vim-phpcolors.git"]
-    path = common/vim/.vim/bundle/vim-phpcolors.git
+[submodule "repository/vim/.vim/bundle/vim-phpcolors.git"]
+    path = repository/vim/.vim/bundle/vim-phpcolors.git
     url = https://github.com/modess/vim-phpcolors.git
-[submodule "vim/.vim/bundle/linediff.vim.git"]
-    path = common/vim/.vim/bundle/linediff.vim.git
+[submodule "repository/vim/.vim/bundle/linediff.vim.git"]
+    path = repository/vim/.vim/bundle/linediff.vim.git
     url = https://github.com/AndrewRadev/linediff.vim.git
-[submodule "tmux/.tmux/tmux-copycat.git"]
-    path = common/tmux/.tmux/tmux-copycat.git
+[submodule "repository/tmux/.tmux/tmux-copycat.git"]
+    path = repository/tmux/.tmux/tmux-copycat.git
     url = https://github.com/tmux-plugins/tmux-copycat.git
     ignore = dirty
-[submodule "tmux/.tmux/tmux-yank.git"]
-    path = common/tmux/.tmux/tmux-yank.git
+[submodule "repository/tmux/.tmux/tmux-yank.git"]
+    path = repository/tmux/.tmux/tmux-yank.git
     url = https://github.com/tmux-plugins/tmux-yank.git
-[submodule "tmux/.tmux/tmux-open.git"]
-    path = common/tmux/.tmux/tmux-open.git
+[submodule "repository/tmux/.tmux/tmux-open.git"]
+    path = repository/tmux/.tmux/tmux-open.git
     url = https://github.com/tmux-plugins/tmux-open.git
-[submodule "vim/.vim/bundle/hexmode.git"]
-    path = common/vim/.vim/bundle/hexmode.git
+[submodule "repository/vim/.vim/bundle/hexmode.git"]
+    path = repository/vim/.vim/bundle/hexmode.git
     url = https://github.com/fidian/hexmode.git
-[submodule "vim/.vim/bundle/vim-better-whitespace.git"]
-    path = common/vim/.vim/bundle/vim-better-whitespace.git
+[submodule "repository/vim/.vim/bundle/vim-better-whitespace.git"]
+    path = repository/vim/.vim/bundle/vim-better-whitespace.git
     url = https://github.com/ntpeters/vim-better-whitespace.git
-[submodule "vim/.vim/bundle/vim-autotag.git"]
-    path = common/vim/.vim/bundle/vim-autotag.git
+[submodule "repository/vim/.vim/bundle/vim-autotag.git"]
+    path = repository/vim/.vim/bundle/vim-autotag.git
     url = https://github.com/craigemery/vim-autotag.git
-[submodule "vim/.vim/bundle/tagbar.git"]
-    path = common/vim/.vim/bundle/tagbar.git
+[submodule "repository/vim/.vim/bundle/tagbar.git"]
+    path = repository/vim/.vim/bundle/tagbar.git
     url = https://github.com/majutsushi/tagbar.git
     ignore = dirty
-[submodule "vim/.vim/bundle/vdebug.git"]
-    path = common/vim/.vim/bundle/vdebug.git
+[submodule "repository/vim/.vim/bundle/vdebug.git"]
+    path = repository/vim/.vim/bundle/vdebug.git
     url = https://github.com/joonty/vdebug.git
-[submodule "vim/.vim/bundle/indentLine.git"]
-    path = common/vim/.vim/bundle/indentLine.git
+[submodule "repository/vim/.vim/bundle/indentLine.git"]
+    path = repository/vim/.vim/bundle/indentLine.git
     url = https://github.com/Yggdroot/indentLine.git
-[submodule "urxvt/.urxvt/ext/urxvt-resize-font.git"]
-    path = common/urxvt/.urxvt/ext/urxvt-resize-font.git
-    url = https://github.com/simmel/urxvt-resize-font.git
-[submodule "common/vim/.vim/bundle/syntastic.git"]
-	path = common/vim/.vim/bundle/syntastic.git
-	url = https://github.com/vim-syntastic/syntastic.git
-[submodule "common/vim/.vim/bundle/vim-indexed-search.git"]
-	path = common/vim/.vim/bundle/vim-indexed-search.git
-	url = https://github.com/henrik/vim-indexed-search.git
-[submodule "common/vim/.vim/bundle/ctrlp.vim.git"]
-	path = common/vim/.vim/bundle/ctrlp.vim.git
-	url = https://github.com/ctrlpvim/ctrlp.vim.git
-[submodule "common/vim/.vim/bundle/vim-airline.git"]
-	path = common/vim/.vim/bundle/vim-airline.git
-	url = https://github.com/vim-airline/vim-airline.git
-[submodule "common/vim/.vim/bundle/vim-airline-themes.git"]
-	path = common/vim/.vim/bundle/vim-airline-themes.git
-	url = https://github.com/vim-airline/vim-airline-themes.git
-[submodule "common/vim/.vim/bundle/file-line.git"]
-	path = common/vim/.vim/bundle/file-line.git
+[submodule "repository/urxvt/.urxvt/ext/urxvt-resize-font.git"]
+	path = repository/urxvt/.urxvt/ext/urxvt-resize-font.git
+	url = https://github.com/simmel/urxvt-resize-font.git
+[submodule "repository/vim/.vim/bundle/syntastic.git"]
+    path = repository/vim/.vim/bundle/syntastic.git
+    url = https://github.com/vim-syntastic/syntastic.git
+[submodule "repository/vim/.vim/bundle/vim-indexed-search.git"]
+    path = repository/vim/.vim/bundle/vim-indexed-search.git
+    url = https://github.com/henrik/vim-indexed-search.git
+[submodule "repository/vim/.vim/bundle/ctrlp.vim.git"]
+    path = repository/vim/.vim/bundle/ctrlp.vim.git
+    url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "repository/vim/.vim/bundle/vim-airline.git"]
+    path = repository/vim/.vim/bundle/vim-airline.git
+    url = https://github.com/vim-airline/vim-airline.git
+[submodule "repository/vim/.vim/bundle/vim-airline-themes.git"]
+    path = repository/vim/.vim/bundle/vim-airline-themes.git
+    url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "repository/vim/.vim/bundle/file-line.git"]
+	path = repository/vim/.vim/bundle/file-line.git
 	url = https://github.com/bogado/file-line.git
-[submodule "common/tmuxifier/.slash/lib/tmuxifier"]
-	path = common/tmuxifier/.slash/lib/tmuxifier
-	url = https://github.com/jimeh/tmuxifier.git
-[submodule "common/vim/.vim/bundle/vim-ingo-library.git"]
-	path = common/vim/.vim/bundle/vim-ingo-library.git
-	url = git@github.com:inkarkat/vim-ingo-library.git
-[submodule "common/vim/.vim/bundle/vim-mark.git"]
-	path = common/vim/.vim/bundle/vim-mark.git
-	url = git@github.com:inkarkat/vim-mark.git
+[submodule "repository/tmuxifier/.slash/lib/tmuxifier"]
+    path = repository/tmuxifier/.slash/lib/tmuxifier
+    url = https://github.com/jimeh/tmuxifier.git
+[submodule "repository/vim/.vim/bundle/vim-ingo-library.git"]
+	path = repository/vim/.vim/bundle/vim-ingo-library.git
+	url = https://github.com/inkarkat/vim-ingo-library.git
+[submodule "repository/vim/.vim/bundle/vim-mark.git"]
+	path = repository/vim/.vim/bundle/vim-mark.git
+	url = https://github.com/inkarkat/vim-mark.git

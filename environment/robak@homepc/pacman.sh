@@ -1,0 +1,1 @@
+../../repository/pacman.sh
