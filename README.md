@@ -1,28 +1,23 @@
-About
-=====
+# About
 
 Dotofiles managed by GNU stow https://www.gnu.org/software/stow/
 
-Install
-=======
+# USAGE
 
-Use `stow.sh` script.
+* stow.sh   - install dotfiles from given environment.
+* pacman.sh - install system packages needed for given environment.
 
-Terminology
-===========
-ENVIROMENT - A <user>@<host> directory which contains read set of dotfiles.
+# Structure
 
-Structure
-=========
+* repository  - A repository of dotfiles. Contains all available configuratins.
+                Intended to be used as link in environment directory.
+* environment - Contains a set of dotfiles for target user on specific host.
+* pacman.dep  - A list of sytem dependencies for certain dotfile (installed by
+                pacman).
 
-dotfiles/common - A repository of configurations. Contains all available dotfiles. Not intended to install.
-dotfiles/<user>@<host> - An ENVIROMENT. Contains a set of dotfiles for target user on specific host.
-pacman.sh - A script to automatically install ENVIROMENT's package dependencies. Must be executed from
-ENVIROMENT top directory. Ignored by stow (does not link it).
-dep.pacman - A list of dependencies (pacman only) for certain dotfile directory. Ignored by stow (does not link it).
+# Ignored files
 
-Dependencies
-============
+Those files will be not considered as dotfile and not linked to home directory.
 
-System dependency packages can be installed by using `sh pacman.sh`. Only Pacman
-package manager is supported at the moment.
+* README.md
+* \*.dep

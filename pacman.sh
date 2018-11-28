@@ -6,14 +6,15 @@ display_usage() {
 cat << USAGE
 Usage: sh `basename $0` DIRECTORY <COMMAND>
 
-Apply dotfiles to user home dir from given environment directory.
+Searches recursively current directory for pacman.dep files and install
+packages listed within them. User must be granted to run pacman command.
+
 
 DIRECTORY
     Pick one from 'environment' directory.
 
 COMMAND
     -h|--help   Display this message.
-    --revert    Undo applied dotfiles.
 
 Example
     sh `basename $0` environment/mrogacki@homepc
@@ -42,15 +43,4 @@ if [ ! -d "$env_dir" ]; then
     exit 1
 fi
 
-cd "$env_dir";
-# "*/" means only directories
-for dir in */; do
-    case "$@" in
-        *--revert*)
-            stow -Dt ~ $dir
-            ;;
-        *)
-            stow --ignore='.*.dep' -t ~ $dir
-            ;;
-    esac
-done
+pacman -S --needed $(find -L . -name pacman.dep | xargs cat | grep -v '^#' | sort -u)
