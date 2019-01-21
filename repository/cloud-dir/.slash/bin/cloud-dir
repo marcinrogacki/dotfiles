@@ -1,0 +1,33 @@
+#!/bin/sh
+
+function display_usage() {
+cat << USAGE
+Usage: `basename $0` [COMMAND]"
+
+COMMAND
+    mount           mounts shared directory
+    umount          umounts shared directory
+    -h|--help       display this message
+USAGE
+}
+
+for arg in "$@"; do
+    if [[ "$arg" == '-h' ]] || [[ "$arg" == '--help' ]]; then
+        display_usage
+        exit
+    fi
+done
+
+if ! [ -x "$(command -v sshfs)" ]; then
+  echo 'The sshfs is not installed on system.' >&2
+  exit 1
+fi
+
+if [ "$1" == 'mount' ]; then
+    sshfs nexway-katowice-master:.slash/var/cloud-dir/ ~/.slash/mnt/cloud-dir
+elif [ "$1" == 'umount' ]; then
+    fusermount -u ~/.slash/mnt/cloud-dir
+else
+    echo "Invalid or missing argument'"
+    display_usage;
+fi
