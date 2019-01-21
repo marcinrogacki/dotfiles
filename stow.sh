@@ -30,7 +30,7 @@ done
 
 env="${1%/}"
 env_dir="$SCRIPT_DIR/$env"
-shift
+shift 2>/dev/null
 
 if [[ "$env" != environment/* ]]; then
     >&2 echo "Wrong environment provided. Please provide one from 'environment' directory."
