@@ -24,7 +24,7 @@ if ! [ -x "$(command -v sshfs)" ]; then
 fi
 
 if [ "$1" == 'mount' ]; then
-    sshfs nexway-katowice-master:.slash/var/cloud-dir/ ~/.slash/mnt/cloud-dir
+    sshfs mrogacki@nexway-ladefense-prep:.slash/var/cloud-dir/ ~/.slash/mnt/cloud-dir
 elif [ "$1" == 'umount' ]; then
     fusermount -u ~/.slash/mnt/cloud-dir
 else
