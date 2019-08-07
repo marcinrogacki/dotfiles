@@ -1,3 +1,4 @@
-Xft.dpi: 120
+! Doesn't work well. So far without it is good. Leaving to not forget about it
+! Xft.dpi: 120
 ! override to font which scales
 URxvt*font: xft:DejaVu Sans Mono:pixelsize=18
