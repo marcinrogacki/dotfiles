@@ -1,3 +1,3 @@
-Xft.dpi: 180
+Xft.dpi: 120
 ! override to font which scales
-URxvt*font: xft:DejaVu Sans Mono:pixelsize=30
+URxvt*font: xft:DejaVu Sans Mono:pixelsize=18
