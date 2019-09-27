@@ -22,6 +22,7 @@ set backspace=2 " make backspace work like most other apps
 set history=1000
 set wildmode=longest,list,full " linux like command ident
 set term=screen-256color
+set conceallevel=0 " avoid json files to hide quotes
 hi ColorColumn ctermbg=DarkRed
 
 "" ctags
