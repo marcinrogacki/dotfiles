@@ -1,2 +1,4 @@
 xorg-server
 fluxbox
+# to have screen shots Alt+F12
+imagemagick
