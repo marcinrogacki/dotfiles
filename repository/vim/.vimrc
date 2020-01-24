@@ -4,11 +4,8 @@ execute pathogen#infect()
 
 syntax on
 
-set background=dark
 set hls " always highlight search
 set nowrapscan " do not jump to top when searched the last word
-set number " show file line numers
-set relativenumber " line numbers are relative, shows current cursor posision and distance
 set nopaste
 set expandtab
 set tabstop=4
@@ -20,17 +17,55 @@ set wildmenu
 set nowrap
 set backspace=2 " make backspace work like most other apps
 set history=1000
-set wildmode=longest,list,full " linux like command ident
+set wildmode=longest,list,full " Linux like command indent
+
+"" Appearance
 set term=screen-256color
-set cursorcolumn " shows vertical line to easy track indent blocks
-set cursorline " shows horizontal underline to easy track long text
-hi ColorColumn ctermbg=DarkRed
+set background=dark
+
+"" File line numbers
+set number
+" cursor shows file current line, remaining are relative to it, e.g: 3 2 1 99 1 2 3
+set relativenumber
+
+"" Spell checker
+set spelllang=en
+set spell
+" style
+hi SpellBad ctermbg=88
+
+"" Cursor horizontal line
+" Draws underline on current cursor position to easier track long text
+set cursorline
+" style
+hi CursorLine ctermbg=59
+hi CursorLine cterm=none
+
+"" Cursor vertical line
+set cursorcolumn " enable
+" style
+hi CursorColumn ctermbg=59
+
+"" File margins
+" Show where are 80 and 120+ column of file.
+function! ToggleFileMarginsIndicator()
+	if &colorcolumn
+		setlocal colorcolumn=""
+	else
+		let &colorcolumn="80,".join(range(120,999),",")
+	endif
+endfu
+" define shortcut for toggle collorcolumn
+command! ToggleFileMarginsIndicator call ToggleFileMarginsIndicator()
+" set nice colorcolumn color
+hi ColorColumn ctermbg=235
+" show colorcolumn at the startup (by exec function)
+autocmd VimEnter * call ToggleFileMarginsIndicator()
 
 "" ctags
 if filereadable(".tags")
   set tags=.tags
 endif
-
 " deletes all entries of certain file in .tags
 function! DelTagOfFile(file)
   let fullpath = a:file
@@ -41,7 +76,6 @@ function! DelTagOfFile(file)
   let cmd = 'sed -i "/' . f . '/d" "' . tagfilename . '"'
   let resp = system(cmd)
 endfunction
-
 " updates tags of current selected file
 function! UpdateTags()
   let f = expand("%:p")
@@ -52,7 +86,6 @@ function! UpdateTags()
 endfunction
 " call update tags of current file on each write
 " autocmd BufWritePost * call UpdateTags()
-
 " allows using ctrl+[ (tags) to jump to function definition (only when cscope
 " is available)
 if has('cscope')
@@ -63,6 +96,7 @@ if has('cscope')
   endif
 endif
 
+""
 filetype on
 filetype plugin indent on
 
@@ -70,13 +104,14 @@ filetype plugin indent on
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
-" push =json in visual mode and json file will be formatted
+"" push =json in visual mode and json file will be formatted
 nmap =json :%!python -m json.tool<CR>
 
-" [o]pposite [d]elete in (v)isual mode
+"" [o]pposite [d]elete in (v)isual mode
 vmap od ygg"_dGP
 
 let mapleader = ","
+
 " nerdtree.git plugin
 nmap <leader>nt :NERDTree<cr>
 nmap <leader>nf :NERDTreeFind<cr>
@@ -89,7 +124,7 @@ let NERDTreeShowLineNumbers=1
 " " make sure relative line numbers are used
 autocmd FileType nerdtree setlocal relativenumber
 
-" tagbar.git plugin
+"" tagbar.git plugin
 nmap <leader>tb :TagbarOpenAutoClose<cr>
 
 "" plugin: ctrlp.vim
@@ -116,7 +151,7 @@ autocmd VimEnter * ToggleStripWhitespaceOnSave
 " autocmd FileType php set omnifunc=phpcomplete#CompletePHP filetype=php
 
 "" plugin: syntastic.git - syntax checker
-let g:syntastic_php_checkers = ['php']
+let g:syntastic_php_checkers = ['php', 'go']
 
 "" plugin: vim-mark.git
 " Remove the default overriding of * and #. Conflicts with IndexedSearch.vim
@@ -124,24 +159,11 @@ let g:syntastic_php_checkers = ['php']
 nmap <Plug>IgnoreMarkSearchNext <Plug>MarkSearchNext
 nmap <Plug>IgnoreMarkSearchPrev <Plug>MarkSearchPrev
 
+"" Markdown
+let g:vim_markdown_folding_disabled = 1 " disable folding (vim-markdown.git)
+
 "" Converts table from mysql to csv
 function! MysqltableToCsv()
     normal Gdd3Gdd1Gdd
     %s/^| */"/g | %s/ *|$/"/g |  %s/ *| */","/g
 endfu
-
-
-"" show border for line 80 and lines after (inclusive) 120 characters
-function! ToggleColumnIndicator()
-	if &colorcolumn
-		setlocal colorcolumn=""
-	else
-		let &colorcolumn="80,".join(range(120,999),",")
-	endif
-endfu
-" define shortcut for toggle collorcolumn
-command! ToggleColumnIndicator call ToggleColumnIndicator()
-" set nice colorcolumn color
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
-" show colorcolumn at the startup (by exec function)
-autocmd VimEnter * call ToggleColumnIndicator()
