@@ -55,9 +55,6 @@
 [submodule "repository/vim/.vim/bundle/vdebug.git"]
     path = repository/vim/.vim/bundle/vdebug.git
     url = https://github.com/joonty/vdebug.git
-[submodule "repository/vim/.vim/bundle/indentLine.git"]
-    path = repository/vim/.vim/bundle/indentLine.git
-    url = https://github.com/Yggdroot/indentLine.git
 [submodule "repository/urxvt/.urxvt/ext/urxvt-resize-font.git"]
 	path = repository/urxvt/.urxvt/ext/urxvt-resize-font.git
 	url = https://github.com/simmel/urxvt-resize-font.git
