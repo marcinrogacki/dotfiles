@@ -5,10 +5,10 @@ execute pathogen#infect()
 syntax on
 
 set background=dark
-set hls
+set hls " always highlight search
 set nowrapscan " do not jump to top when searched the last word
-set number
-set relativenumber " shows relative line numbers from current cursor posision
+set number " show file line numers
+set relativenumber " line numbers are relative, shows current cursor posision and distance
 set nopaste
 set expandtab
 set tabstop=4
