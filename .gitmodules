@@ -91,3 +91,6 @@
 [submodule "repository/vim/.vim/bundle/vim-go"]
 	path = repository/vim/.vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
+[submodule "repository/vim/.vim/bundle/vim-android"]
+	path = repository/vim/.vim/bundle/vim-android
+	url = git@github.com:hsanson/vim-android.git

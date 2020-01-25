@@ -118,6 +118,13 @@ autocmd VimEnter * ToggleStripWhitespaceOnSave
 
 "" plugin: syntastic.git - syntax checker
 let g:syntastic_php_checkers = ['php']
+" Each java project will defind it's class path in file
+" It was added to support Gradle projects (mostly Android)
+let g:syntastic_java_checkers=['javac']
+let g:syntastic_java_javac_config_file_enabled = 1
+
+" vim-adnroid
+let g:android_sdk_path = '/opt/android-sdk'
 
 "" plugin: vim-mark.git
 " Remove the default overriding of * and #. Conflicts with IndexedSearch.vim
@@ -130,7 +137,6 @@ function! MysqltableToCsv()
     normal Gdd3Gdd1Gdd
     %s/^| */"/g | %s/ *|$/"/g |  %s/ *| */","/g
 endfu
-
 
 "" show border for line 80 and lines after (inclusive) 120 characters
 function! ToggleColumnIndicator()
