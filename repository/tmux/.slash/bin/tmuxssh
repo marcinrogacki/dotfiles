@@ -20,7 +20,7 @@ for arg in "$@"; do
 	fi
 done
 
-server=`tmux display-message -p '#S'`
+server=`tmux display-message -p '#W'`
 
 if [ -z "$server" ]; then
     echo "None server provided. Are you using tmux?"

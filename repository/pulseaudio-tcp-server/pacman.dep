@@ -1,4 +1,6 @@
 pulseaudio
-# bluethooth headphones support
+# Protocol stack
 bluez
+# Bluetoothctl utility.
+bluez-utils
 pulseaudio-bluetooth

@@ -1,0 +1,3 @@
+new-session -s 2_dotfiles -n vim -c workspace/dotfiles
+new-window -n console -c workspace/dotfiles
+select-window -t vim

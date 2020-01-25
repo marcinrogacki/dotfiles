@@ -55,18 +55,12 @@
 [submodule "repository/vim/.vim/bundle/vdebug.git"]
     path = repository/vim/.vim/bundle/vdebug.git
     url = https://github.com/joonty/vdebug.git
-[submodule "repository/vim/.vim/bundle/indentLine.git"]
-    path = repository/vim/.vim/bundle/indentLine.git
-    url = https://github.com/Yggdroot/indentLine.git
 [submodule "repository/urxvt/.urxvt/ext/urxvt-resize-font.git"]
 	path = repository/urxvt/.urxvt/ext/urxvt-resize-font.git
 	url = https://github.com/simmel/urxvt-resize-font.git
 [submodule "repository/vim/.vim/bundle/syntastic.git"]
     path = repository/vim/.vim/bundle/syntastic.git
     url = https://github.com/vim-syntastic/syntastic.git
-[submodule "repository/vim/.vim/bundle/vim-indexed-search.git"]
-    path = repository/vim/.vim/bundle/vim-indexed-search.git
-    url = https://github.com/henrik/vim-indexed-search.git
 [submodule "repository/vim/.vim/bundle/ctrlp.vim.git"]
     path = repository/vim/.vim/bundle/ctrlp.vim.git
     url = https://github.com/ctrlpvim/ctrlp.vim.git
@@ -94,3 +88,6 @@
 [submodule "repository/vim/.vim/bundle/vim-android"]
 	path = repository/vim/.vim/bundle/vim-android
 	url = git@github.com:hsanson/vim-android.git
+[submodule "repository/vim/.vim/bundle/vim-markdown.git"]
+	path = repository/vim/.vim/bundle/vim-markdown.git
+	url = https://github.com/plasticboy/vim-markdown.git

@@ -19,3 +19,9 @@ Troubleshooting
 No sound on client
 * add both users server and client to sound group
 * regenerete cookies and restart
+
+Bluetooth
+=========
+
+Enable bluetooth service
+Configuration for pulseaudio https://wiki.archlinux.org/index.php/Bluetooth#Audio
