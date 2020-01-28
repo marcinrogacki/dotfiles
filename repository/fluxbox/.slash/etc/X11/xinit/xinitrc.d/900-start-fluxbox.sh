@@ -1,1 +1,1 @@
-exec startfluxbox
+exec fluxbox
