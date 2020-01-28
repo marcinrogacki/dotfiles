@@ -1,5 +1,0 @@
-new-session -s softgallery -n vim -c workspace/softgallery
-new-window -n db
-new-window -n console
-new-window -n sshtunel
-previous-window
