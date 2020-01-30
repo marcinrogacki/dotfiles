@@ -91,3 +91,6 @@
 [submodule "repository/vim/.vim/bundle/vim-markdown.git"]
 	path = repository/vim/.vim/bundle/vim-markdown.git
 	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "repository/vim/.vim/bundle/vim-indexed-search.git"]
+	path = repository/vim/.vim/bundle/vim-indexed-search.git
+	url = https://github.com/henrik/vim-indexed-search.git
