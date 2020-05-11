@@ -4,4 +4,4 @@ new-window -n db
 new-window -n nexway-ladefense-devmrogacki
 new-window -n nexway-ladefense-prep
 new-window -n sshtunel
-select-window -t vim
+select-window -t console

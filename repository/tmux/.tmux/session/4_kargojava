@@ -2,4 +2,4 @@ new-session -s 4_kargojava -n vim -c workspace
 new-window -n console -c workspace
 new-window -n db -c workspace
 new-window -n run -c workspace
-select-window -t vim
+select-window -t console
