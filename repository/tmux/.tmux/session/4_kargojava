@@ -1,5 +1,5 @@
-new-session -s 4_kargojava -n vim -c workspace
-new-window -n console -c workspace
-new-window -n db -c workspace
-new-window -n run -c workspace
+new-session -s 4_kargojava -n vim -c workspace/java
+new-window -n console -c workspace/java
+new-window -n db -c workspace/java
+new-window -n run -c workspace/java
 select-window -t console
