@@ -12,7 +12,6 @@ Order is realized by "NUMBER-" prefix.
 
 E.g.
 100-dunst.sh
-999-start-fluxbox.sh
 
 * $HOME/.slash/etc/X11/xinit/Xresources.d/\*
 

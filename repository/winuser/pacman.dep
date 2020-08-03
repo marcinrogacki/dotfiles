@@ -1,8 +1,0 @@
-# sound
-alsa
-alsa-utils
-pulseaudio
-pulseaudio-alsa
-# display
-xfce4
-network-manager-applet

@@ -7,8 +7,8 @@ if [ -d "$HOME"/.slash/etc/X11/xinit/Xresources.d ] ; then
     unset f
 fi
 
-if [ -d "$HOME"/.slash/etc/X11/xinit/xinitrc.d ] ; then
-    for f in "$HOME"/.slash/etc/X11/xinit/xinitrc.d/?*.sh ; do
+if [ -d "$HOME"/.slash/etc/xinitrc.d ] ; then
+    for f in "$HOME"/.slash/etc/xinitrc.d/?*.sh ; do
         . "$f"
     done
     unset f
