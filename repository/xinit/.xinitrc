@@ -1,7 +1,7 @@
 #!/bin/sh
 
-if [ -d "$HOME"/.slash/etc/X11/xinit/Xresources.d ] ; then
-    for f in "$HOME"/.slash/etc/X11/xinit/Xresources.d/?* ; do
+if [ -d "$HOME"/.slash/etc/Xresources.d ] ; then
+    for f in "$HOME"/.slash/etc/Xresources.d/?* ; do
         xrdb -merge "$f"
     done
     unset f
