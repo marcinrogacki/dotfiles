@@ -1,76 +1,52 @@
 {
-    "actionBarsOptions": {
-        "allowTooltip": true,
-        "lockActionBars": false,
-        "showActionBar1": true,
-        "showActionBar2": false,
-        "showAmount": true,
-        "showCooldown": true,
-        "showCooldownNumber": true,
-        "showHotkey": true,
-        "showSpellParameters": true
-    },
     "chatOptions": {
         "chatModeOn": false,
         "lootChannelOpen": true,
         "openChannels": [
         ]
     },
-    "clientOptionsVersion": 4,
-    "convertedLegacyConfiguration": true,
-    "gameWindowOptions": {
+    "clientOptionsVersion": 6,
+    "clientWindowOptions": {
         "clientWindowHeight": 855,
+        "clientWindowIsBorderless": false,
         "clientWindowIsMaximized": true,
         "clientWindowPositionX": 0,
         "clientWindowPositionY": 22,
         "clientWindowScreenName": "eDP1",
-        "clientWindowWidth": 1600,
-        "mapWindowHeight": 602
+        "clientWindowWidth": 1600
     },
-    "generalOptions": {
-        "allowAllToInspectPlayer": false,
-        "animatedMouseCursor": true,
-        "askBeforeBuyingStoreProducts": true,
-        "autoChase": false,
-        "controlScheme": 0,
-        "desiredIsPremiumPanelVisible": false,
-        "dragAndDropDefaultActionIsMoveAll": false,
-        "highlightMouseTarget": true,
-        "keyboardDelay": 0,
-        "lootScheme": "shiftright",
-        "optimizeConnectionStability": true,
-        "rotateWithAlt": false,
-        "rotateWithCtrl": true,
-        "rotateWithShift": true,
-        "showCooldownBar": true,
-        "stayLoggedInByDefault": true,
-        "systemCursor": false,
-        "useDefaultKeyboardDelay": true
-    },
-    "graphicsOptions": {
-        "ambientLight": 0,
-        "antialiasing": true,
-        "borderlessWindow": false,
-        "frameRateLimit": 50,
-        "gameWindowFixedSize": false,
-        "levelSeparator": 80,
-        "lightAttenuationClouds": 0.5,
-        "lightAttenuationIndoor": 0.5,
-        "lightEffects": true,
-        "noFrameRateLimit": false,
-        "quickLogin": true,
-        "renderer": 0,
-        "rendererChangeConfirmationRequired": false,
-        "vSync": true
+    "controlButtonsOptions": {
+        "disabledButtons": [
+        ],
+        "enabledButtons": [
+            "skillsWidget",
+            "battleListWidget",
+            "partyWidget",
+            "vipWidget",
+            "spellListWidget",
+            "questDialog",
+            "questTrackerWidget",
+            "unjustifiedPoinsWidget",
+            "preyDialog",
+            "preyWidget",
+            "rewardWallDialog",
+            "analyticsSelectorWidget",
+            "compendiumDialog",
+            "cyclopediaDialog",
+            "bestiaryTrackerWidget",
+            "friendsDialog",
+            "tournamentLeaderboardWidget",
+            "tournamentDialog",
+            "lenshelpFunction",
+            "highscoresDialog"
+        ]
     },
     "hotkeyOptions": {
         "autoSwitchHotkeyPreset": false,
-        "currentHotkeySetName": "Druid",
+        "currentHotkeySetName": "Knight",
         "hotkeySets": {
             "Druid": {
                 "actionBarOptions": {
-                    "firstVisibleButtons": {
-                    },
                     "mappings": [
                     ]
                 },
@@ -813,12 +789,254 @@
             },
             "Knight": {
                 "actionBarOptions": {
-                    "firstVisibleButtons": {
-                    },
                     "mappings": [
                     ]
                 },
                 "chatOff": [
+                    {
+                        "actionsetting": {
+                            "chatText": "#s exori ico",
+                            "sendAutomatically": true
+                        },
+                        "keysequence": "1"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "#s exori",
+                            "sendAutomatically": true
+                        },
+                        "keysequence": "2"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "#s exori min",
+                            "sendAutomatically": true
+                        },
+                        "keysequence": "3"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "#s exori mas",
+                            "sendAutomatically": true
+                        },
+                        "keysequence": "4"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "#s utura gran",
+                            "sendAutomatically": true
+                        },
+                        "keysequence": "B"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "#s exura ico",
+                            "sendAutomatically": true
+                        },
+                        "keysequence": "F"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "#s exana pox",
+                            "sendAutomatically": true
+                        },
+                        "keysequence": "G"
+                    },
+                    {
+                        "actionsetting": {
+                            "useObject": 268,
+                            "useType": "UseOnYourself"
+                        },
+                        "keysequence": "R"
+                    },
+                    {
+                        "actionsetting": {
+                            "useObject": 239,
+                            "useType": "UseOnYourself"
+                        },
+                        "keysequence": "V"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "#s exani hur up",
+                            "sendAutomatically": true
+                        },
+                        "keysequence": "X"
+                    },
+                    {
+                        "actionsetting": {
+                            "useObject": 5908,
+                            "useType": "SelectUseTarget"
+                        },
+                        "keysequence": "`"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "#s utani tempo hur",
+                            "sendAutomatically": true
+                        },
+                        "keysequence": "F1"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "#s utito tempo",
+                            "sendAutomatically": true
+                        },
+                        "keysequence": "F2"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "#s exeta res",
+                            "sendAutomatically": true
+                        },
+                        "keysequence": "F3"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "exiva \"",
+                            "sendAutomatically": false
+                        },
+                        "keysequence": "F5"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "#s exori gran ico",
+                            "sendAutomatically": true
+                        },
+                        "keysequence": "Shift+!"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "#s exori hur",
+                            "sendAutomatically": true
+                        },
+                        "keysequence": "Shift+#"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "#s utori kor",
+                            "sendAutomatically": true
+                        },
+                        "keysequence": "Shift+$"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "#s exori gran",
+                            "sendAutomatically": true
+                        },
+                        "keysequence": "Shift+@"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "#s utura",
+                            "sendAutomatically": true
+                        },
+                        "keysequence": "Shift+B"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "$s exura infir ico",
+                            "sendAutomatically": true
+                        },
+                        "keysequence": "Shift+F"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "#s exana kor",
+                            "sendAutomatically": true
+                        },
+                        "keysequence": "Shift+G"
+                    },
+                    {
+                        "actionsetting": {
+                            "useObject": 3003,
+                            "useType": "SelectUseTarget"
+                        },
+                        "keysequence": "Shift+R"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "#s exura gran ico",
+                            "sendAutomatically": true
+                        },
+                        "keysequence": "Shift+V"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "#s exani hur down",
+                            "sendAutomatically": true
+                        },
+                        "keysequence": "Shift+X"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "#s utani hur",
+                            "sendAutomatically": true
+                        },
+                        "keysequence": "Shift+F1"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "#s utito ms tio",
+                            "sendAutomatically": true
+                        },
+                        "keysequence": "Shift+F2"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "#s utamo tempo",
+                            "sendAutomatically": true
+                        },
+                        "keysequence": "Shift+F3"
+                    },
+                    {
+                        "actionsetting": {
+                            "action": "TriggerActionButton_1.4"
+                        },
+                        "keysequence": "F4"
+                    },
+                    {
+                        "actionsetting": {
+                            "action": "TriggerActionButton_1.6"
+                        },
+                        "keysequence": "F6"
+                    },
+                    {
+                        "actionsetting": {
+                            "action": "TriggerActionButton_1.7"
+                        },
+                        "keysequence": "F7"
+                    },
+                    {
+                        "actionsetting": {
+                            "action": "TriggerActionButton_1.8"
+                        },
+                        "keysequence": "F8"
+                    },
+                    {
+                        "actionsetting": {
+                            "action": "TriggerActionButton_1.9"
+                        },
+                        "keysequence": "F9"
+                    },
+                    {
+                        "actionsetting": {
+                            "action": "TriggerActionButton_1.10"
+                        },
+                        "keysequence": "F10"
+                    },
+                    {
+                        "actionsetting": {
+                            "action": "TriggerActionButton_1.11"
+                        },
+                        "keysequence": "F11"
+                    },
+                    {
+                        "actionsetting": {
+                            "action": "TriggerActionButton_1.12"
+                        },
+                        "keysequence": "F12"
+                    },
                     {
                         "actionsetting": {
                             "action": "AttackNextTarget"
@@ -1136,256 +1354,6 @@
                             "action": "ToggleSkillsWidget"
                         },
                         "keysequence": "Alt+S"
-                    },
-                    {
-                        "actionsetting": {
-                            "action": "TriggerActionButton_1.4"
-                        },
-                        "keysequence": "F4"
-                    },
-                    {
-                        "actionsetting": {
-                            "action": "TriggerActionButton_1.6"
-                        },
-                        "keysequence": "F6"
-                    },
-                    {
-                        "actionsetting": {
-                            "action": "TriggerActionButton_1.7"
-                        },
-                        "keysequence": "F7"
-                    },
-                    {
-                        "actionsetting": {
-                            "action": "TriggerActionButton_1.8"
-                        },
-                        "keysequence": "F8"
-                    },
-                    {
-                        "actionsetting": {
-                            "action": "TriggerActionButton_1.9"
-                        },
-                        "keysequence": "F9"
-                    },
-                    {
-                        "actionsetting": {
-                            "action": "TriggerActionButton_1.10"
-                        },
-                        "keysequence": "F10"
-                    },
-                    {
-                        "actionsetting": {
-                            "action": "TriggerActionButton_1.11"
-                        },
-                        "keysequence": "F11"
-                    },
-                    {
-                        "actionsetting": {
-                            "action": "TriggerActionButton_1.12"
-                        },
-                        "keysequence": "F12"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s exori ico",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "1"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s exori",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "2"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s exori min",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "3"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s exori mas",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "4"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s utura gran",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "B"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s exura ico",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "F"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s exana pox",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "G"
-                    },
-                    {
-                        "actionsetting": {
-                            "useObject": 268,
-                            "useType": "UseOnYourself"
-                        },
-                        "keysequence": "R"
-                    },
-                    {
-                        "actionsetting": {
-                            "useObject": 239,
-                            "useType": "UseOnYourself"
-                        },
-                        "keysequence": "V"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s exani hur up",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "X"
-                    },
-                    {
-                        "actionsetting": {
-                            "useObject": 5908,
-                            "useType": "SelectUseTarget"
-                        },
-                        "keysequence": "`"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s utani tempo hur",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "F1"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s utito tempo",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "F2"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s exeta res",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "F3"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "exiva \"",
-                            "sendAutomatically": false
-                        },
-                        "keysequence": "F5"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s exori gran ico",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "Shift+!"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s exori hur",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "Shift+#"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s utori kor",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "Shift+$"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s exori gran",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "Shift+@"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s utura",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "Shift+B"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "$s exura infir ico",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "Shift+F"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s exana kor",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "Shift+G"
-                    },
-                    {
-                        "actionsetting": {
-                            "useObject": 3003,
-                            "useType": "SelectUseTarget"
-                        },
-                        "keysequence": "Shift+R"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s exura gran ico",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "Shift+V"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s exani hur down",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "Shift+X"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s utani hur",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "Shift+F1"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s utito ms tio",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "Shift+F2"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s utamo tempo",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "Shift+F3"
-                    },
-                    {
-                        "actionsetting": {
-                            "action": "ToggleSpellListWidget"
-                        },
-                        "keysequence": "Alt+L"
                     }
                 ],
                 "chatOn": [
@@ -1720,8 +1688,6 @@
             },
             "Paladin": {
                 "actionBarOptions": {
-                    "firstVisibleButtons": {
-                    },
                     "mappings": [
                     ]
                 },
@@ -2418,8 +2384,6 @@
             },
             "Sorcerer": {
                 "actionBarOptions": {
-                    "firstVisibleButtons": {
-                    },
                     "mappings": [
                     ]
                 },
@@ -3119,35 +3083,119 @@
         },
         "showStaticHotkeysFirst": true
     },
-    "messagesOptions": {
-        "showEventMessagesInConsole": true,
-        "showInfoMessagesInConsole": true,
-        "showLevelsInConsole": true,
-        "showLinkCopyWarning": true,
-        "showMessagesInGameWindow": true,
-        "showOthersSpellsInGameWindow": true,
-        "showOwnSpellsInGameWindow": true,
-        "showPrivateMessagesInGameWindow": true,
-        "showStatusMessagesInConsole": true,
-        "showStatusMessagesOfOthersInConsole": true,
-        "showTextualEffects": true,
-        "showTimestampsInConsole": true
-    },
-    "statusOptions": {
+    "options": {
+        "actionBarLocked": false,
+        "actionBarShowAction1": true,
+        "actionBarShowAction2": false,
+        "actionButtonAllowTooltip": true,
+        "actionButtonShowAmount": true,
+        "actionButtonShowCooldownNumbers": true,
+        "actionButtonShowGraphicalCooldown": true,
+        "actionButtonShowHotkey": true,
+        "actionButtonShowSpellParameters": true,
+        "antialiasingMode": 2,
+        "autoChaseEnabled": false,
+        "charTradePaymentRemindAgain": 0,
+        "characterSelectionShowHidden": true,
+        "characterSelectionShowOutfits": true,
+        "characterSelectionSortAscendingOrder": true,
+        "characterSelectionSortColumn": 1,
+        "colorizeLootStyle": 1,
+        "combatShowFrames": true,
+        "combatShowPvpFrames": true,
+        "connectionStabilityOptimizationEnabled": true,
+        "consoleShowEventMessages": true,
+        "consoleShowInfoMessages": true,
+        "consoleShowJoinLeaveMessages": true,
+        "consoleShowLevels": true,
+        "consoleShowStatusMessagesOfOthers": true,
+        "consoleShowStatusMessagesOwn": true,
+        "consoleShowTimestamps": true,
+        "controlSchemeIndex": 0,
+        "cooldownBarEnabled": true,
+        "creatueShowNpcIcon": true,
         "creatureHudEnabled": true,
         "creatureShowHealth": true,
         "creatureShowMarks": true,
         "creatureShowName": true,
-        "npcShowIcon": true,
+        "dragAndDropDefaultActionIsMoveAll": false,
+        "emergencyDialogVersion": 0,
+        "frameRateLimit": 50,
+        "frameRateLimitEnabled": true,
+        "gameWindowScaleOnlyByEvenMultiples": false,
+        "gameWindowShowBoostedCreatureMessages": true,
+        "gameWindowShowHotkeyUsageMessages": true,
+        "gameWindowShowLootMessages": true,
+        "gameWindowShowMessages": true,
+        "gameWindowShowOfflineTrainingMessages": true,
+        "gameWindowShowOthersSpells": true,
+        "gameWindowShowOwnSpells": true,
+        "gameWindowShowPotionMessages": true,
+        "gameWindowShowPrivateMessages": true,
+        "gameWindowShowStoreMessages": true,
+        "gameWindowShowTextualEffects": true,
+        "inspectPlayerAllowAllEnabled": false,
+        "keyboardDelayMs": 0,
+        "keyboardDelayUseDefault": true,
+        "lightAmbientLevel": 0,
+        "lightAttenuationCloudsIndoor": 0.800000011920929,
+        "lightEffectsEnabled": true,
+        "lightLevelSeparatorLevel": 0.800000011920929,
+        "linkCopyWarningEnabled": true,
+        "loginEmailAddress": "robakking@gmail.com",
+        "lootSchemeIndex": 1,
+        "mapWindowHeight": 570,
+        "marketShowLockerOnly": false,
+        "mouseAnimatedCursor": true,
+        "mouseBigCursor": false,
+        "mouseHighlightTarget": true,
+        "mouseSystemCursor": false,
+        "openCharacterTrackingChannelOnLogin": true,
+        "optionsShowAdvanced": true,
+        "playerHudBarStyle": true,
         "playerHudEnabled": true,
-        "playerHudStyle": "bar",
         "playerShowHealth": true,
         "playerShowMana": true,
         "playerShowMarks": true,
         "playerShowName": true,
-        "showFrames": true,
-        "showFramesPvp": true
+        "quickLogin": true,
+        "rememberLoginEmail": true,
+        "rendererIndex": 0,
+        "rotateWithAlt": false,
+        "rotateWithCtrl": true,
+        "rotateWithShift": true,
+        "screenshotsAchievementEnabled": true,
+        "screenshotsAutoScreenshotsEnabled": true,
+        "screenshotsBestiaryFullEnabled": false,
+        "screenshotsBestiaryPartlyEnabled": false,
+        "screenshotsBossKillEnabled": false,
+        "screenshotsDeathPvEEnabled": true,
+        "screenshotsDeathPvPEnabled": true,
+        "screenshotsLevelUpEnabled": true,
+        "screenshotsLowHitPointsEnabled": false,
+        "screenshotsNewMaxDamageEnabled": false,
+        "screenshotsNewMaxHealingEnabled": false,
+        "screenshotsPlayerKillAssistEnabled": false,
+        "screenshotsPlayerKillFullEnabled": false,
+        "screenshotsPvPAttackEnabled": false,
+        "screenshotsRewardChestEnabled": false,
+        "screenshotsSkillUpEnabled": true,
+        "screenshotsTrackedLootEnabled": false,
+        "screenshotsUseBacklog": false,
+        "screnshotsOnlyGameWindow": true,
+        "sessionRemainLoggedIn": true,
+        "showDailyRemainingTournamentPlaytimeIndicator": true,
+        "showEMailAsPlainText": true,
+        "stashAskBeforeStowContainerContent": true,
+        "statusBarEnabled": true,
+        "statusPanelEnabled": false,
+        "storeAskBeforeBuyingProducts": true,
+        "tournamentButtonLastHighlightDateTime": 0,
+        "vSyncEnabled": true
     },
+    "pinnedCharacters": [
+    ],
+    "rendererChangeConfirmationRequired": false,
     "survey": {
         "id": 0,
         "status": 2
