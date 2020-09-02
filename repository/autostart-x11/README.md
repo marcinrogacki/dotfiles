@@ -1,4 +1,0 @@
-DEPENDENCIES
-============
-
-common/bashrc
