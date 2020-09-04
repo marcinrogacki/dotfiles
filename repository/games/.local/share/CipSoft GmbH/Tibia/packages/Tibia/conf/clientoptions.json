@@ -3,6 +3,7 @@
         "chatModeOn": false,
         "lootChannelOpen": true,
         "openChannels": [
+            5
         ]
     },
     "clientOptionsVersion": 6,
@@ -12,14 +13,13 @@
         "clientWindowIsMaximized": true,
         "clientWindowPositionX": 0,
         "clientWindowPositionY": 22,
-        "clientWindowScreenName": "eDP1",
+        "clientWindowScreenName": "DVI-D-0",
         "clientWindowWidth": 1600
     },
     "controlButtonsOptions": {
         "disabledButtons": [
         ],
         "enabledButtons": [
-            "skillsWidget",
             "battleListWidget",
             "partyWidget",
             "vipWidget",
@@ -38,7 +38,8 @@
             "tournamentLeaderboardWidget",
             "tournamentDialog",
             "lenshelpFunction",
-            "highscoresDialog"
+            "highscoresDialog",
+            "skillsWidget"
         ]
     },
     "hotkeyOptions": {
@@ -802,31 +803,24 @@
                     },
                     {
                         "actionsetting": {
-                            "chatText": "#s exori",
+                            "chatText": "#s exori min",
                             "sendAutomatically": true
                         },
                         "keysequence": "2"
                     },
                     {
                         "actionsetting": {
-                            "chatText": "#s exori min",
+                            "chatText": "#s exori",
                             "sendAutomatically": true
                         },
                         "keysequence": "3"
                     },
                     {
                         "actionsetting": {
-                            "chatText": "#s exori mas",
+                            "chatText": "#s utori kor",
                             "sendAutomatically": true
                         },
                         "keysequence": "4"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s utura gran",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "B"
                     },
                     {
                         "actionsetting": {
@@ -837,7 +831,7 @@
                     },
                     {
                         "actionsetting": {
-                            "chatText": "#s exana pox",
+                            "chatText": "#s utani hur",
                             "sendAutomatically": true
                         },
                         "keysequence": "G"
@@ -851,77 +845,56 @@
                     },
                     {
                         "actionsetting": {
-                            "useObject": 239,
-                            "useType": "UseOnYourself"
+                            "chatText": "#s exana pox",
+                            "sendAutomatically": true
+                        },
+                        "keysequence": "T"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "#s exani hur",
+                            "sendAutomatically": true
                         },
                         "keysequence": "V"
                     },
                     {
                         "actionsetting": {
-                            "chatText": "#s exani hur up",
-                            "sendAutomatically": true
+                            "useObject": 239,
+                            "useType": "UseOnYourself"
                         },
                         "keysequence": "X"
-                    },
-                    {
-                        "actionsetting": {
-                            "useObject": 5908,
-                            "useType": "SelectUseTarget"
-                        },
-                        "keysequence": "`"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s utani tempo hur",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "F1"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s utito tempo",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "F2"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s exeta res",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "F3"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "exiva \"",
-                            "sendAutomatically": false
-                        },
-                        "keysequence": "F5"
                     },
                     {
                         "actionsetting": {
                             "chatText": "#s exori gran ico",
                             "sendAutomatically": true
                         },
-                        "keysequence": "Shift+!"
+                        "keysequence": "`"
                     },
                     {
                         "actionsetting": {
                             "chatText": "#s exori hur",
                             "sendAutomatically": true
                         },
+                        "keysequence": "Shift+!"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "#s exori gran",
+                            "sendAutomatically": true
+                        },
                         "keysequence": "Shift+#"
                     },
                     {
                         "actionsetting": {
-                            "chatText": "#s utori kor",
+                            "chatText": "#s utito tempo",
                             "sendAutomatically": true
                         },
                         "keysequence": "Shift+$"
                     },
                     {
                         "actionsetting": {
-                            "chatText": "#s exori gran",
+                            "chatText": "#s exori mas",
                             "sendAutomatically": true
                         },
                         "keysequence": "Shift+@"
@@ -931,63 +904,35 @@
                             "chatText": "#s utura",
                             "sendAutomatically": true
                         },
-                        "keysequence": "Shift+B"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "$s exura infir ico",
-                            "sendAutomatically": true
-                        },
                         "keysequence": "Shift+F"
                     },
                     {
                         "actionsetting": {
-                            "chatText": "#s exana kor",
+                            "chatText": "#s utani tempo hur",
                             "sendAutomatically": true
                         },
                         "keysequence": "Shift+G"
                     },
                     {
                         "actionsetting": {
-                            "useObject": 3003,
-                            "useType": "SelectUseTarget"
+                            "chatText": "#s utura gran",
+                            "sendAutomatically": true
                         },
                         "keysequence": "Shift+R"
+                    },
+                    {
+                        "actionsetting": {
+                            "chatText": "#s exana kor",
+                            "sendAutomatically": true
+                        },
+                        "keysequence": "Shift+T"
                     },
                     {
                         "actionsetting": {
                             "chatText": "#s exura gran ico",
                             "sendAutomatically": true
                         },
-                        "keysequence": "Shift+V"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s exani hur down",
-                            "sendAutomatically": true
-                        },
                         "keysequence": "Shift+X"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s utani hur",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "Shift+F1"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s utito ms tio",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "Shift+F2"
-                    },
-                    {
-                        "actionsetting": {
-                            "chatText": "#s utamo tempo",
-                            "sendAutomatically": true
-                        },
-                        "keysequence": "Shift+F3"
                     },
                     {
                         "actionsetting": {
@@ -3100,7 +3045,7 @@
         "characterSelectionShowOutfits": true,
         "characterSelectionSortAscendingOrder": true,
         "characterSelectionSortColumn": 1,
-        "colorizeLootStyle": 1,
+        "colorizeLootStyle": 2,
         "combatShowFrames": true,
         "combatShowPvpFrames": true,
         "connectionStabilityOptimizationEnabled": true,
@@ -3137,7 +3082,7 @@
         "inspectPlayerAllowAllEnabled": false,
         "keyboardDelayMs": 0,
         "keyboardDelayUseDefault": true,
-        "lightAmbientLevel": 0,
+        "lightAmbientLevel": 0.4699999988079071,
         "lightAttenuationCloudsIndoor": 0.800000011920929,
         "lightEffectsEnabled": true,
         "lightLevelSeparatorLevel": 0.800000011920929,
@@ -3147,12 +3092,12 @@
         "mapWindowHeight": 570,
         "marketShowLockerOnly": false,
         "mouseAnimatedCursor": true,
-        "mouseBigCursor": false,
+        "mouseBigCursor": true,
         "mouseHighlightTarget": true,
         "mouseSystemCursor": false,
         "openCharacterTrackingChannelOnLogin": true,
         "optionsShowAdvanced": true,
-        "playerHudBarStyle": true,
+        "playerHudBarStyle": false,
         "playerHudEnabled": true,
         "playerShowHealth": true,
         "playerShowMana": true,
@@ -3160,7 +3105,7 @@
         "playerShowName": true,
         "quickLogin": true,
         "rememberLoginEmail": true,
-        "rendererIndex": 0,
+        "rendererIndex": 1,
         "rotateWithAlt": false,
         "rotateWithCtrl": true,
         "rotateWithShift": true,
