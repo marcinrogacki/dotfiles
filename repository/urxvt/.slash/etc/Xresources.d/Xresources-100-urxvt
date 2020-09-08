@@ -12,7 +12,8 @@ URxvt*scrollstyle: rxvt
 ! Know issues when font is inncorect:
 ! - Error message: "urxvt: unable to load base fontset, please specify a valid one using -fn, aborting."
 ! - Fonts are too bold and unreadable.
-URxvt*font: xft:DEC Terminal
+! - resize-font doesn't work with all fonts like DEC Terminal
+URxvt*font: xft:DejaVu Sans Mono:pixelsize=18
 ! Enable when fonts are to wide (takes to much horizontal space).
 !URxvt*letterSpace: -1
 !Larger history limit
@@ -20,5 +21,5 @@ URxvt.saveLines: 1000000
 !ext
 URxvt.perl-ext-common: resize-font
 !resize-font config
-URxvt.resize-font.smaller: C-Down
 URxvt.resize-font.bigger: C-Up
+URxvt.resize-font.smaller: C-Down
