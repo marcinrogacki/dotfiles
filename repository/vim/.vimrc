@@ -166,6 +166,18 @@ let g:android_sdk_path = '/opt/android-sdk'
 nmap <Plug>IgnoreMarkSearchNext <Plug>MarkSearchNext
 nmap <Plug>IgnoreMarkSearchPrev <Plug>MarkSearchPrev
 
+"" plugin: govim
+set mouse=a " To get hover work
+set ttymouse=sgr " To get hover working
+" map hover to key
+nmap <silent> <buffer> <Leader>gh : <C-u>call GOVIMHover()<CR>
+
+"" Suggestion: show info for completion candidates in a popup menu
+"if has("patch-8.1.1904")
+"  set completeopt+=popup
+"  set completepopup=align:menu,border:off,highlight:Pmenu
+"endif
+
 "" Markdown
 let g:vim_markdown_folding_disabled = 1 " disable folding (vim-markdown.git)
 

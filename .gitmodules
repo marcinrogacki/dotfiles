@@ -91,3 +91,6 @@
 [submodule "repository/vim/.vim/bundle/vim-indexed-search.git"]
 	path = repository/vim/.vim/bundle/vim-indexed-search.git
 	url = https://github.com/henrik/vim-indexed-search.git
+[submodule "repository/vim/.vim/bundle/govim.git"]
+	path = repository/vim/.vim/bundle/govim.git
+	url = https://github.com/govim/govim.git
