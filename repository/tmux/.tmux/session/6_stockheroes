@@ -1,0 +1,4 @@
+new-session -s 6_stockheroes -n vim -c workspace/stockheroes
+new-window -n console -c workspace/stockheroes
+new-window -n db
+select-window -t console
