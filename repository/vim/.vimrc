@@ -38,13 +38,13 @@ hi SpellBad ctermbg=88
 " Draws underline on current cursor position to easier track long text
 set cursorline
 " style
-hi CursorLine ctermbg=59
+hi CursorLine ctermbg=17
 hi CursorLine cterm=none
 
 "" Cursor vertical line
 set cursorcolumn " enable
 " style
-hi CursorColumn ctermbg=59
+hi CursorColumn ctermbg=17
 
 "" File margins
 " Show where are 80 and 120+ column of file.
