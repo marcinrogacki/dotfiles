@@ -1,4 +1,6 @@
 pulseaudio
+# Without alsamixer plugin sound will not work (sinks will be empty)
+pulseaudio-alsamixer
 # Protocol stack
 bluez
 # Bluetoothctl utility.

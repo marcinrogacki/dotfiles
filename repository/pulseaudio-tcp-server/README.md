@@ -16,6 +16,9 @@ have same cookie file `~/.config/pulse/cookie`.
 Troubleshooting
 ===============
 
+No sound
+* Install pulseaudio-alsamixer
+
 No sound on client
 * add both users server and client to sound group
 * regenerete cookies and restart
