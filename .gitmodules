@@ -100,3 +100,6 @@
 [submodule "repository/vim/.vim/bundle/tsuquyomi.git"]
 	path = repository/vim/.vim/bundle/tsuquyomi.git
 	url = git@github.com:Quramy/tsuquyomi.git
+[submodule "repository/vim/.vim/bundle/vim-prettier"]
+	path = repository/vim/.vim/bundle/vim-prettier
+	url = https://github.com/prettier/vim-prettier

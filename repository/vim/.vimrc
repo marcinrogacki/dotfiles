@@ -190,3 +190,12 @@ function! MysqltableToCsv()
     normal Gdd3Gdd1Gdd
     %s/^| */"/g | %s/ *|$/"/g |  %s/ *| */","/g
 endfu
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" typescript
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Plugin vim-prettier
+" Enable on save without defining @format in header
+let g:prettier#autoformat_require_pragma = 0
+" Use .prettierrc config if present
+let g:prettier#autoformat_config_present = 1
