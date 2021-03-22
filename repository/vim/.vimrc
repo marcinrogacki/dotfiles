@@ -194,8 +194,14 @@ endfu
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " typescript
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Indent by two spaces instead four
+autocmd FileType typescript setlocal shiftwidth=2 softtabstop=2
+
 "" Plugin vim-prettier
-" Enable on save without defining @format in header
-let g:prettier#autoformat_require_pragma = 0
+" Enable on save without defining @format in header for specific files
+autocmd FileType typescript let g:prettier#autoformat_require_pragma = 0
 " Use .prettierrc config if present
 let g:prettier#autoformat_config_present = 1
+" By default we auto focus on the quickfix when there are errors but can also
+" be disabled
+let g:prettier#quickfix_auto_focus = 0
