@@ -1,8 +1,0 @@
-playonlinux
-samba
-gstreamer
-lib32-libpulse
-libudev0-shim
-lib32-libudev0-shim
-# https://github.com/HearthSim/Hearthstone-Deck-Tracker
-lib32-mpg123
