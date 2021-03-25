@@ -1,11 +1,19 @@
-" load pathogen
+"" Enable profiling to find what slow downs the Vim
+" profile start profile.log
+" profile func *
+" profile file *
+
+"" vim-pathogen.git
+" Load plugin loader
 runtime bundle/vim-pathogen.git/autoload/pathogen.vim
 execute pathogen#infect()
 
 syntax on
 
-set hls " always highlight search
-set nowrapscan " do not jump to top when searched the last word
+" always highlight search
+set hls
+" do not jump to top when searched the last word
+set nowrapscan
 set nopaste
 set expandtab
 set tabstop=4
@@ -18,32 +26,32 @@ set nowrap
 set backspace=2 " make backspace work like most other apps
 set history=1000
 set wildmode=longest,list,full " Linux like command indent
-
-"" Appearance
-set term=screen-256color
-set background=dark
-
-"" File line numbers
-set number
-" cursor shows file current line, remaining are relative to it, e.g: 3 2 1 99 1 2 3
-set relativenumber
-
+let mapleader = ","
 "" Spell checker
 set spelllang=en
 set spell
-" style
+" Spell checker wrong word highlighting color
 hi SpellBad ctermbg=88
 
-"" Cursor horizontal line
-" Draws underline on current cursor position to easier track long text
+" Appearance
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Color pallate
+set term=screen-256color
+set background=dark
+" Show file line numbers
+set number
+" Cursor shows file current line, remaining are relative to it, e.g: 3 2 1 99 1 2 3
+set relativenumber
+
+"" Line markers
+" Draws horizontal line mark on current cursor position to easier track long text
 set cursorline
-" style
+" Color of the horizontal line mark
 hi CursorLine ctermbg=17
 hi CursorLine cterm=none
-
-"" Cursor vertical line
+" Draws vertical line mark on current cursor position to easier track long text
 set cursorcolumn " enable
-" style
+" Color of the vertical line mark
 hi CursorColumn ctermbg=17
 
 "" File margins
@@ -62,47 +70,13 @@ hi ColorColumn ctermbg=235
 " show colorcolumn at the startup (by exec function)
 autocmd VimEnter * call ToggleFileMarginsIndicator()
 
-"" ctags
-if filereadable(".tags")
-  set tags=.tags
-endif
-" deletes all entries of certain file in .tags
-function! DelTagOfFile(file)
-  let fullpath = a:file
-  let cwd = getcwd()
-  let tagfilename = cwd . "/.tags"
-  let f = substitute(fullpath, cwd . "/", "", "")
-  let f = escape(f, './')
-  let cmd = 'sed -i "/' . f . '/d" "' . tagfilename . '"'
-  let resp = system(cmd)
-endfunction
-" updates tags of current selected file
-function! UpdateTags()
-  let f = expand("%:p")
-  let cwd = getcwd()
-  let cmd = 'ctags -a "' . f . '"'
-  call DelTagOfFile(f)
-  let resp = system(cmd)
-endfunction
-" call update tags of current file on each write
-" autocmd BufWritePost * call UpdateTags()
-" allows using ctrl+[ (tags) to jump to function definition (only when cscope
-" is available)
-if has('cscope')
-  set cscopetag cscopeverbose
-  " add cscope database
-  if filereadable(".vim/cscope/cscope.out")
-    silent cs add .vim/cscope/cscope.out
-  endif
-endif
-
-""
-filetype on
-filetype plugin indent on
-
-:map <C-s> :w <Enter>
-map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+" Custom
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Converts table from mysql to csv
+function! MysqltableToCsv()
+    normal Gdd3Gdd1Gdd
+    %s/^| */"/g | %s/ *|$/"/g |  %s/ *| */","/g
+endfu
 
 "" push =json in visual mode and json file will be formatted
 nmap =json :%!python -m json.tool<CR>
@@ -110,9 +84,24 @@ nmap =json :%!python -m json.tool<CR>
 "" [o]pposite [d]elete in (v)isual mode
 vmap od ygg"_dGP
 
-let mapleader = ","
+" What is it?
+filetype on
+filetype plugin indent on
+map <C-s> :w <Enter>
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
-" nerdtree.git plugin
+" Language specifics
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"" typescript
+" Indent by two spaces instead four
+autocmd FileType typescript setlocal shiftwidth=2 softtabstop=2
+
+" Plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"" nerdtree.git
 nmap <leader>nt :NERDTree<cr>
 nmap <leader>nf :NERDTreeFind<cr>
 let NERDTreeShowHidden=1
@@ -126,12 +115,15 @@ autocmd FileType nerdtree setlocal relativenumber
 "" Don't show those files
 let NERDTreeIgnore = ['\.js$' , '\.d.ts$']
 
-
-
-"" tagbar.git plugin
+"" tagbar.git
 nmap <leader>tb :TagbarOpenAutoClose<cr>
 
-"" plugin: ctrlp.vim
+"" vim-airline.git
+set laststatus=2
+let g:airline_powerline_fonts = 0
+let g:airline_theme='simple'
+
+"" ctrlp.vim
 " use 'ag' instead 'grep' to boost serach performance
 if executable('ag')
   " Use Ag over Grep
@@ -140,62 +132,30 @@ if executable('ag')
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
-
-"" vim-airline.git
-set laststatus=2
-let g:airline_powerline_fonts = 0
-let g:airline_theme='simple'
-let g:airline#extensions#tagbar#enabled = 1
+" Ignore unnecessary files. Speeds up searching the files.
+let g:ctrlp_custom_ignore = 'node_modules\|git'
 
 "" vim-better-whitespace.git
 " enable vim-better-whitespace.git plugin (removes whitespaces at EOL) on save
 autocmd VimEnter * ToggleStripWhitespaceOnSave
 
-"" phpcomplete.vim.git plugin
-" autocmd FileType php set omnifunc=phpcomplete#CompletePHP filetype=php
-
-"" plugin: syntastic.git - syntax checker
-let g:syntastic_php_checkers = ['php', 'go']
-" Each java project will defind it's class path in file
-" It was added to support Gradle projects (mostly Android)
-let g:syntastic_java_checkers=['javac']
-let g:syntastic_java_javac_config_file_enabled = 1
-
 " vim-adnroid
 let g:android_sdk_path = '/opt/android-sdk'
 
-"" plugin: vim-mark.git
+"" vim-mark.git
 " Remove the default overriding of * and #. Conflicts with IndexedSearch.vim
-" plugin
 nmap <Plug>IgnoreMarkSearchNext <Plug>MarkSearchNext
 nmap <Plug>IgnoreMarkSearchPrev <Plug>MarkSearchPrev
 
-"" plugin: govim
+"" govim
 set mouse=a " To get hover work
 set ttymouse=sgr " To get hover working
 " map hover to key
 nmap <silent> <buffer> <Leader>gh : <C-u>call GOVIMHover()<CR>
 
-"" Suggestion: show info for completion candidates in a popup menu
-"if has("patch-8.1.1904")
-"  set completeopt+=popup
-"  set completepopup=align:menu,border:off,highlight:Pmenu
-"endif
-
-"" Markdown
-let g:vim_markdown_folding_disabled = 1 " disable folding (vim-markdown.git)
-
-"" Converts table from mysql to csv
-function! MysqltableToCsv()
-    normal Gdd3Gdd1Gdd
-    %s/^| */"/g | %s/ *|$/"/g |  %s/ *| */","/g
-endfu
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" typescript
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Indent by two spaces instead four
-autocmd FileType typescript setlocal shiftwidth=2 softtabstop=2
+"" vim-markdown.git
+" disable folding
+let g:vim_markdown_folding_disabled = 1
 
 "" Plugin vim-prettier
 " Enable on save without defining @format in header for specific files

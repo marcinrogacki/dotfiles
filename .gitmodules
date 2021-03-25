@@ -17,15 +17,9 @@
 [submodule "repository/vim/.vim/bundle/nerdtree.git"]
     path = repository/vim/.vim/bundle/nerdtree.git
     url = https://github.com/scrooloose/nerdtree.git
-[submodule "repository/vim/.vim/bundle/phpcomplete.vim.git"]
-    path = repository/vim/.vim/bundle/phpcomplete.vim.git
-    url = https://github.com/shawncplus/phpcomplete.vim.git
 [submodule "repository/vim/.vim/bundle/vim-unimpaired.git"]
     path = repository/vim/.vim/bundle/vim-unimpaired.git
     url = https://github.com/tpope/vim-unimpaired.git
-[submodule "repository/vim/.vim/bundle/vim-phpcolors.git"]
-    path = repository/vim/.vim/bundle/vim-phpcolors.git
-    url = https://github.com/modess/vim-phpcolors.git
 [submodule "repository/vim/.vim/bundle/linediff.vim.git"]
     path = repository/vim/.vim/bundle/linediff.vim.git
     url = https://github.com/AndrewRadev/linediff.vim.git
@@ -45,22 +39,13 @@
 [submodule "repository/vim/.vim/bundle/vim-better-whitespace.git"]
     path = repository/vim/.vim/bundle/vim-better-whitespace.git
     url = https://github.com/ntpeters/vim-better-whitespace.git
-[submodule "repository/vim/.vim/bundle/vim-autotag.git"]
-    path = repository/vim/.vim/bundle/vim-autotag.git
-    url = https://github.com/craigemery/vim-autotag.git
 [submodule "repository/vim/.vim/bundle/tagbar.git"]
     path = repository/vim/.vim/bundle/tagbar.git
     url = https://github.com/majutsushi/tagbar.git
     ignore = dirty
-[submodule "repository/vim/.vim/bundle/vdebug.git"]
-    path = repository/vim/.vim/bundle/vdebug.git
-    url = https://github.com/joonty/vdebug.git
 [submodule "repository/urxvt/.urxvt/ext/urxvt-resize-font.git"]
 	path = repository/urxvt/.urxvt/ext/urxvt-resize-font.git
 	url = https://github.com/simmel/urxvt-resize-font.git
-[submodule "repository/vim/.vim/bundle/syntastic.git"]
-    path = repository/vim/.vim/bundle/syntastic.git
-    url = https://github.com/vim-syntastic/syntastic.git
 [submodule "repository/vim/.vim/bundle/ctrlp.vim.git"]
     path = repository/vim/.vim/bundle/ctrlp.vim.git
     url = https://github.com/ctrlpvim/ctrlp.vim.git
