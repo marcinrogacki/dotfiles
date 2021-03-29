@@ -1,5 +1,5 @@
 "" Enable profiling to find what slow downs the Vim
-" profile start profile.log
+" profile start vimprofile.log
 " profile func *
 " profile file *
 
@@ -98,6 +98,10 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 " Indent by two spaces instead four
 autocmd FileType typescript setlocal shiftwidth=2 softtabstop=2
 
+"" graphql
+" Indent by two spaces instead four
+autocmd FileType graphql setlocal shiftwidth=2 softtabstop=2
+
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -158,8 +162,8 @@ nmap <silent> <buffer> <Leader>gh : <C-u>call GOVIMHover()<CR>
 let g:vim_markdown_folding_disabled = 1
 
 "" Plugin vim-prettier
-" Enable on save without defining @format in header for specific files
-autocmd FileType typescript let g:prettier#autoformat_require_pragma = 0
+" Enable on save without defining @format in header
+let g:prettier#autoformat_require_pragma = 0
 " Use .prettierrc config if present
 let g:prettier#autoformat_config_present = 1
 " By default we auto focus on the quickfix when there are errors but can also
