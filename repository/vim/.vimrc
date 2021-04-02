@@ -175,3 +175,6 @@ let g:prettier#autoformat_config_present = 1
 " By default we auto focus on the quickfix when there are errors but can also
 " be disabled
 let g:prettier#quickfix_auto_focus = 0
+" prettier downloaded from yarn in project doesn't work stable (config issue?)
+" workaround by using global
+let g:prettier#exec_cmd_path = "~/.node_modules/bin/prettier"
