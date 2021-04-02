@@ -137,7 +137,13 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 " Ignore unnecessary files. Speeds up searching the files.
-let g:ctrlp_custom_ignore = 'node_modules\|git'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  'node_modules\|\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(d.ts|js)$',
+  \ }
+
+" Scan hidden files
+let g:ctrlp_show_hidden = 1
 
 "" vim-better-whitespace.git
 " enable vim-better-whitespace.git plugin (removes whitespaces at EOL) on save
