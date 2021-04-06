@@ -114,9 +114,9 @@ let NERDTreeShowHidden=1
 set sidescroll=1
 " enable line numbers
 let NERDTreeShowLineNumbers=1
-"" make sure relative line numbers are used
+" make sure relative line numbers are used
 autocmd FileType nerdtree setlocal relativenumber
-"" Don't show those files
+" Don't show those files
 let NERDTreeIgnore = ['\.js$' , '\.d.ts$']
 
 "" tagbar.git
