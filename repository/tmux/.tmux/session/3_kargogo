@@ -1,5 +1,0 @@
-new-session -s 3_kargogo -n vim -c workspace/go/src/github.com/NexwayGroup/
-new-window -n console -c workspace/go/src/github.com/NexwayGroup/
-new-window -n db -c workspace/go/src/github.com/NexwayGroup/
-new-window -n run -c workspace/go/src/github.com/NexwayGroup/
-select-window -t console

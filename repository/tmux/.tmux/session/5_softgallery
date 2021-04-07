@@ -1,7 +1,0 @@
-new-session -s 5_softgallery -n vim -c workspace/php/softgallery
-new-window -n console -c workspace/php/softgallery
-new-window -n db
-new-window -n nexway-ladefense-devmrogacki
-new-window -n nexway-ladefense-prep
-new-window -n sshtunel
-select-window -t console
