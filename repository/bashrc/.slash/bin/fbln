@@ -1,0 +1,21 @@
+#!/bin/sh
+
+display_usage() {
+cat << USAGE
+Usage: `basename $0` [COMMAND]
+
+The Find Broken symLiNks
+
+COMMAND
+    -h|--help       display this message
+USAGE
+}
+
+for arg in "$@"; do
+    if [ "$arg" = "-h" -o "$arg" = "--help" ]; then
+        display_usage
+        exit
+    fi
+done
+
+find . -type l -exec sh -c 'file -b "$1" | grep -q ^broken' sh {} \; -print
