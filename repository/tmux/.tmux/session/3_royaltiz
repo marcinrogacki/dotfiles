@@ -1,4 +1,4 @@
 new-session -s 3_royaltiz -n vim -c workspace/royaltiz/platform vim
 new-window -n console -c workspace/royaltiz/platform
-new-window -n db
+new-window -n db -c workspace/royaltiz/platform
 select-window -t console
