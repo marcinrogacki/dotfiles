@@ -1,4 +1,5 @@
 new-session -s 3_royaltiz -n vim -c workspace/royaltiz/platform
 new-window -n console -c workspace/royaltiz/platform
 new-window -n db -c workspace/royaltiz/platform/packages/functions/integration-tests/resources/dynamoDB/docker
+new-window -n deploy -c workspace/royaltiz/platform/packages/stacks
 select-window -t console
