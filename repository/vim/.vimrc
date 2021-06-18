@@ -149,9 +149,6 @@ let g:ctrlp_show_hidden = 1
 " enable vim-better-whitespace.git plugin (removes whitespaces at EOL) on save
 autocmd VimEnter * ToggleStripWhitespaceOnSave
 
-" vim-adnroid
-let g:android_sdk_path = '/opt/android-sdk'
-
 "" vim-mark.git
 " Remove the default overriding of * and #. Conflicts with IndexedSearch.vim
 nmap <Plug>IgnoreMarkSearchNext <Plug>MarkSearchNext
