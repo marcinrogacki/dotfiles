@@ -30,8 +30,6 @@ let mapleader = ","
 "" Spell checker
 set spelllang=en
 set spell
-" Spell checker wrong word highlighting color
-hi SpellBad ctermbg=88
 
 " Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -69,6 +67,9 @@ command! ToggleFileMarginsIndicator call ToggleFileMarginsIndicator()
 hi ColorColumn ctermbg=235
 " show colorcolumn at the startup (by exec function)
 autocmd VimEnter * call ToggleFileMarginsIndicator()
+
+" Spell checker wrong word highlighting color
+hi SpellBad ctermbg=88
 
 " Custom
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -153,6 +154,14 @@ autocmd VimEnter * ToggleStripWhitespaceOnSave
 " Remove the default overriding of * and #. Conflicts with IndexedSearch.vim
 nmap <Plug>IgnoreMarkSearchNext <Plug>MarkSearchNext
 nmap <Plug>IgnoreMarkSearchPrev <Plug>MarkSearchPrev
+" Eye friendly mark color without yellow which is used for search highlight
+let g:mwDefaultHighlightingPalette = [
+\   { 'ctermbg':'39', 'ctermfg': 'Black' },
+\   { 'ctermbg':'71', 'ctermfg': 'Black' },
+\   { 'ctermbg':'97', 'ctermfg': 'Black' },
+\   { 'ctermbg':'205', 'ctermfg': 'Black' },
+\   { 'ctermbg':'241', 'ctermfg': 'Black' },
+\]
 
 "" govim
 set mouse=a " To get hover work
