@@ -126,7 +126,7 @@ nmap <leader>tb :TagbarOpenAutoClose<cr>
 "" vim-airline.git
 set laststatus=2
 let g:airline_powerline_fonts = 0
-let g:airline_theme='simple'
+let g:airline_theme='papercolor'
 
 "" ctrlp.vim
 " use 'ag' instead 'grep' to boost serach performance
