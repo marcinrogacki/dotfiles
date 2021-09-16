@@ -30,8 +30,6 @@ let mapleader = ","
 "" Spell checker
 set spelllang=en
 set spell
-" Spell checker wrong word highlighting color
-hi SpellBad ctermbg=88
 
 " Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -69,6 +67,9 @@ command! ToggleFileMarginsIndicator call ToggleFileMarginsIndicator()
 hi ColorColumn ctermbg=235
 " show colorcolumn at the startup (by exec function)
 autocmd VimEnter * call ToggleFileMarginsIndicator()
+
+" Spell checker wrong word highlighting color
+hi SpellBad ctermbg=88
 
 " Custom
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -125,7 +126,7 @@ nmap <leader>tb :TagbarOpenAutoClose<cr>
 "" vim-airline.git
 set laststatus=2
 let g:airline_powerline_fonts = 0
-let g:airline_theme='simple'
+let g:airline_theme='papercolor'
 
 "" ctrlp.vim
 " use 'ag' instead 'grep' to boost serach performance
@@ -149,13 +150,18 @@ let g:ctrlp_show_hidden = 1
 " enable vim-better-whitespace.git plugin (removes whitespaces at EOL) on save
 autocmd VimEnter * ToggleStripWhitespaceOnSave
 
-" vim-adnroid
-let g:android_sdk_path = '/opt/android-sdk'
-
 "" vim-mark.git
 " Remove the default overriding of * and #. Conflicts with IndexedSearch.vim
 nmap <Plug>IgnoreMarkSearchNext <Plug>MarkSearchNext
 nmap <Plug>IgnoreMarkSearchPrev <Plug>MarkSearchPrev
+" Eye friendly mark color without yellow which is used for search highlight
+let g:mwDefaultHighlightingPalette = [
+\   { 'ctermbg':'39', 'ctermfg': 'Black' },
+\   { 'ctermbg':'71', 'ctermfg': 'Black' },
+\   { 'ctermbg':'97', 'ctermfg': 'Black' },
+\   { 'ctermbg':'205', 'ctermfg': 'Black' },
+\   { 'ctermbg':'241', 'ctermfg': 'Black' },
+\]
 
 "" govim
 set mouse=a " To get hover work

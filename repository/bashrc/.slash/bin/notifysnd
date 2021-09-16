@@ -1,0 +1,28 @@
+#!/bin/sh
+
+display_usage() {
+cat << USAGE
+Usage: `basename $0` <SND_NAME> [COMMAND]
+
+Plays a sound effect
+
+SND_NAME
+    success
+
+COMMAND
+    -h|--help       display this message
+USAGE
+}
+
+for arg in "$@"; do
+    if [ "$arg" = "-h" -o "$arg" = "--help" ]; then
+        display_usage
+        exit
+    fi
+done
+
+if [[ ! -f  "$HOME/.slash/var/notifysnd/$1" ]]; then
+    (>&2 echo "Sound name not found: $1")
+fi
+
+aplay "$HOME/.slash/var/notifysnd/$1" 2>/dev/null
