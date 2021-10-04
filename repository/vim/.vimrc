@@ -127,6 +127,8 @@ nmap <leader>tb :TagbarOpenAutoClose<cr>
 set laststatus=2
 let g:airline_powerline_fonts = 0
 let g:airline_theme='papercolor'
+" Extension slows greatly the vim on large files
+let g:airline#extensions#tagbar#enabled = 0
 
 "" ctrlp.vim
 " use 'ag' instead 'grep' to boost serach performance
