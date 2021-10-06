@@ -71,6 +71,9 @@ autocmd VimEnter * call ToggleFileMarginsIndicator()
 " Spell checker wrong word highlighting color
 hi SpellBad ctermbg=88
 
+" Search highlight color
+hi Search cterm=NONE ctermfg=52 ctermbg=3
+
 " Custom
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Converts table from mysql to csv
