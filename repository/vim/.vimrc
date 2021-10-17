@@ -196,3 +196,12 @@ let g:prettier#autoformat_config_present = 1
 " By default we auto focus on the quickfix when there are errors but can also
 " be disabled
 let g:prettier#quickfix_auto_focus = 0
+
+"" Plugin Syntastic
+" Enable syntax check for java project (including Android)
+let g:syntastic_java_checkers=['javac']
+
+"" Plugin vim-android
+" Tell where is android SDK. It will allow generate app/.classpath file
+" properly for Syntastic
+let g:android_sdk_path = "/opt/android-sdk"

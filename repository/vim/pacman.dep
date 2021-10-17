@@ -1,1 +1,5 @@
 vim
+# Deps for 'ag' command the silver search, which can be installed only from AUR.
+# The 'ag' command is used for 'ctrl+p' fuzzy finder plugin
+autoconf
+automake
