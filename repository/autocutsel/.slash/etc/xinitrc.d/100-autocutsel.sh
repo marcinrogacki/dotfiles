@@ -1,2 +1,2 @@
 autocutsel -s CLIPBOARD &
-# autocutsel -s PRIMARY &
+autocutsel -s PRIMARY &
