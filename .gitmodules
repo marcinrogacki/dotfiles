@@ -88,6 +88,3 @@
 [submodule "repository/vim/.vim/bundle/vim-android"]
 	path = repository/vim/.vim/bundle/vim-android
 	url = https://github.com/hsanson/vim-android.git
-[submodule "repository/vim/.vim/bundle/syntastic.git"]
-	path = repository/vim/.vim/bundle/syntastic.git
-	url = https://github.com/vim-syntastic/syntastic.git
