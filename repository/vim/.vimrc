@@ -162,20 +162,17 @@ nmap <Plug>IgnoreMarkSearchPrev <Plug>MarkSearchPrev
 " Eye friendly mark color without yellow which is used for search highlight
 let g:mwDefaultHighlightingPalette = [
 \   { 'ctermbg':'21', 'ctermfg': 'White' },
-\   { 'ctermbg':'27', 'ctermfg': 'White' },
-\   { 'ctermbg':'39', 'ctermfg': 'White' },
-\   { 'ctermbg':'71', 'ctermfg': 'White' },
-\   { 'ctermbg':'76', 'ctermfg': 'White' },
-\   { 'ctermbg':'79', 'ctermfg': 'White' },
-\   { 'ctermbg':'94', 'ctermfg': 'White' },
-\   { 'ctermbg':'97', 'ctermfg': 'White' },
-\   { 'ctermbg':'99', 'ctermfg': 'White' },
-\   { 'ctermbg':'202', 'ctermfg': 'White' },
-\   { 'ctermbg':'205', 'ctermfg': 'White' },
-\   { 'ctermbg':'213', 'ctermfg': 'White' },
-\   { 'ctermbg':'238', 'ctermfg': 'White' },
-\   { 'ctermbg':'243', 'ctermfg': 'White' },
-\   { 'ctermbg':'247', 'ctermfg': 'White' },
+\   { 'ctermbg':'23', 'ctermfg': 'White' },
+\   { 'ctermbg':'43', 'ctermfg': 'Black' },
+\   { 'ctermbg':'58', 'ctermfg': 'White' },
+\   { 'ctermbg':'88', 'ctermfg': 'White' },
+\   { 'ctermbg':'92', 'ctermfg': 'White' },
+\   { 'ctermbg':'153', 'ctermfg': 'Black' },
+\   { 'ctermbg':'163', 'ctermfg': 'Black' },
+\   { 'ctermbg':'196', 'ctermfg': 'White' },
+\   { 'ctermbg':'202', 'ctermfg': 'Black' },
+\   { 'ctermbg':'216', 'ctermfg': 'Black' },
+\   { 'ctermbg':'249', 'ctermfg': 'Black' },
 \]
 
 "" govim
