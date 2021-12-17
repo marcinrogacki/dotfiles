@@ -3,3 +3,6 @@ vim
 # The 'ag' command is used for 'ctrl+p' fuzzy finder plugin
 autoconf
 automake
+# Support Android development. Required by https://github.com/Shougo/ddc.vim
+# which is requirement by  https://github.com/dense-analysis/ale
+deno

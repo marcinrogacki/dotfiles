@@ -88,3 +88,15 @@
 [submodule "repository/vim/.vim/bundle/vim-android"]
 	path = repository/vim/.vim/bundle/vim-android
 	url = https://github.com/hsanson/vim-android.git
+[submodule "repository/vim/.vim/bundle/ale.git"]
+	path = repository/vim/.vim/bundle/ale.git
+	url = git@github.com:dense-analysis/ale.git
+[submodule "repository/vim/.vim/bundle/denops.vim.git"]
+	path = repository/vim/.vim/bundle/denops.vim.git
+	url = git@github.com:vim-denops/denops.vim.git
+[submodule "repository/vim/.vim/bundle/ddc.vim.git"]
+	path = repository/vim/.vim/bundle/ddc.vim.git
+	url = git@github.com:Shougo/ddc.vim.git
+[submodule "repository/vim/.vim/bundle/dcc-ale.git"]
+	path = repository/vim/.vim/bundle/dcc-ale.git
+	url = git@github.com:statiolake/ddc-ale.git

@@ -7,8 +7,8 @@
 " Load plugin loader
 runtime bundle/vim-pathogen.git/autoload/pathogen.vim
 execute pathogen#infect()
-
 syntax on
+filetype plugin indent on
 
 " always highlight search
 set hls
@@ -27,7 +27,7 @@ set backspace=2 " make backspace work like most other apps
 set history=1000
 set wildmode=longest,list,full " Linux like command indent
 let mapleader = ","
-"" Spell checker
+" Spell checker
 set spelllang=en
 set spell
 
@@ -74,6 +74,9 @@ hi SpellBad ctermbg=88
 " Search highlight color
 hi Search cterm=NONE ctermfg=52 ctermbg=3
 
+" Popup window color
+hi Pmenu ctermbg=gray guibg=gray
+
 " Custom
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Converts table from mysql to csv
@@ -90,7 +93,6 @@ vmap od ygg"_dGP
 
 " What is it?
 filetype on
-filetype plugin indent on
 map <C-s> :w <Enter>
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
@@ -193,12 +195,3 @@ let g:prettier#autoformat_config_present = 1
 " By default we auto focus on the quickfix when there are errors but can also
 " be disabled
 let g:prettier#quickfix_auto_focus = 0
-
-"" Plugin Syntastic
-" Enable syntax check for java project (including Android)
-let g:syntastic_java_checkers=['javac']
-
-"" Plugin vim-android
-" Tell where is android SDK. It will allow generate app/.classpath file
-" properly for Syntastic
-let g:android_sdk_path = "/opt/android-sdk"
