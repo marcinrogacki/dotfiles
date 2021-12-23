@@ -1,0 +1,5 @@
+new-session -s 3_project -n vim -c $project 
+new-window -n console -c $project
+new-window -n tests -c $project 
+new-window -n deploy -c $project 
+select-window -t console
