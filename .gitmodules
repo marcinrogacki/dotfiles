@@ -52,9 +52,6 @@
 [submodule "repository/vim/.vim/bundle/vim-airline-themes.git"]
     path = repository/vim/.vim/bundle/vim-airline-themes.git
     url = https://github.com/vim-airline/vim-airline-themes.git
-[submodule "repository/vim/.vim/bundle/file-line.git"]
-	path = repository/vim/.vim/bundle/file-line.git
-	url = https://github.com/bogado/file-line.git
 [submodule "repository/tmuxifier/.slash/lib/tmuxifier"]
     path = repository/tmuxifier/.slash/lib/tmuxifier
     url = https://github.com/jimeh/tmuxifier.git
