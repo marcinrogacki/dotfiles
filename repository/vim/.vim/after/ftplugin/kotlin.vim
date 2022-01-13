@@ -8,9 +8,9 @@ let g:gradle_show_signs = 0
 "" Plugin: https://github.com/dense-analysis/ale
 " Reason: Android development
 " Reference: https://github.com/georgewfraser/java-language-server/pull/64#issuecomment-504544437
-let g:ale_linters = {'java': ['checkstyle', 'javalsp', 'android']}
+let g:ale_linters = {'kotlin': ['ktlint', 'languageserver', 'android']}
 " Tell which command (or path) to use to run jls
-let g:ale_java_javalsp_executable = 'java-language-server'
+let g:ale_kotlin_languageserver_executable = 'kotlin-language-server'
 " Press 'ctrl+]' to jump to function or variable definition
 nmap <C-]> :ALEGoToDefinition<cr>
 

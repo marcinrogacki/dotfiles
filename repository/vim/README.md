@@ -7,6 +7,22 @@ Plugins are loaded by https://github.com/tpope/vim-pathogen
 Several options are available, not all are working however listing them for
 reference. 
 
+### vim-android + ALE + kotlin-language-server
+
+Note: It seems kotlin-language-server is slower than Java.
+Setup is identical as with java-language-server. Just add kotlin ftplugin with
+different linter and server executable:
+```
+g:ale_linters = {'kotlin': ['ktlint', 'languageserver', 'android']}
+let g:ale_kotlin_languageserver_executable = 'kotlin-language-server'
+```
+
+* Install https://github.com/fwcd/kotlin-language-server 
+    * Required by ALE
+    * Arch Linux package https://aur.archlinux.org/packages/kotlin-language-server-git/
+* Install https://github.com/udalov/kotlin-vim 
+    * Provide code syntax highlighting
+
 ### vim-android + ALE + java-language-server
 
 Available features: check Java syntax, GoToDefinition, code completion,
