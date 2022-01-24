@@ -30,6 +30,8 @@ let mapleader = ","
 " Spell checker
 set spelllang=en
 set spell
+" Set autoformat text line length (command <select-block>gq)
+set textwidth=120
 
 " Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
