@@ -179,12 +179,6 @@ let g:mwDefaultHighlightingPalette = [
 \   { 'ctermbg':'249', 'ctermfg': 'Black' },
 \]
 
-"" govim
-set mouse=a " To get hover work
-set ttymouse=sgr " To get hover working
-" map hover to key
-nmap <silent> <buffer> <Leader>gh : <C-u>call GOVIMHover()<CR>
-
 "" vim-markdown.git
 " disable folding
 let g:vim_markdown_folding_disabled = 1
