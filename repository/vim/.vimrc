@@ -158,6 +158,8 @@ let g:ctrlp_show_hidden = 1
 "" vim-better-whitespace.git
 " enable vim-better-whitespace.git plugin (removes whitespaces at EOL) on save
 autocmd VimEnter * ToggleStripWhitespaceOnSave
+" Don't ask whether or not to strip white spaces
+let g:strip_whitespace_confirm=0
 
 "" vim-mark.git
 " Remove the default overriding of * and #. Conflicts with IndexedSearch.vim
