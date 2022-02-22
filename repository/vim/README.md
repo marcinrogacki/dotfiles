@@ -4,8 +4,11 @@ Plugins are loaded by https://github.com/tpope/vim-pathogen
 
 ## Android support
 
-Several options are available, not all are working however listing them for
-reference. 
+Go to definition feature can use two ways of viewing Java/Kotlin files:
+* Decompile them using external tools like CFR, Fernflower, Krakatau, Procyon.
+* Download Android sources with command `sdkmanager --install "sources;android-31"`
+
+Below is list available configurations. Not all are working however they are listed for reference. 
 
 ### vim-android + ALE + kotlin-language-server
 
