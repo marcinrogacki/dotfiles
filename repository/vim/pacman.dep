@@ -6,3 +6,5 @@ automake
 # Support Android development. Required by https://github.com/Shougo/ddc.vim
 # which is requirement by  https://github.com/dense-analysis/ale
 deno
+# For ctrlp plugin. Enables fuzzy finder for files
+the_silver_searcher
