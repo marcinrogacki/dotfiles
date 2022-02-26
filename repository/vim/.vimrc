@@ -30,8 +30,6 @@ let mapleader = ","
 " Spell checker
 set spelllang=en
 set spell
-" Set autoformat text line length (command <select-block>gq)
-set textwidth=120
 
 " Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -137,25 +135,18 @@ let g:airline_theme='papercolor'
 " Extension slows greatly the vim on large files
 let g:airline#extensions#tagbar#enabled = 0
 
-""" ctrlp.vim
-"" use 'ag' instead 'grep' to boost serach performance
-"if executable('ag')
-"  " Use Ag over Grep
-"  set grepprg=ag\ --nogroup\ --nocolor
-"
-"  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-"  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-"endif
-"Ignore unnecessary files. Speeds up searching the files.
-"These options do not apply when a command defined with g:ctrlp_user_command
-"is being used
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  'node_modules\|\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(d.ts|js)$',
-  \ }
-
-" Scan hidden files
-let g:ctrlp_show_hidden = 1
+"" ctrlp.vim
+" Fuzzy finder for files.
+" Use 'ag' instead 'grep' to boost serach performance.
+if executable('ag')
+  " Use Ag over Grep
+  " set grepprg=ag\ --nogroup\ --nocolor\ -U\ --hidden
+  " Use ag in ctrlp for listing files. Define ignore list in .ignore inside
+  " the project
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -U -g ""'
+else
+  echom "the_silver_searcher (ag) is not installed. The ctrlp (file fuzzy finder) will not work as expected."
+endif
 
 "" vim-better-whitespace.git
 " enable vim-better-whitespace.git plugin (removes whitespaces at EOL) on save
