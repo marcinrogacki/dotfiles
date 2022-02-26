@@ -94,6 +94,3 @@
 [submodule "repository/vim/.vim/bundle/dcc-ale.git"]
 	path = repository/vim/.vim/bundle/dcc-ale.git
 	url = git@github.com:statiolake/ddc-ale.git
-[submodule "repository/vim/.vim/bundle/kotlin-vim.git"]
-	path = repository/vim/.vim/bundle/kotlin-vim.git
-	url = git@github.com:udalov/kotlin-vim.git

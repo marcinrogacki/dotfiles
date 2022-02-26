@@ -1,6 +1,0 @@
-*.swo
-*.swp
-.ctags
-.tags
-.vscode/
-.vim/
