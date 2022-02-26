@@ -137,18 +137,18 @@ let g:airline_theme='papercolor'
 " Extension slows greatly the vim on large files
 let g:airline#extensions#tagbar#enabled = 0
 
-"" ctrlp.vim
-" use 'ag' instead 'grep' to boost serach performance
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
-" Ignore unnecessary files. Speeds up searching the files.
-" These options do not apply when a command defined with g:ctrlp_user_command
-" is being used
+""" ctrlp.vim
+"" use 'ag' instead 'grep' to boost serach performance
+"if executable('ag')
+"  " Use Ag over Grep
+"  set grepprg=ag\ --nogroup\ --nocolor
+"
+"  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+"  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+"endif
+"Ignore unnecessary files. Speeds up searching the files.
+"These options do not apply when a command defined with g:ctrlp_user_command
+"is being used
 let g:ctrlp_custom_ignore = {
   \ 'dir':  'node_modules\|\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(d.ts|js)$',
