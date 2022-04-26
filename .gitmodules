@@ -70,10 +70,6 @@
 [submodule "repository/vim/.vim/bundle/typescript-vim.git"]
     path = repository/vim/.vim/bundle/typescript-vim.git
     url = https://github.com/leafgarland/typescript-vim.git
-[submodule "repository/vim/.vim/bundle/tsuquyomi.git"]
-    path = repository/vim/.vim/bundle/tsuquyomi.git
-    url = git@github.com:Quramy/tsuquyomi.git
-    ignore = dirty
 [submodule "repository/vim/.vim/bundle/vim-prettier"]
     path = repository/vim/.vim/bundle/vim-prettier
     url = https://github.com/prettier/vim-prettier
