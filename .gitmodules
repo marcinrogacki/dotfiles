@@ -41,8 +41,8 @@
     url = https://github.com/majutsushi/tagbar.git
     ignore = dirty
 [submodule "repository/urxvt/.urxvt/ext/urxvt-resize-font.git"]
-	path = repository/urxvt/.urxvt/ext/urxvt-resize-font.git
-	url = https://github.com/simmel/urxvt-resize-font.git
+    path = repository/urxvt/.urxvt/ext/urxvt-resize-font.git
+    url = https://github.com/simmel/urxvt-resize-font.git
 [submodule "repository/vim/.vim/bundle/ctrlp.vim.git"]
     path = repository/vim/.vim/bundle/ctrlp.vim.git
     url = https://github.com/ctrlpvim/ctrlp.vim.git
@@ -56,47 +56,48 @@
     path = repository/tmuxifier/.slash/lib/tmuxifier
     url = https://github.com/jimeh/tmuxifier.git
 [submodule "repository/vim/.vim/bundle/vim-ingo-library.git"]
-	path = repository/vim/.vim/bundle/vim-ingo-library.git
-	url = https://github.com/inkarkat/vim-ingo-library.git
+    path = repository/vim/.vim/bundle/vim-ingo-library.git
+    url = https://github.com/inkarkat/vim-ingo-library.git
 [submodule "repository/vim/.vim/bundle/vim-mark.git"]
-	path = repository/vim/.vim/bundle/vim-mark.git
-	url = https://github.com/inkarkat/vim-mark.git
+    path = repository/vim/.vim/bundle/vim-mark.git
+    url = https://github.com/inkarkat/vim-mark.git
 [submodule "repository/vim/.vim/bundle/vim-markdown.git"]
-	path = repository/vim/.vim/bundle/vim-markdown.git
-	url = https://github.com/plasticboy/vim-markdown.git
+    path = repository/vim/.vim/bundle/vim-markdown.git
+    url = https://github.com/plasticboy/vim-markdown.git
 [submodule "repository/vim/.vim/bundle/vim-indexed-search.git"]
-	path = repository/vim/.vim/bundle/vim-indexed-search.git
-	url = https://github.com/henrik/vim-indexed-search.git
+    path = repository/vim/.vim/bundle/vim-indexed-search.git
+    url = https://github.com/henrik/vim-indexed-search.git
 [submodule "repository/vim/.vim/bundle/typescript-vim.git"]
-	path = repository/vim/.vim/bundle/typescript-vim.git
-	url = https://github.com/leafgarland/typescript-vim.git
+    path = repository/vim/.vim/bundle/typescript-vim.git
+    url = https://github.com/leafgarland/typescript-vim.git
 [submodule "repository/vim/.vim/bundle/tsuquyomi.git"]
-	path = repository/vim/.vim/bundle/tsuquyomi.git
-	url = git@github.com:Quramy/tsuquyomi.git
+    path = repository/vim/.vim/bundle/tsuquyomi.git
+    url = git@github.com:Quramy/tsuquyomi.git
     ignore = dirty
 [submodule "repository/vim/.vim/bundle/vim-prettier"]
-	path = repository/vim/.vim/bundle/vim-prettier
-	url = https://github.com/prettier/vim-prettier
+    path = repository/vim/.vim/bundle/vim-prettier
+    url = https://github.com/prettier/vim-prettier
 [submodule "repository/vim/.vim/bundle/vim-graphql.git"]
-	path = repository/vim/.vim/bundle/vim-graphql.git
-	url = git@github.com:jparise/vim-graphql.git
+    path = repository/vim/.vim/bundle/vim-graphql.git
+    url = git@github.com:jparise/vim-graphql.git
 [submodule "repository/vim/.vim/bundle/vim-android"]
-	path = repository/vim/.vim/bundle/vim-android
-	url = https://github.com/hsanson/vim-android.git
+    path = repository/vim/.vim/bundle/vim-android
+    url = https://github.com/hsanson/vim-android.git
 [submodule "repository/vim/.vim/bundle/ale.git"]
-	path = repository/vim/.vim/bundle/ale.git
-	url = git@github.com:dense-analysis/ale.git
+    path = repository/vim/.vim/bundle/ale.git
+    url = git@github.com:dense-analysis/ale.git
 [submodule "repository/vim/.vim/bundle/denops.vim.git"]
-	path = repository/vim/.vim/bundle/denops.vim.git
-	url = git@github.com:vim-denops/denops.vim.git
+    path = repository/vim/.vim/bundle/denops.vim.git
+    url = git@github.com:vim-denops/denops.vim.git
 [submodule "repository/vim/.vim/bundle/ddc.vim.git"]
-	path = repository/vim/.vim/bundle/ddc.vim.git
-	url = git@github.com:Shougo/ddc.vim.git
-    ignore = dirty
-[submodule "repository/vim/.vim/bundle/dcc-ale.git"]
-	path = repository/vim/.vim/bundle/dcc-ale.git
-	url = git@github.com:statiolake/ddc-ale.git
+    path = repository/vim/.vim/bundle/ddc.vim.git
+    url = git@github.com:Shougo/ddc.vim.git
     ignore = dirty
 [submodule "repository/vim/.vim/bundle/kotlin-vim.git"]
-	path = repository/vim/.vim/bundle/kotlin-vim.git
-	url = git@github.com:udalov/kotlin-vim.git
+    path = repository/vim/.vim/bundle/kotlin-vim.git
+    url = git@github.com:udalov/kotlin-vim.git
+    ignore = dirty
+[submodule "repository/vim/.vim/bundle/ddc-ale.git"]
+    path = repository/vim/.vim/bundle/ddc-ale.git
+    url = git@github.com:statiolake/ddc-ale.git
+    ignore = dirty
