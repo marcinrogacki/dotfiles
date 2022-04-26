@@ -73,6 +73,7 @@
 [submodule "repository/vim/.vim/bundle/tsuquyomi.git"]
 	path = repository/vim/.vim/bundle/tsuquyomi.git
 	url = git@github.com:Quramy/tsuquyomi.git
+    ignore = dirty
 [submodule "repository/vim/.vim/bundle/vim-prettier"]
 	path = repository/vim/.vim/bundle/vim-prettier
 	url = https://github.com/prettier/vim-prettier
@@ -91,9 +92,11 @@
 [submodule "repository/vim/.vim/bundle/ddc.vim.git"]
 	path = repository/vim/.vim/bundle/ddc.vim.git
 	url = git@github.com:Shougo/ddc.vim.git
+    ignore = dirty
 [submodule "repository/vim/.vim/bundle/dcc-ale.git"]
 	path = repository/vim/.vim/bundle/dcc-ale.git
 	url = git@github.com:statiolake/ddc-ale.git
+    ignore = dirty
 [submodule "repository/vim/.vim/bundle/kotlin-vim.git"]
 	path = repository/vim/.vim/bundle/kotlin-vim.git
 	url = git@github.com:udalov/kotlin-vim.git
