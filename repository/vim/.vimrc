@@ -176,24 +176,21 @@ let g:vim_markdown_folding_disabled = 1
 
 "" Plugin https://github.com/dense-analysis/ale
 " Usage: Android development, Typescript development
-
 " Press 'ctrl+]' to jump to function or variable definition
 nmap <C-]> :ALEGoToDefinition<cr>
+" Next lint error
+nmap <leader>an :ALENext<cr>
 
 "" Plugin: https://github.com/Shougo/ddc.vim
 " Usage: Android development, Typescript development
-
 " Enable ALE
 call ddc#custom#patch_global('sources', ['ale'])
-
 " Enable code completion using TAB key
 inoremap <silent><expr> <TAB>
 \ ddc#map#pum_visible() ? '<C-n>' :
 \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
 \ '<TAB>' : ddc#map#manual_complete()
-
 " Revere TAB completion
 inoremap <expr><S-TAB>  ddc#map#pum_visible() ? '<C-p>' : '<C-h>'
-
 " enable plugin
 call ddc#enable()
