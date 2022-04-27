@@ -131,7 +131,7 @@ let g:airline_theme='papercolor'
 " Extension slows greatly the vim on large files
 let g:airline#extensions#tagbar#enabled = 0
 
-"" ctrlp.vim
+"" https://github.com/ctrlpvim/ctrlp.vim.git
 " Fuzzy finder for files.
 " Use 'ag' instead 'grep' to boost serach performance.
 if executable('ag')
@@ -144,9 +144,10 @@ else
   echom "the_silver_searcher (ag) is not installed. The ctrlp (file fuzzy finder) will not work as expected."
 endif
 
-"" vim-better-whitespace.git
+"" https://github.com/ntpeters/vim-better-whitespace.git
 " enable vim-better-whitespace.git plugin (removes whitespaces at EOL) on save
-autocmd VimEnter * ToggleStripWhitespaceOnSave
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
 " Don't ask whether or not to strip white spaces
 let g:strip_whitespace_confirm=0
 
