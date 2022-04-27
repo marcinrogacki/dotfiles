@@ -181,6 +181,8 @@ let g:vim_markdown_folding_disabled = 1
 nmap <C-]> :ALEGoToDefinition<cr>
 " Next lint error
 nmap <leader>an :ALENext<cr>
+nmap <leader>ap :ALEPrevious<cr>
+nmap <leader>ad :ALEDetail<cr>
 
 "" Plugin: https://github.com/Shougo/ddc.vim
 " Usage: Android development, Typescript development
