@@ -26,10 +26,11 @@ set nowrap
 set backspace=2 " make backspace work like most other apps
 set history=1000
 set wildmode=longest,list,full " Linux like command indent
-let mapleader = ","
 " Spell checker
 set spelllang=en
 set spell
+" Set space for custom key mapping
+let mapleader = "\<Space>"
 
 " Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -108,8 +109,7 @@ autocmd FileType graphql setlocal shiftwidth=2 softtabstop=2
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "" nerdtree.git
-nmap <leader>nt :NERDTree<cr>
-nmap <leader>nf :NERDTreeFind<cr>
+nmap <leader>t :NERDTreeFind<cr>
 let NERDTreeShowHidden=1
 " scroll horizontally by small amount of text char instead of half of page
 " (usefull for NERDTree)
@@ -122,7 +122,7 @@ autocmd FileType nerdtree setlocal relativenumber
 let NERDTreeIgnore = ['\.js$' , '\.d.ts$']
 
 "" tagbar.git
-nmap <leader>tb :TagbarOpenAutoClose<cr>
+nmap <leader>b :TagbarOpenAutoClose<cr>
 
 "" vim-airline.git
 set laststatus=2
@@ -180,11 +180,11 @@ let g:vim_markdown_folding_disabled = 1
 " Press 'ctrl+]' to jump to function or variable definition
 nmap <C-]> :ALEGoToDefinition<cr>
 " Go to  next lint error
-nmap <leader>an :ALENext<cr>
+nmap <leader>e :ALENext<cr>
 " Go to  previous lint error
-nmap <leader>ap :ALEPrevious<cr>
+nmap <leader>E :ALEPrevious<cr>
 " Show full lint error
-nmap <leader>ad :ALEDetail<cr>
+nmap <leader>d :ALEDetail<cr>
 " Display notification about number of lint errors found in current file
 let g:airline#extensions#ale#enabled = 1
 
