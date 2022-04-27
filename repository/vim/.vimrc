@@ -179,10 +179,14 @@ let g:vim_markdown_folding_disabled = 1
 " Usage: Android development, Typescript development
 " Press 'ctrl+]' to jump to function or variable definition
 nmap <C-]> :ALEGoToDefinition<cr>
-" Next lint error
+" Go to  next lint error
 nmap <leader>an :ALENext<cr>
+" Go to  previous lint error
 nmap <leader>ap :ALEPrevious<cr>
+" Show full lint error
 nmap <leader>ad :ALEDetail<cr>
+" Display notification about number of lint errors found in current file
+let g:airline#extensions#ale#enabled = 1
 
 "" Plugin: https://github.com/Shougo/ddc.vim
 " Usage: Android development, Typescript development
