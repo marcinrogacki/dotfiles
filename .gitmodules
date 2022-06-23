@@ -94,3 +94,6 @@
     path = repository/vim/.vim/bundle/ddc-ale.git
     url = git@github.com:statiolake/ddc-ale.git
     ignore = dirty
+[submodule "repository/vim/.vim/bundle/ddc-fuzzy.git"]
+	path = repository/vim/.vim/bundle/ddc-fuzzy.git
+	url = git@github.com:tani/ddc-fuzzy.git

@@ -33,7 +33,7 @@ set spell
 let mapleader = "\<Space>"
 " Autocomplete window behaviour:
 " * popup - display floating window (balloon)
-set completeopt=menu,menuone,popup,noselect,longest
+set completeopt=menu,menuone,popup
 
 " Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -193,16 +193,31 @@ nmap <leader>d :ALEDetail<cr>
 " Display notification about number of lint errors found in current file
 let g:airline#extensions#ale#enabled = 1
 
+"" Plugin: https://github.com/tani/ddc-fuzzy
+" Usage: Typescript
+" Autocompletion fuzzy matcher
+call ddc#custom#patch_global('sourceOptions', {
+\   '_': {
+\     'matchers': ['matcher_fuzzy'],
+\     'sorters': ['sorter_fuzzy'],
+\     'converters': ['converter_fuzzy']
+\   }
+\ })
+
 "" Plugin: https://github.com/Shougo/ddc.vim
 " Usage: Android development, Typescript development
 " Enable ALE
 call ddc#custom#patch_global('sources', ['ale'])
-" <TAB>: code completion
+" <TAB>: complete the code
 inoremap <silent><expr> <TAB>
 \ ddc#map#pum_visible() ? '<C-n>' :
 \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
 \ '<TAB>' : ddc#map#manual_complete()
-" <S-TAB>: completion back
+" <S-TAB>: go back in complete code list
 inoremap <expr><S-TAB>  ddc#map#pum_visible() ? '<C-p>' : '<C-h>'
+" <ENTER>: accept autocomplete item
+" inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<CR>"
+" <ENTER>: close autocomplete window
+" inoremap <expr> <ESC> pumvisible() ? "\<C-e>" : "\<CR>"
 " enable plugin
 call ddc#enable()
