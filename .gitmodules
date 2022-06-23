@@ -97,3 +97,6 @@
 [submodule "repository/vim/.vim/bundle/ddc-fuzzy.git"]
 	path = repository/vim/.vim/bundle/ddc-fuzzy.git
 	url = git@github.com:tani/ddc-fuzzy.git
+[submodule "repository/vim/.vim/bundle/pum.vim.git"]
+	path = repository/vim/.vim/bundle/pum.vim.git
+	url = git@github.com:Shougo/pum.vim.git

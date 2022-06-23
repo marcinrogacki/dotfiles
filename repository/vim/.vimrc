@@ -204,20 +204,21 @@ call ddc#custom#patch_global('sourceOptions', {
 \   }
 \ })
 
+"" https://github.com/Shougo/pum.vim
+" Usage: Typescript
+" Use TAB to trigger autocomplete. Highlight searched words in fuzzy
+" autocomplete.
+call ddc#custom#patch_global('completionMenu', 'pum.vim')
+" <TAB>: complete the code
+inoremap <Tab>   <Cmd>call pum#map#insert_relative(+1)<CR>
+" <S-TAB>: go back in complete code list
+inoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
+" <ENTER>: accept autocomplete item
+inoremap <ENTER>   <Cmd>call pum#map#confirm()<CR>
+
 "" Plugin: https://github.com/Shougo/ddc.vim
 " Usage: Android development, Typescript development
 " Enable ALE
 call ddc#custom#patch_global('sources', ['ale'])
-" <TAB>: complete the code
-inoremap <silent><expr> <TAB>
-\ ddc#map#pum_visible() ? '<C-n>' :
-\ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-\ '<TAB>' : ddc#map#manual_complete()
-" <S-TAB>: go back in complete code list
-inoremap <expr><S-TAB>  ddc#map#pum_visible() ? '<C-p>' : '<C-h>'
-" <ENTER>: accept autocomplete item
-" inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<CR>"
-" <ENTER>: close autocomplete window
-" inoremap <expr> <ESC> pumvisible() ? "\<C-e>" : "\<CR>"
 " enable plugin
 call ddc#enable()
