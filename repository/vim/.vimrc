@@ -31,6 +31,9 @@ set spelllang=en
 set spell
 " Set space for custom key mapping
 let mapleader = "\<Space>"
+" Autocomplete window behaviour:
+" * popup - display floating window (balloon)
+set completeopt=menu,menuone,popup,noselect,longest
 
 " Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -76,7 +79,9 @@ hi SpellBad ctermbg=88
 hi Search cterm=NONE ctermfg=52 ctermbg=3
 
 " Popup window color
-hi Pmenu ctermbg=gray guibg=gray
+hi Pmenu ctermbg=151 guibg=gray
+hi PmenuSel ctermbg=8 ctermfg=2
+
 
 " Custom
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -192,12 +197,12 @@ let g:airline#extensions#ale#enabled = 1
 " Usage: Android development, Typescript development
 " Enable ALE
 call ddc#custom#patch_global('sources', ['ale'])
-" Enable code completion using TAB key
+" <TAB>: code completion
 inoremap <silent><expr> <TAB>
 \ ddc#map#pum_visible() ? '<C-n>' :
 \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
 \ '<TAB>' : ddc#map#manual_complete()
-" Revere TAB completion
+" <S-TAB>: completion back
 inoremap <expr><S-TAB>  ddc#map#pum_visible() ? '<C-p>' : '<C-h>'
 " enable plugin
 call ddc#enable()
