@@ -81,6 +81,8 @@ hi Search cterm=NONE ctermfg=52 ctermbg=3
 " Popup window color
 hi Pmenu ctermbg=151 guibg=gray
 hi PmenuSel ctermbg=8 ctermfg=2
+" Set documentation popup at same hight (menu) as completion popup
+set completepopup=align:menu,border:on,highlight:PmenuSel
 
 
 " Custom
@@ -193,6 +195,22 @@ nmap <leader>d :ALEDetail<cr>
 " Display notification about number of lint errors found in current file
 let g:airline#extensions#ale#enabled = 1
 
+"" https://github.com/Shougo/pum.vim
+" Usage: Typescript
+" Use TAB to trigger autocomplete. Highlight searched words in fuzzy
+" autocomplete.
+call ddc#custom#patch_global('completionMenu', 'pum.vim')
+" <TAB>: start completion or go to next item
+inoremap <silent><expr> <TAB>
+\ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+\ '<TAB>' : ddc#map#pum_visible() ?
+\ pum#map#insert_relative(+1) : ddc#map#manual_complete()
+" <S-TAB>: completion previous item
+inoremap <expr><S-TAB> ddc#map#pum_visible() ? pum#map#insert_relative(-1) : '<C-h>'
+" <C-y>: accept completion item
+inoremap <C-y>   <Cmd>call pum#map#confirm()<CR> " <C-e>: accept completion item
+inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
+
 "" Plugin: https://github.com/tani/ddc-fuzzy
 " Usage: Typescript
 " Autocompletion fuzzy matcher
@@ -200,25 +218,15 @@ call ddc#custom#patch_global('sourceOptions', {
 \   '_': {
 \     'matchers': ['matcher_fuzzy'],
 \     'sorters': ['sorter_fuzzy'],
-\     'converters': ['converter_fuzzy']
+\     'converters': ['converter_fuzzy'],
+\     'ignoreCase': 'true'
 \   }
 \ })
-
-"" https://github.com/Shougo/pum.vim
-" Usage: Typescript
-" Use TAB to trigger autocomplete. Highlight searched words in fuzzy
-" autocomplete.
-call ddc#custom#patch_global('completionMenu', 'pum.vim')
-" <TAB>: complete the code
-inoremap <Tab>   <Cmd>call pum#map#insert_relative(+1)<CR>
-" <S-TAB>: go back in complete code list
-inoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
-" <ENTER>: accept autocomplete item
-inoremap <ENTER>   <Cmd>call pum#map#confirm()<CR>
 
 "" Plugin: https://github.com/Shougo/ddc.vim
 " Usage: Android development, Typescript development
 " Enable ALE
 call ddc#custom#patch_global('sources', ['ale'])
+
 " enable plugin
 call ddc#enable()
