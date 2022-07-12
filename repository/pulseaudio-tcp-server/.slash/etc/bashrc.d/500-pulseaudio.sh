@@ -1,1 +1,4 @@
-pgrep pulseaudio 1>/dev/null || pulseaudio -D
+pulseaudioid=`pgrep pulseaudio`
+if [ -z $pulseaudioid ]; then
+    pulseaudio -D
+fi
