@@ -192,6 +192,8 @@ nmap <leader>e :ALENext<cr>
 nmap <leader>E :ALEPrevious<cr>
 " Show full lint error
 nmap <leader>d :ALEDetail<cr>
+" Execute lint
+nmap <leader>l :ALELint<cr>
 " Display notification about number of lint errors found in current file
 let g:airline#extensions#ale#enabled = 1
 
