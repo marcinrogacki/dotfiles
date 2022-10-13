@@ -1,0 +1,4 @@
+#!/bin/sh
+last --time-format iso --since `date +%Y-%m-%d` reboot | grep -v 'wtmp begins'
+echo Since `uptime -s`
+uptime -p
