@@ -181,6 +181,10 @@ let g:mwDefaultHighlightingPalette = [
 "" vim-markdown.git
 " disable folding
 let g:vim_markdown_folding_disabled = 1
+" disable due conflicting personal mapping: <leader>r ALERename
+let g:mw_no_mappings = 1
+" keep useful mappings
+nmap <unique> <Leader>m <Plug>MarkSet
 
 "" Plugin https://github.com/dense-analysis/ale
 " Usage: Android development, Typescript development
@@ -194,6 +198,8 @@ nmap <leader>E :ALEPrevious<cr>
 nmap <leader>d :ALEDetail<cr>
 " Execute lint
 nmap <leader>l :ALELint<cr>
+" Rename var
+nmap <leader>r <Plug> :ALERename<cr>
 " Display notification about number of lint errors found in current file
 let g:airline#extensions#ale#enabled = 1
 
