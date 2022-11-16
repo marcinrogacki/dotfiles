@@ -1,2 +1,2 @@
 #!/bin/sh
-playonlinux --run poetrade
+playonlinux4 --run poetrade

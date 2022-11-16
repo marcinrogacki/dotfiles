@@ -1,2 +1,2 @@
 #!/bin/sh
-playonlinux --run battle.net
+playonlinux4 --run battle.net

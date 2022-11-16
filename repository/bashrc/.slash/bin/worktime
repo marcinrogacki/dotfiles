@@ -1,0 +1,19 @@
+#!/bin/sh
+last -R --time-format iso --since `date +%Y-%m-%d` reboot \
+    | grep -v 'wtmp begins' \
+    | sed "s/still running/`date +%Y-%m-%dT%H:%M:%S%:z`/g" \
+    | sed 's/   / - /g'
+
+echo uptime: `uptime -s`
+echo uptime: `uptime -p`
+echo
+
+last -R --time-format iso --since `date +%Y-%m-%d` reboot \
+    | grep -v 'wtmp begins' \
+    | sed "s/still running/`date +%Y-%m-%dT%H:%M:%S%:z`/g" \
+    | sed 's/   / - /g' \
+    | head -n -1 \
+    | awk '{"date -d "$5" +%s"|getline one; "date -d "$7" +%s"|getline two; print $1, $2, two-one}' \
+    | awk '{print $3}' \
+    | awk '{ sum += $1 } END { print sum }' \
+    | xargs -I {} date -d@{} -u +%H:%M:%S

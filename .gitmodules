@@ -100,3 +100,6 @@
 [submodule "repository/vim/.vim/bundle/pum.vim.git"]
 	path = repository/vim/.vim/bundle/pum.vim.git
 	url = git@github.com:Shougo/pum.vim.git
+[submodule "repository/vim/.vim/bundle/copilot.vim.git"]
+	path = repository/vim/.vim/bundle/copilot.vim.git
+	url = git@github.com:github/copilot.vim.git
