@@ -8,7 +8,8 @@ echo uptime: `uptime -s`
 echo uptime: `uptime -p`
 echo
 
-last -R --time-format iso --since `date +%Y-%m-%d` reboot \
+function calculate_uptime_sum {
+    last -R --time-format iso --since `date +%Y-%m-%d` reboot \
     | grep -v 'wtmp begins' \
     | sed "s/still running/`date +%Y-%m-%dT%H:%M:%S%:z`/g" \
     | sed 's/   / - /g' \
@@ -17,3 +18,20 @@ last -R --time-format iso --since `date +%Y-%m-%d` reboot \
     | awk '{print $3}' \
     | awk '{ sum += $1 } END { print sum }' \
     | xargs -I {} date -d@{} -u +%H:%M:%S
+}
+
+uptime_sum=`calculate_uptime_sum`
+echo Uptime: $uptime_sum
+
+uptime_sum_seconds=`date -d $uptime_sum  +%s`
+workday_time_seconds=`date -d 08:00:00 +%s`
+diff=$(($workday_time_seconds - $uptime_sum_seconds))
+remaining_hours=`printf  "%.2d" $(($diff / 60 / 60))`
+remaining_minutes=`printf  "%.2d" $(($diff / 60 % 60))`
+remaining_seconds=`printf  "%.2d" $(($diff % 60))`
+workday_time_remaining=`echo "$remaining_hours:$remaining_minutes:$remaining_seconds"`
+
+echo "Remain: $workday_time_remaining"
+
+add_time=`echo "+${workday_time_remaining}seconds" | sed 's/:/hours +/' | sed 's/:/minutes +/'`
+echo "Finish: `date -d "$add_time" +%H:%M:%S`"
