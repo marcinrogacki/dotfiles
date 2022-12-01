@@ -199,7 +199,7 @@ nmap <leader>d :ALEDetail<cr>
 " Execute lint
 nmap <leader>l :ALELint<cr>
 " Rename var
-nmap <leader>r <Plug> :ALERename<cr>
+nmap <leader>r :ALERename<cr>
 " Display notification about number of lint errors found in current file
 let g:airline#extensions#ale#enabled = 1
 
