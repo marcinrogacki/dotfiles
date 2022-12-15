@@ -27,13 +27,16 @@ set backspace=2 " make backspace work like most other apps
 set history=1000
 set wildmode=longest,list,full " Linux like command indent
 " Spell checker
-set spelllang=en
-set spell
+if !&diff
+  set spelllang=en
+  set spell
+endif
 " Set space for custom key mapping
 let mapleader = "\<Space>"
 " Autocomplete window behaviour:
 " * popup - display floating window (balloon)
 set completeopt=menu,menuone,popup
+
 
 " Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -76,7 +79,7 @@ autocmd VimEnter * call ToggleFileMarginsIndicator()
 hi SpellBad ctermbg=88
 
 " Search highlight color
-hi Search cterm=NONE ctermfg=52 ctermbg=3
+hi Search cterm=none ctermfg=52 ctermbg=3
 
 " Popup window color
 hi Pmenu ctermbg=151 guibg=gray
@@ -84,6 +87,11 @@ hi PmenuSel ctermbg=8 ctermfg=2
 " Set documentation popup at same hight (menu) as completion popup
 set completepopup=align:menu,border:on,highlight:PmenuSel
 
+"" Vimdiff better color palette
+highlight DiffAdd cterm=none ctermfg=darkgreen ctermbg=none
+highlight DiffDelete cterm=none ctermfg=darkred ctermbg=none
+highlight DiffChange cterm=none ctermfg=none ctermbg=none
+highlight DiffText cterm=none ctermfg=darkgreen ctermbg=none
 
 " Custom
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -218,6 +226,8 @@ inoremap <expr><S-TAB> ddc#map#pum_visible() ? pum#map#insert_relative(-1) : '<C
 " <C-y>: accept completion item
 inoremap <C-y>   <Cmd>call pum#map#confirm()<CR> " <C-e>: accept completion item
 inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
+
+inoremap <expr> <C-J> &diff ? ']c' : '<C-W>j'
 
 "" Plugin: https://github.com/tani/ddc-fuzzy
 " Usage: Typescript
