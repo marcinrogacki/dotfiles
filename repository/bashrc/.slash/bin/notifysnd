@@ -21,8 +21,10 @@ for arg in "$@"; do
     fi
 done
 
-if [[ ! -f  "$HOME/.slash/var/notifysnd/$1" ]]; then
-    (>&2 echo "Sound name not found: $1")
+sound_file="$HOME/.slash/var/notifysnd/$1.wav"
+if [[ ! -f  "$sound_file" ]]; then
+    (>&2 echo "[notifysnd] Sound file not found: $sound_file")
+    exit
 fi
 
-aplay "$HOME/.slash/var/notifysnd/$1" 2>/dev/null
+aplay $sound_file 2>/dev/null
