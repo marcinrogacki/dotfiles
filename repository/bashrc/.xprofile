@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# Protection from sourcing multiple times. A .xprofile is symlinked to .xinitrc
+# and .xsession
+if [ $X11_XPROFILE_LOADED ]; then
+    exit 1
+fi
+
+if [ -d "$HOME"/.slash/etc/Xresources.d ] ; then
+    for f in "$HOME"/.slash/etc/Xresources.d/?* ; do
+        xrdb -merge "$f"
+    done
+    unset f
+fi
+
+if [ -d "$HOME"/.slash/etc/X11.d ] ; then
+    for f in "$HOME"/.slash/etc/X11.d/?*.sh ; do
+        . "$f"
+    done
+    unset f
+fi
+
+export X11_XPROFILE_LOADED=1
