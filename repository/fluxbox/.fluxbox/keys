@@ -90,14 +90,14 @@ Control Mod1 Delete :Exit
 Control Mod1 Backspace:Restart
 
 # change to previous/next workspace
-Control Mod1 Left :Workspace 1
-Control Mod1 Right :Workspace 2
+Control Mod1 Right :Workspace 1
+Control Mod1 Left :Workspace 2
 Control Mod1 Up :Workspace 3
 Control Mod1 Down :Workspace 4
 
 # send the current window and follow it to previous/next workspace
-Control Mod1 Shift Left :TakeToWorkspace 1
-Control Mod1 Shift Right :TakeToWorkspace 2
+Control Mod1 Shift Right :TakeToWorkspace 1
+Control Mod1 Shift Left :TakeToWorkspace 2
 Control Mod1 Shift Up :TakeToWorkspace 3
 Control Mod1 Shift Down :TakeToWorkspace 4
 
