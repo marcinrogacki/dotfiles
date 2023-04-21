@@ -103,3 +103,6 @@
 [submodule "repository/vim/.vim/bundle/copilot.vim.git"]
 	path = repository/vim/.vim/bundle/copilot.vim.git
 	url = git@github.com:github/copilot.vim.git
+[submodule "repository/vim/.vim/bundle/ddc-ui-pum.git"]
+	path = repository/vim/.vim/bundle/ddc-ui-pum.git
+	url = git@github.com:Shougo/ddc-ui-pum.git
