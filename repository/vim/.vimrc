@@ -215,7 +215,7 @@ let g:airline#extensions#ale#enabled = 1
 " Usage: Typescript
 " Use TAB to trigger autocomplete. Highlight searched words in fuzzy
 " autocomplete.
-call ddc#custom#patch_global('completionMenu', 'pum.vim')
+call ddc#custom#patch_global('ui', 'pum')
 " <TAB>: start completion or go to next item
 inoremap <silent><expr> <TAB>
 \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
