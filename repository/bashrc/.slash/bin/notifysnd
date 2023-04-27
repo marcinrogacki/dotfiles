@@ -21,7 +21,7 @@ for arg in "$@"; do
     fi
 done
 
-sound_file="$HOME/.slash/var/notifysnd/$1.wav"
+sound_file="$HOME/.slash/var/notifysnd/$1"
 if [[ ! -f  "$sound_file" ]]; then
     (>&2 echo "[notifysnd] Sound file not found: $sound_file")
     exit
