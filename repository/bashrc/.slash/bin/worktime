@@ -1,23 +1,38 @@
 #!/bin/sh
-last -R --time-format iso --since `date +%Y-%m-%d` reboot \
-    | grep -v 'wtmp begins' \
-    | sed "s/still running/`date +%Y-%m-%dT%H:%M:%S%:z`/g" \
-    | sed 's/   / - /g'
+last_since_date=`date +%Y-%m-%d`
 
-echo uptime: `uptime -s`
-echo uptime: `uptime -p`
+last -R --time-format iso --since $last_since_date reboot \
+| sed '/^$/d' \
+| grep -v 'wtmp begins' \
+| sed "s/still running/`date +%Y-%m-%dT%H:%M:%S%:z`/g" \
+| sed 's/   / - /g'
+
+echo uptime -s: `uptime -s`
+echo uptime -p: `uptime -p`
 echo
 
 function calculate_uptime_sum {
-    last -R --time-format iso --since `date +%Y-%m-%d` reboot \
-    | grep -v 'wtmp begins' \
-    | sed "s/still running/`date +%Y-%m-%dT%H:%M:%S%:z`/g" \
-    | sed 's/   / - /g' \
-    | head -n -1 \
-    | awk '{"date -d "$5" +%s"|getline one; "date -d "$7" +%s"|getline two; print $1, $2, two-one}' \
-    | awk '{print $3}' \
-    | awk '{ sum += $1 } END { print sum }' \
-    | xargs -I {} date -d@{} -u +%H:%M:%S
+    if [[ $(last -R --time-format iso --since $last_since_date reboot | wc -l) -eq 1 ]]; then
+        last -R --time-format iso --since $last_since_date reboot \
+        | sed '/^$/d' \
+        | sed "s/wtmp begins //g" \
+        | sed "s/still running/`date +%Y-%m-%dT%H:%M:%S%:z`/g" \
+        | sed 's/   / - /g' \
+        | awk '{"date -d "$1" +%s"|getline one; "date +%s"|getline two; print $1, $2, two-one}' \
+        | awk '{print $2}' \
+        | awk '{ sum += $1 } END { print sum }' \
+        | xargs -I {} date -d@{} -u +%H:%M:%S
+    else
+        last -R --time-format iso --since $last_since_date reboot \
+        | grep -v 'wtmp begins ' \
+        | sed "s/still running/`date +%Y-%m-%dT%H:%M:%S%:z`/g" \
+        | sed '/^$/d' \
+        | sed 's/   / - /g' \
+        | awk '{"date -d "$5" +%s"|getline one; "date -d "$7" +%s"|getline two; print $1, $2, two-one}' \
+        | awk '{print $3}' \
+        | awk '{ sum += $1 } END { print sum }' \
+        | xargs -I {} date -d@{} -u +%H:%M:%S
+    fi
 }
 
 uptime_sum=`calculate_uptime_sum`
