@@ -33,15 +33,21 @@ if !&diff
 endif
 " Set space for custom key mapping
 let mapleader = "\<Space>"
-" Autocomplete window behaviour:
-" * popup - display floating window (balloon)
-set completeopt=menu,menuone,popup
+if !has('nvim')
+    " Autocomplete window behaviour:
+    " * popup - display floating window (balloon)
+    set completeopt=menu,menuone,popup
+else
+    set completeopt=menu,menuone
+endif
 
 
 " Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Color pallate
-set term=screen-256color
+if !has('nvim')
+    " Color pallate
+    set term=screen-256color
+endif
 set background=dark
 " Show file line numbers
 set number
@@ -84,8 +90,10 @@ hi Search cterm=none ctermfg=52 ctermbg=3
 " Popup window color
 hi Pmenu ctermbg=151 guibg=gray
 hi PmenuSel ctermbg=8 ctermfg=2
-" Set documentation popup at same hight (menu) as completion popup
-set completepopup=align:menu,border:on,highlight:PmenuSel
+if !has('nvim')
+    " Set documentation popup at same hight (menu) as completion popup
+    set completepopup=align:menu,border:on,highlight:PmenuSel
+endif
 
 "" Vimdiff better color palette
 highlight DiffAdd cterm=none ctermfg=darkgreen ctermbg=none
