@@ -4,7 +4,7 @@
 [color]
     ui = true
 [core]
-    editor = vim
+    editor = nvim
     filemode = false
     autocrlf = false
 	excludesfile = ~/.gitglobal/ignore
@@ -16,8 +16,8 @@
 	sync = !~/.gitglobal/subcommand/sync
 	hooks = !~/.gitglobal/subcommand/hooks
 [diff]
-	tool = vimdiff
+	tool = nvim -d
 [merge]
-	tool = vimdiff
+	tool = nvim -d
 [url "git@github.com:"]
 	insteadOf = https://github.com/
