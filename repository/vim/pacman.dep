@@ -8,3 +8,5 @@ automake
 deno
 # For ctrlp plugin. Enables fuzzy finder for files
 the_silver_searcher
+# Rust LSP
+rust-analyzer
