@@ -53,6 +53,6 @@ fi
 for dep_file in `find -L "$env_dir" -name pacman.dep`; do
                                   echo -e "\e[32m[FILE]\e[39m $dep_file"
     cat "$dep_file" | xargs -I {} echo -e "\e[32m[SOFT]\e[39m "{}
-    pacman -S --needed $(cat "$dep_file" | grep -v '^#' | sort -u)
+    pacman -S --noconfirm --needed $(cat "$dep_file" | grep -v '^#' | sort -u)
     # pacman -Rs $(cat "$dep_file" | xargs cat | grep -v '^#' | sort -u)
 done
