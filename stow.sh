@@ -4,12 +4,9 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
 display_usage() {
 cat << USAGE
-Usage: sh `basename $0` DIRECTORY <COMMAND>
+Usage: sh `basename $0` <COMMAND>
 
-Apply dotfiles to user home dir from given environment directory.
-
-DIRECTORY
-    Pick one from 'environment' directory.
+Apply dotfiles. Automatically picks files from environment/<user>@<host> directory.
 
 COMMAND
     -h|--help   Display this message.
@@ -28,14 +25,9 @@ for arg in "$@"; do
     fi
 done
 
-env="${1%/}"
-env_dir="$SCRIPT_DIR/$env"
+# env_dir="$SCRIPT_DIR/environment/$USER@$HOSTNAME"
+env_dir="$SCRIPT_DIR/environment/$USER@1900x"
 shift 2>/dev/null
-
-if [[ "$env" != environment/* ]]; then
-    >&2 echo "Wrong environment provided. Please provide one from 'environment' directory."
-    exit 1
-fi
 
 if [ ! -d "$env_dir" ]; then
     >&2 echo "Not existing environment. Directory does not exists $env_dir"
