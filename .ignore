@@ -1,3 +1,4 @@
 .git/
 repository/vim/.vim/bundle/
 repository/games/.local/
+repository/nvim/.config/nvim/pack/
