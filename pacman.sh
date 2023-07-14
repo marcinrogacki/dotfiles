@@ -4,20 +4,19 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
 display_usage() {
 cat << USAGE
-Usage: sh `basename $0` DIRECTORY <COMMAND>
+Usage: sh `basename $0` USER <COMMAND>
 
-Searches recursively current directory for pacman.dep files and install
-packages listed within them. User must be granted to run pacman command.
+Install system dependencies. Install listed packages from pacman.dep files in
+environment directory. Must be executed as root user.
 
-
-DIRECTORY
-    Pick one from 'environment' directory.
+USER
+    System user name from environment directory.
 
 COMMAND
     -h|--help   Display this message.
 
 Example
-    sh `basename $0` environment/mrogacki@homepc
+    sh `basename $0 robak`
     sh `basename $0` -h
 USAGE
 }
@@ -29,15 +28,8 @@ for arg in "$@"; do
     fi
 done
 
-env="${1%/}"
-env_dir="$SCRIPT_DIR/$env"
-shift
-
-if [[ "$env" != environment/* ]]; then
-    >&2 echo "Wrong environment provided. Please provide one from 'environment' directory."
-    exit 1
-fi
-
+user="$1"
+env_dir="$SCRIPT_DIR/environment/$USER@$HOSTNAME"
 if [ ! -d "$env_dir" ]; then
     >&2 echo "Not existing environment. Directory does not exists $env_dir"
     exit 1
@@ -51,7 +43,7 @@ fi
 # done
 
 for dep_file in `find -L "$env_dir" -name pacman.dep`; do
-                                  echo -e "\e[32m[FILE]\e[39m $dep_file"
+    echo -e "\e[32m[FILE]\e[39m $dep_file"
     cat "$dep_file" | xargs -I {} echo -e "\e[32m[SOFT]\e[39m "{}
     pacman -S --noconfirm --needed $(cat "$dep_file" | grep -v '^#' | sort -u)
     # pacman -Rs $(cat "$dep_file" | xargs cat | grep -v '^#' | sort -u)

@@ -25,10 +25,7 @@ for arg in "$@"; do
     fi
 done
 
-# env_dir="$SCRIPT_DIR/environment/$USER@$HOSTNAME"
-env_dir="$SCRIPT_DIR/environment/$USER@1900x"
-shift 2>/dev/null
-
+env_dir="$SCRIPT_DIR/environment/$USER@$HOSTNAME"
 if [ ! -d "$env_dir" ]; then
     >&2 echo "Not existing environment. Directory does not exists $env_dir"
     exit 1
