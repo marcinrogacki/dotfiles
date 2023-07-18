@@ -1,1 +1,1 @@
-dunst -config ~/.config/dunst/dunstr &
+dunst -config ~/.config/dunst/dunstrc &
