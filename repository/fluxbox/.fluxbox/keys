@@ -70,6 +70,9 @@ Mod1 F2 :Exec fbrun
 Mod1 F12 :Exec import ~/Pictures/screen-shot-`date +%s`.jpg
 # Mod1 F12 :Exec fbrun
 
+F8 :Exec bash ~/.slash/bin/poemapsclicker.sh 1
+F9 :Exec bash ~/.slash/bin/poemapsclicker.sh 2
+
 # volume settings, using common keycodes
 # if these don't work, use xev to find out your real keycodes
 176 :Exec amixer sset Master,0 1+
