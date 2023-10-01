@@ -23,6 +23,19 @@ No sound on client
 * add both users server and client to sound group
 * regenerete cookies and restart
 
+Error:
+
+```
+Oct 01 13:10:05 thinkpad systemd[1035]: pulseaudio.service: Scheduled restart job, restart counter is at 5.
+Oct 01 13:10:05 thinkpad systemd[1035]: pulseaudio.service: Start request repeated too quickly.
+Oct 01 13:10:05 thinkpad systemd[1035]: pulseaudio.service: Failed with result 'exit-code'.
+Oct 01 13:10:05 thinkpad systemd[1035]: Failed to start Sound Service.
+```
+
+Configuration directory `~/.config/pulse` cannot by a symlink or has wrong permissions. Unlink/remove it, start the
+service `systemctl --user start pulseaudio.service` so it will create new directory and than perform `sh stow.sh` to
+apply config.
+
 Bluetooth
 =========
 
