@@ -12,7 +12,7 @@ echo uptime -p: `uptime -p`
 echo
 
 function calculate_uptime_sum {
-    if [[ $(last -R --time-format iso --since $last_since_date reboot | wc -l) -eq 1 ]]; then
+    if [[ $(last -R --time-format iso --since $last_since_date reboot | sed '/^$/d' | wc -l) -eq 1 ]]; then
         last -R --time-format iso --since $last_since_date reboot \
         | sed '/^$/d' \
         | sed "s/wtmp begins //g" \
