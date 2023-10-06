@@ -42,7 +42,7 @@ session.screen0.maxIgnoreIncrement:	true
 session.screen0.opaqueMove:	true
 session.screen0.workspacewarpingvertical:	true
 session.screen0.strftimeFormat:	%d/%m/%y %k:%M
-session.screen0.windowMenu:	~/.fluxbox/windowmenu
+session.screen0.windowMenu:	/home/robak/.fluxbox/windowmenu
 session.screen0.workspacewarpinghorizontal:	true
 session.screen0.focusNewWindows:	true
 session.screen0.fullMaximization:	false

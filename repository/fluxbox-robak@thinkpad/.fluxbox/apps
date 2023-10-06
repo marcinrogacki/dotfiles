@@ -1,0 +1,21 @@
+# Use "xprop | grep WM_CLASS" to read app name. First field should be taken.
+# Navigator = Firefox
+[app] (name=Navigator) {1}
+  [Workspace] {0}
+  [Maximized] {yes}
+[end]
+[app] (name=urxvt) {1}
+  [Workspace] {1}
+  [Maximized] {yes}
+[end]
+[app] (name=.*potify.*) {1}
+  [Workspace] {2}
+  [Maximized] {yes}
+[end]
+[app] (name=org.remmina.Remmina) {1}
+  [Workspace] {3}
+[end]
+[app] (name=fbrun)
+  [Position]	(CENTER)	{0 0}
+  [Layer]	{2}
+[end]
