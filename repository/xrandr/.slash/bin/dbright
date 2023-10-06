@@ -1,0 +1,52 @@
+#!/bin/sh
+#
+display_usage() {
+cat << USAGE
+Usage: `basename $0` [SIGN] [VALUE] <PARAM>
+
+Increases or decreases display brightness by fiven VALUE
+
+SIGN
+    EIther "+" or "-". A program partial or full name.
+
+VALUE
+    A decimal value by which display brightness will be changed.
+
+PARAM
+    -h|--help       display this message
+
+Examples
+    `basename $0` + 0.01
+    `basename $0` - 0.01
+
+USAGE
+}
+
+for arg in "$@"; do
+    if [ "$arg" = "-h" -o "$arg" = "--help" ]; then
+        display_usage
+        exit
+    fi
+done
+
+sign="$1"
+value="$2"
+if [[ $sign != "+" &&  $sign != "-" ]]; then
+    >&2 echo "Invalid sign param. Either + or - accepted. Given: $sign"
+    exit 1
+fi
+if [[ ! "$value" =~ ^[0-9]+(\.[0-9]+)?$ ]]; then
+    >&2 echo "Invalid value param. Expected decimal value. Given: $value"
+    exit 1
+fi
+
+current_brightness=`xrandr --verbose | grep Brightness | awk '{print $2}'`
+primary_display=`xrandr | grep 'connected primary' | awk '{print $1}'`
+if [ $sign == "+" ]; then
+    current_brightness=`echo $current_brightness+$value | bc`
+else
+    current_brightness=`echo $current_brightness-$value | bc`
+fi
+xrandr --output $primary_display --brightness $current_brightness
+# Use 999999999 as id for notification to replace it instead creating a new one
+notify-send -r 999999999 $current_brightness

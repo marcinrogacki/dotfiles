@@ -14,6 +14,7 @@ urxvt &
 spotify &
 remmina &
 signal-desktop --start-in-tray &
+xrandr --output eDP --brightness 0.4
 
 # And last but not least we start fluxbox.
 # Because it is the last app you have to run it with ''exec'' before it.

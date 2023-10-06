@@ -154,27 +154,6 @@
 #    summary = "foobar"
 #    format = ""
 
-[signed_on]
-    appname = Pidgin
-    summary = "*signed on*"
-    urgency = low
-
-[signed_off]
-    appname = Pidgin
-    summary = *signed off*
-    urgency = low
-
-[says]
-    appname = Pidgin
-    summary = *says*
-    urgency = critical
-    format  = "%s "%b""
-
-[music]
-    appname = Amarok
-    summary = "Now playing"
-    urgency = low
-
 #[twitter]
 #    appname = Pidgin
 #    summary = *twitter.com*
