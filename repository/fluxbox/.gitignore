@@ -1,9 +1,5 @@
-.fluxbox/styles/current
-.fluxbox/styles/dynamic
-.fluxbox/fbrun_history
-.fluxbox/lastwallpaper
-.fluxbox/menu
-.fluxbox/overlay
-.fluxbox/slitlist
-.fluxbox/startup
-.fluxbox/windowmenu
+.fluxbox/*
+!.fluxbox/keys
+!.fluxbox/menu
+!.fluxbox/windowmenu
+!.fluxbox/styles/
