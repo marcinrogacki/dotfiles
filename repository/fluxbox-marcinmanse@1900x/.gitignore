@@ -1,0 +1,4 @@
+.fluxbox/*
+!.fluxbox/apps
+!.fluxbox/init
+!.fluxbox/startup
