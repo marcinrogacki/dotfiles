@@ -27,7 +27,7 @@ set backspace=2 " make backspace work like most other apps
 set history=1000
 set wildmode=longest,list,full " Linux like command indent
 " How long text will be with auto formatting via q command
-set textwidth=120
+set textwidth=80
 " Spell checker
 if !&diff
   set spelllang=en
