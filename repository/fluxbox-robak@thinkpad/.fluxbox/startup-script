@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# Urxvt must be executed after the feh. Scripts mimic asynchronous execution,
+# where Fluxbox will start whenever any app here will fail.
+# Also provides some additional actions.
+
+firefox &
+remmina &
+signal-desktop --start-in-tray &
+xrandr --output eDP --brightness 0.4 &
+
+# To enable transparency in urxvt, initiate the wallpaper first and wait for it
+# to complete
+feh --no-fehbg --bg-scale '/home/robak/.fluxbox/styles/llama/wallpaper'
+urxvt &
+
+# Handle Spotify position since Fluxbox has problem to set it properly via apps.
+spotify
+# Wait for Spotify to open
+sleep 5s
+# Send to desktop 2
+wmctrl -r Spotify -t 2 &
+# Maximize the window
+wmctrl -r Spotify -b add,maximized_vert,maximized_horz &

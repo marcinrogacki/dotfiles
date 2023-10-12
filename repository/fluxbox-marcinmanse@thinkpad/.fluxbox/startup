@@ -9,10 +9,7 @@ xmodmap "/home/marcinmanse/.Xmodmap"
 
 # Applications you want to run with fluxbox.
 # MAKE SURE THAT APPS THAT KEEP RUNNING HAVE AN ''&'' AT THE END.
-firefox &
-urxvt &
-authy &
-xrandr --output eDP --brightness 0.4
+~/.fluxbox/startup-script &
 
 # And last but not least we start fluxbox.
 # Because it is the last app you have to run it with ''exec'' before it.
