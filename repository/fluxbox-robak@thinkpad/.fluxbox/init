@@ -1,4 +1,3 @@
-session.screen0.rootCommand:	~/.fehbg
 session.screen0.slit.placement:	RightBottom
 session.screen0.slit.maxOver:	false
 session.screen0.slit.onhead:	0

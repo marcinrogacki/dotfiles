@@ -1,4 +1,3 @@
-session.screen0.rootCommand:	~/.fehbg
 session.screen0.toolbar.alpha:	255
 session.screen0.toolbar.onhead:	1
 session.screen0.toolbar.autoRaise:	false
