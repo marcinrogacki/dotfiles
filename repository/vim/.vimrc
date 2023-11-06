@@ -28,11 +28,17 @@ set history=1000
 set wildmode=longest,list,full " Linux like command indent
 " How long text will be with auto formatting via q command
 set textwidth=80
+" Enable code folding https://vim.fandom.com/wiki/Folding#Syntax_folding
+set foldmethod=syntax
+" By default open all folds
+set foldlevel=99
+
 " Spell checker
 if !&diff
   set spelllang=en
   set spell
 endif
+
 " Set space for custom key mapping
 let mapleader = "\<Space>"
 if !has('nvim')
