@@ -204,6 +204,16 @@ let g:mw_no_mappings = 1
 " keep useful mappings
 nmap <unique> <Leader>m <Plug>MarkSet
 
+"" https://github.com/github/copilot.vim
+" Don't use <Tab> to accept Github copilot suggestion.
+let g:copilot_no_tab_map = v:true
+" Remap keys to use Alt+Key letter
+imap <silent><script><expr> <M-Space> copilot#Accept("")
+imap <M-Backspace> <Plug>(copilot-dismiss)
+imap <M-]> <Plug>(copilot-next)
+imap <M-[> <Plug>(copilot-previous)
+imap <M-\> <Plug>(copilot-suggest)
+
 "" Plugin https://github.com/dense-analysis/ale
 " Usage: Android development, Typescript development
 " Press 'ctrl+]' to jump to function or variable definition
