@@ -32,6 +32,8 @@ set textwidth=80
 set foldmethod=syntax
 " By default open all folds
 set foldlevel=99
+" Fuzzy command-line completion
+set wildoptions+=fuzzy
 
 " Spell checker
 if !&diff
