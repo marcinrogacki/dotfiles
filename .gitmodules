@@ -112,3 +112,6 @@
 [submodule "repository/vim/.vim/bundle/denops-helloworld.vim.git"]
 	path = repository/vim/.vim/bundle/denops-helloworld.vim.git
 	url = git@github.com:vim-denops/denops-helloworld.vim.git
+[submodule "repository/vim/.vim/bundle/coc.nvim"]
+	path = repository/vim/.vim/bundle/coc.nvim
+	url = https://github.com/neoclide/coc.nvim
