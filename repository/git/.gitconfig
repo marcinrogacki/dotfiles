@@ -15,6 +15,7 @@
 [alias]
 	sync = !~/.gitglobal/subcommand/sync
 	hooks = !~/.gitglobal/subcommand/hooks
+	submodulerm = !~/.gitglobal/subcommand/submodulerm
 [diff]
 	tool = nvim -d
 [merge]

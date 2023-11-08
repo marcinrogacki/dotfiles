@@ -1,0 +1,18 @@
+#!/bin/bash
+# get lates branches from upstream and delete localy merged branches
+
+submodule_path="${1%/}"
+
+if [ ! -d "$submodule_path" ]; then
+    >&2 echo "Not existing submodule. Directory does not exists: $submodule_path"
+    exit 1
+fi
+if ! grep -q "$submodule_path" .gitmodules; then
+    >&2 echo "Not a submodule. Directory is not listed in .gitmodules: $submodule_path/.git"
+    exit 1
+fi
+
+
+git rm $submodule_path
+rm -rf .git/modules/$submodule_path
+git config --remove-section submodule.$submodule_path
