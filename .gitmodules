@@ -109,3 +109,6 @@
 [submodule "repository/nvim/.config/nvim/pack/github/start/copilot.vim"]
 	path = repository/nvim/.config/nvim/pack/github/start/copilot.vim
 	url = https://github.com/github/copilot.vim
+[submodule "repository/vim/.vim/bundle/denops-helloworld.vim.git"]
+	path = repository/vim/.vim/bundle/denops-helloworld.vim.git
+	url = git@github.com:vim-denops/denops-helloworld.vim.git
