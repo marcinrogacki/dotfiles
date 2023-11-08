@@ -223,7 +223,7 @@ imap <M-[> <Plug>(copilot-previous)
 imap <M-\> <Plug>(copilot-suggest)
 
 "" Plugin https://github.com/dense-analysis/ale
-" Usage: Android development, Typescript development
+" Tags: Android development, Typescript development
 " Press 'ctrl+]' to jump to function or variable definition
 nmap <C-]> :ALEGoToDefinition<cr>
 " Go to  next lint error
@@ -240,7 +240,7 @@ nmap <leader>r :ALERename<cr>
 let g:airline#extensions#ale#enabled = 1
 
 "" https://github.com/neoclide/coc.nvim
-" Usage: Rust
+" Tags: Rust, autocomplete, inline docs
 " Do "yarn install --frozen-lockfile" in coc.nvim directory. Install node bin.
 " Use tab for trigger completion with characters ahead and navigate
 " NOTE: There's always complete item selected by default, you may want to enable
@@ -265,39 +265,3 @@ if has('nvim')
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
-
-""" https://github.com/Shougo/pum.vim
-"" Usage: Typescript
-"" Use TAB to trigger autocomplete. Highlight searched words in fuzzy
-"" autocomplete.
-"call ddc#custom#patch_global('ui', 'pum')
-"" <TAB>: start completion or go to next item
-"inoremap <silent><expr> <TAB>
-"\ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-"\ '<TAB>' : ddc#map#pum_visible() ?
-"\ pum#map#insert_relative(+1) : ddc#map#manual_complete()
-"" <S-TAB>: completion previous item
-"inoremap <expr><S-TAB> ddc#map#pum_visible() ? pum#map#insert_relative(-1) : '<C-h>'
-"" <C-y>: accept completion item
-"inoremap <C-y>   <Cmd>call pum#map#confirm()<CR> " <C-e>: accept completion item
-"inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
-"inoremap <expr> <C-J> &diff ? ']c' : '<C-W>j'
-
-""" Plugin: https://github.com/tani/ddc-fuzzy
-"" Usage: Typescript
-"" Autocompletion fuzzy matcher
-"call ddc#custom#patch_global('sourceOptions', {
-"\   '_': {
-"\     'matchers': ['matcher_fuzzy'],
-"\     'sorters': ['sorter_fuzzy'],
-"\     'converters': ['converter_fuzzy'],
-"\     'ignoreCase': 'true'
-"\   }
-"\ })
-
-""" Plugin: https://github.com/Shougo/ddc.vim
-"" Usage: Android development, Typescript development
-"" Enable ALE
-"call ddc#custom#patch_global('sources', ['ale'])
-"" Enable plugin. Must be done at the end
-"call ddc#enable()

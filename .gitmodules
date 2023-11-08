@@ -79,39 +79,16 @@
 [submodule "repository/vim/.vim/bundle/ale.git"]
     path = repository/vim/.vim/bundle/ale.git
     url = git@github.com:dense-analysis/ale.git
-[submodule "repository/vim/.vim/bundle/denops.vim.git"]
-    path = repository/vim/.vim/bundle/denops.vim.git
-    url = git@github.com:vim-denops/denops.vim.git
-[submodule "repository/vim/.vim/bundle/ddc.vim.git"]
-    path = repository/vim/.vim/bundle/ddc.vim.git
-    url = git@github.com:Shougo/ddc.vim.git
-    ignore = dirty
 [submodule "repository/vim/.vim/bundle/kotlin-vim.git"]
     path = repository/vim/.vim/bundle/kotlin-vim.git
     url = git@github.com:udalov/kotlin-vim.git
     ignore = dirty
-[submodule "repository/vim/.vim/bundle/ddc-ale.git"]
-    path = repository/vim/.vim/bundle/ddc-ale.git
-    url = git@github.com:statiolake/ddc-ale.git
-    ignore = dirty
-[submodule "repository/vim/.vim/bundle/ddc-fuzzy.git"]
-	path = repository/vim/.vim/bundle/ddc-fuzzy.git
-	url = git@github.com:tani/ddc-fuzzy.git
-[submodule "repository/vim/.vim/bundle/pum.vim.git"]
-	path = repository/vim/.vim/bundle/pum.vim.git
-	url = git@github.com:Shougo/pum.vim.git
 [submodule "repository/vim/.vim/bundle/copilot.vim.git"]
 	path = repository/vim/.vim/bundle/copilot.vim.git
 	url = git@github.com:github/copilot.vim.git
-[submodule "repository/vim/.vim/bundle/ddc-ui-pum.git"]
-	path = repository/vim/.vim/bundle/ddc-ui-pum.git
-	url = git@github.com:Shougo/ddc-ui-pum.git
 [submodule "repository/nvim/.config/nvim/pack/github/start/copilot.vim"]
 	path = repository/nvim/.config/nvim/pack/github/start/copilot.vim
 	url = https://github.com/github/copilot.vim
-[submodule "repository/vim/.vim/bundle/denops-helloworld.vim.git"]
-	path = repository/vim/.vim/bundle/denops-helloworld.vim.git
-	url = git@github.com:vim-denops/denops-helloworld.vim.git
 [submodule "repository/vim/.vim/bundle/coc.nvim"]
 	path = repository/vim/.vim/bundle/coc.nvim
 	url = https://github.com/neoclide/coc.nvim
