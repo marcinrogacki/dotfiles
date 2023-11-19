@@ -1,1 +1,1 @@
-cbatticon &
+cbatticon -n &
