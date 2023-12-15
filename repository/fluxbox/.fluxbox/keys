@@ -2,9 +2,9 @@
 OnDesktop Mouse1 :HideMenus
 OnDesktop Mouse3 :RootMenu
 
-# Alt+Win left/right click to move/resize a window
-OnWindow Mod1 Mod4 Mouse1 :MacroCmd {Raise} {Focus} {StartMoving}
-OnWindow Mod1 Mod4 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing NearestCorner}
+# Control+Alt left/right click to move/resize a window
+OnWindow Control Mod1 Mouse1 :MacroCmd {Raise} {Focus} {StartMoving}
+OnWindow Control Mod1 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing NearestCorner}
 
 # Resize window borders
 OnWindowBorder Move1 :StartMoving
@@ -39,7 +39,7 @@ Mod1 F12 :Exec import ~/Pictures/screen-shot-`date +%s`.jpg
 F8 :Exec bash ~/.slash/bin/poemapsclicker.sh 1
 F9 :Exec bash ~/.slash/bin/poemapsclicker.sh 2
 
-# Win+"=/-" Display brightness. If these don't work, use xev to find out your real keycodes
+# Win+"=/-" Display brightness. If these don't work, use xev to find out your real keycodeMarcin Kowalewski and yous
 Mod4 21 :Exec ~/.slash/bin/dbright + 0.01
 Mod4 20 :Exec ~/.slash/bin/dbright - 0.01
 
