@@ -45,7 +45,7 @@ session.screen0.focusModel:	ClickFocus
 session.screen0.showwindowposition:	false
 session.screen0.opaqueResize:	false
 session.screen0.strftimeFormat:	%d/%m/%y %k:%M
-session.screen0.workspaceNames:	browser,terminal,background,remote,
+session.screen0.workspaceNames: browser,terminal,background,remote,dev,works,review,PROD
 session.screen0.tabFocusModel:	ClickToTabFocus
 session.screen0.allowRemoteActions:	false
 session.screen0.edgeSnapThreshold:	10

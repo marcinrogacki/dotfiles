@@ -58,9 +58,17 @@ Control Mod1 Right :Workspace 1
 Control Mod1 Left :Workspace 2
 Control Mod1 Up :Workspace 3
 Control Mod1 Down :Workspace 4
+Control Mod1 0 :Workspace 5
+Control Mod1 9 :Workspace 6
+Control Mod1 8 :Workspace 7
+Control Mod1 7 :Workspace 8
 
 # send the current window and follow it to previous/next workspace
 Control Mod1 Shift Right :TakeToWorkspace 1
 Control Mod1 Shift Left :TakeToWorkspace 2
 Control Mod1 Shift Up :TakeToWorkspace 3
 Control Mod1 Shift Down :TakeToWorkspace 4
+Control Mod1 Shift 0 :TakeToWorkspace 5
+Control Mod1 Shift 9 :TakeToWorkspace 6
+Control Mod1 Shift 8 :TakeToWorkspace 7
+Control Mod1 Shift 7 :TakeToWorkspace 8
