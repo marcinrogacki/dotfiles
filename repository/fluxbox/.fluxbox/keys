@@ -2,58 +2,58 @@
 OnDesktop Mouse1 :HideMenus
 OnDesktop Mouse3 :RootMenu
 
-# Control+Alt left/right click to move/resize a window
-OnWindow Control Mod1 Mouse1 :MacroCmd {Raise} {Focus} {StartMoving}
-OnWindow Control Mod1 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing NearestCorner}
-
 # Resize window borders
 OnWindowBorder Move1 :StartMoving
 OnLeftGrip Move1 :StartResizing bottomleft
 OnRightGrip Move1 :StartResizing bottomright
 
-# left click on the titlebar to move the window
+# Mouse Left: click on the titlebar to move the window
 OnTitlebar Mouse1 :MacroCmd {Raise} {Focus} {ActivateTab}
 OnTitlebar Move1  :StartMoving
 
-# right click on the titlebar for a menu of options
+# Right click on the titlebar for a menu of options
 OnTitlebar Mouse3 :WindowMenu
 
-# alt-tab
+# Alt+Tab
 Mod1 Tab :NextWindow {groups} (workspace=[current])
 Mod1 Shift Tab :PrevWindow {groups} (workspace=[current]i)
 
-# lock screen
+# Win+L: Lock screen
 Mod4 L :Exec xscreensaver-command --lock
 
-# open a terminal
+# Alt+F1: Open terminal
 Mod1 F1 :Exec urxvt
 
-# open a dialog to run programs
+# Alt+F2: Open a dialog to run programs
 Mod1 F2 :Exec fbrun
 
-# Screen shot / Print screen
+# Alt+F12: Screen shot / Print screen
 Mod1 F12 :Exec import ~/Pictures/screen-shot-`date +%s`.jpg
-# Mod1 F12 :Exec fbrun
 
 # POE
 F8 :Exec bash ~/.slash/bin/poemapsclicker.sh 1
 F9 :Exec bash ~/.slash/bin/poemapsclicker.sh 2
 
-# Win+"=/-" Display brightness. If these don't work, use xev to find out your real keycodeMarcin Kowalewski and yous
+# Win+"=/-": Display brightness. If not work - use xev to find correct keycodes.
 Mod4 21 :Exec ~/.slash/bin/dbright + 0.01
 Mod4 20 :Exec ~/.slash/bin/dbright - 0.01
 
-# current window commands
+# Alt+*: Current window commands
 Mod1 F4 :Close
 Mod1 F5 :Kill
 Mod1 F9 :Minimize
 Mod1 F10 :Maximize
 Mod1 F11 :Fullscreen
 
+# Control+Alt+Del/Backspace: Fluxbox Exit/Restart
 Control Mod1 Delete :Exit
 Control Mod1 Backspace:Restart
 
-# change to previous/next workspace
+# Control+Alt Mouse Left/Right: click to move/resize a window
+OnWindow Control Mod1 Mouse1 :MacroCmd {Raise} {Focus} {StartMoving}
+OnWindow Control Mod1 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing NearestCorner}
+
+# Control+Alt+*: Change to previous/next workspace
 Control Mod1 Right :Workspace 1
 Control Mod1 Left :Workspace 2
 Control Mod1 Up :Workspace 3
@@ -63,12 +63,12 @@ Control Mod1 9 :Workspace 6
 Control Mod1 8 :Workspace 7
 Control Mod1 7 :Workspace 8
 
-# send the current window and follow it to previous/next workspace
-Control Mod1 Shift Right :TakeToWorkspace 1
-Control Mod1 Shift Left :TakeToWorkspace 2
-Control Mod1 Shift Up :TakeToWorkspace 3
-Control Mod1 Shift Down :TakeToWorkspace 4
-Control Mod1 Shift 0 :TakeToWorkspace 5
-Control Mod1 Shift 9 :TakeToWorkspace 6
-Control Mod1 Shift 8 :TakeToWorkspace 7
-Control Mod1 Shift 7 :TakeToWorkspace 8
+# Control+Shift+Alt+*: Send the current window and follow it to previous/next workspace
+Control Shift Mod1 Right :TakeToWorkspace 1
+Control Shift Mod1 Left :TakeToWorkspace 2
+Control Shift Mod1 Up :TakeToWorkspace 3
+Control Shift Mod1 Down :TakeToWorkspace 4
+Control Shift Mod1 0 :TakeToWorkspace 5
+Control Shift Mod1 9 :TakeToWorkspace 6
+Control Shift Mod1 8 :TakeToWorkspace 7
+Control Shift Mod1 7 :TakeToWorkspace 8
