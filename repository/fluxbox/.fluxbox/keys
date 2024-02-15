@@ -61,7 +61,7 @@ Control Mod1 Down :Workspace 4
 Control Mod1 0 :Workspace 5
 Control Mod1 9 :Workspace 6
 Control Mod1 8 :Workspace 7
-Control Mod1 7 :Workspace 8
+Control Mod1 p :Workspace 8
 
 # Control+Shift+Alt+*: Send the current window and follow it to previous/next workspace
 Control Shift Mod1 Right :TakeToWorkspace 1
@@ -71,4 +71,4 @@ Control Shift Mod1 Down :TakeToWorkspace 4
 Control Shift Mod1 0 :TakeToWorkspace 5
 Control Shift Mod1 9 :TakeToWorkspace 6
 Control Shift Mod1 8 :TakeToWorkspace 7
-Control Shift Mod1 7 :TakeToWorkspace 8
+Control Shift Mod1 p :TakeToWorkspace 8
