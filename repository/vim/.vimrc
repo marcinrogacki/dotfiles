@@ -278,3 +278,12 @@ if has('nvim')
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
+
+"" https://github.com/tveskag/nvim-blame-line
+" Tags: Git
+" Show git blame for given line
+nnoremap <silent> <leader>g :ToggleBlameLine<CR>
+" Show blame info below the statusline instead of using virtual text
+let g:blameLineUseVirtualText = 0
+" Format: ISO date, author name, commit hash, commit message
+let g:blameLineGitFormat = '%aI %an %h %s'

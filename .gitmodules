@@ -92,3 +92,6 @@
 [submodule "repository/vim/.vim/bundle/coc.nvim"]
 	path = repository/vim/.vim/bundle/coc.nvim
 	url = https://github.com/neoclide/coc.nvim
+[submodule "repository/vim/.vim/bundle/nvim-blame-line.git"]
+	path = repository/vim/.vim/bundle/nvim-blame-line.git
+	url = git@github.com:tveskag/nvim-blame-line.git
