@@ -10,6 +10,9 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+" Use space for custom key mapping
+let mapleader = "\<Space>"
+
 " always highlight search
 set hls
 " do not jump to top when searched the last word
@@ -41,23 +44,10 @@ if !&diff
   set spell
 endif
 
-" Set space for custom key mapping
-let mapleader = "\<Space>"
-if !has('nvim')
-    " Autocomplete window behaviour:
-    " * popup - display floating window (balloon)
-    set completeopt=menu,menuone,popup
-else
-    set completeopt=menu,menuone
-endif
-
+set completeopt=menu,menuone
 
 " Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if !has('nvim')
-    " Color pallate
-    set term=screen-256color
-endif
 set background=dark
 " Show file line numbers
 set number
@@ -71,7 +61,7 @@ set cursorline
 hi CursorLine ctermbg=17
 hi CursorLine cterm=none
 " Draws vertical line mark on current cursor position to easier track long text
-set cursorcolumn " enable
+set cursorcolumn
 " Color of the vertical line mark
 hi CursorColumn ctermbg=17
 
@@ -100,10 +90,6 @@ hi Search cterm=none ctermfg=52 ctermbg=3
 " Popup window color
 hi Pmenu ctermbg=151 guibg=gray
 hi PmenuSel ctermbg=8 ctermfg=2
-if !has('nvim')
-    " Set documentation popup at same hight (menu) as completion popup
-    set completepopup=align:menu,border:on,highlight:PmenuSel
-endif
 
 "" Vimdiff better color palette
 highlight DiffAdd cterm=none ctermfg=darkgreen ctermbg=none
@@ -273,11 +259,7 @@ function! CheckBackspace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 " Use <c-space> to trigger completion
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
+inoremap <silent><expr> <c-space> coc#refresh()
 
 "" https://github.com/tveskag/nvim-blame-line
 " Tags: Git
