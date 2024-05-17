@@ -48,6 +48,7 @@ set completeopt=menu,menuone
 
 " Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+colorscheme solarized
 set background=dark
 " Show file line numbers
 set number
