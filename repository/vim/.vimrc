@@ -30,7 +30,7 @@ set backspace=2 " make backspace work like most other apps
 set history=1000
 set wildmode=longest,list,full " Linux like command indent
 " How long text will be with auto formatting via q command
-set textwidth=80
+set textwidth=120
 " Enable code folding https://vim.fandom.com/wiki/Folding#Syntax_folding
 set foldmethod=syntax
 " By default open all folds
