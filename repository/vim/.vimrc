@@ -48,7 +48,6 @@ set completeopt=menu,menuone
 
 " Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set background=dark
 " Show file line numbers
 set number
 " Cursor shows file current line, remaining are relative to it, e.g: 3 2 1 99 1 2 3
@@ -269,3 +268,18 @@ nnoremap <silent> <leader>g :ToggleBlameLine<CR>
 let g:blameLineUseVirtualText = 0
 " Format: ISO date, author name, commit hash, commit message
 let g:blameLineGitFormat = '%aI %an %h %s'
+
+"" https://github.com/altercation/vim-colors-solarized?tab=readme-ov-file
+" Monotones colorscheme
+" Tags: vim
+" Notes: Apply also Solarized color theme for terminal via .Xresources
+" Dark theme
+set background=dark
+" Hight contrast for comments since they are less visible
+let g:solarized_contrast="high"
+" Darker and nicer looking background (does not look like original Soralized)
+let g:solarized_termcolors=256
+" Enable transparent background for urxvt
+let g:solarized_termtrans=1
+" enable, must be done last otherwise background is not transparent
+colorscheme solarized
