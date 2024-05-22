@@ -52,20 +52,12 @@ set completeopt=menu,menuone
 set number
 " Cursor shows file current line, remaining are relative to it, e.g: 3 2 1 99 1 2 3
 set relativenumber
-
 "" Line markers
 " Draws horizontal line mark on current cursor position to easier track long text
 set cursorline
-" Color of the horizontal line mark
-hi CursorLine ctermbg=17
-hi CursorLine cterm=none
 " Draws vertical line mark on current cursor position to easier track long text
 set cursorcolumn
-" Color of the vertical line mark
-hi CursorColumn ctermbg=17
-
-"" File margins
-" Show where are 80 and 120+ column of file.
+" File margins. Show where are 80 and 120+ column of file.
 function! ToggleFileMarginsIndicator()
 	if &colorcolumn
 		setlocal colorcolumn=""
@@ -75,20 +67,8 @@ function! ToggleFileMarginsIndicator()
 endfu
 " define shortcut for toggle collorcolumn
 command! ToggleFileMarginsIndicator call ToggleFileMarginsIndicator()
-" set nice colorcolumn color
-hi ColorColumn ctermbg=235
 " show colorcolumn at the startup (by exec function)
 autocmd VimEnter * call ToggleFileMarginsIndicator()
-
-" Spell checker wrong word highlighting color
-hi SpellBad ctermbg=88
-
-" Search highlight color
-hi Search cterm=none ctermfg=52 ctermbg=3
-
-" Popup window color
-hi Pmenu ctermbg=151 guibg=gray
-hi PmenuSel ctermbg=8 ctermfg=2
 
 "" Vimdiff better color palette
 highlight DiffAdd cterm=none ctermfg=darkgreen ctermbg=none
