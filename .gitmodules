@@ -95,9 +95,3 @@
 [submodule "repository/vim/.vim/bundle/nvim-blame-line.git"]
 	path = repository/vim/.vim/bundle/nvim-blame-line.git
 	url = git@github.com:tveskag/nvim-blame-line.git
-[submodule "repository/vim/.vim/bundle/nvim-treesitter.git"]
-	path = repository/vim/.vim/bundle/nvim-treesitter.git
-	url = git@github.com:nvim-treesitter/nvim-treesitter.git
-[submodule "repository/vim/.vim/bundle/solarized.nvim.git"]
-	path = repository/vim/.vim/bundle/solarized.nvim.git
-	url = git@github.com:maxmx03/solarized.nvim.git
