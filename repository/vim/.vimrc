@@ -263,3 +263,7 @@ let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 " enable, must be done last otherwise background is not transparent
 colorscheme solarized
+
+"" Plugin https://github.com/neovim/nvim-lspconfig (main configuration in neovim)
+" Toggle inlay hints
+nnoremap <silent> <leader>i :ToggleInlayHints<CR>
