@@ -95,9 +95,6 @@
 [submodule "repository/vim/.vim/bundle/nvim-blame-line.git"]
 	path = repository/vim/.vim/bundle/nvim-blame-line.git
 	url = git@github.com:tveskag/nvim-blame-line.git
-[submodule "repository/vim/.vim/bundle/vim-colors-solarized.git"]
-	path = repository/vim/.vim/bundle/vim-colors-solarized.git
-	url = git@github.com:altercation/vim-colors-solarized.git
 [submodule "repository/nvim/.config/nvim/pack/nvim/start/nvim-lspconfig.git"]
 	path = repository/nvim/.config/nvim/pack/nvim/start/nvim-lspconfig.git
 	url = git@github.com:neovim/nvim-lspconfig.git
