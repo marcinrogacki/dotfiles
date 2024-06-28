@@ -8,7 +8,15 @@ vim.opt.packpath = vim.opt.runtimepath:get()
 -- Source the .vimrc file
 vim.cmd("source ~/.vimrc")
 
--- --- Plugin https://github.com/neovim/nvim-lspconfig
+-- Plugin: https://github.com/morhetz/gruvbox
+-- Tags: appearance
+-- Reason: Set the colorscheme
+vim.cmd("autocmd vimenter * ++nested colorscheme gruvbox")
+vim.g.gruvbox_transparent_bg = 1
+-- Fix transparent background https://github.com/morhetz/gruvbox/issues/375
+vim.cmd("autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE")
+
+-- -- Plugin https://github.com/neovim/nvim-lspconfig
 -- -- Tags: typescript
 -- -- Reason: Enable inlay feature
 -- -- Used by: coc.nvim

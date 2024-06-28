@@ -98,3 +98,6 @@
 [submodule "repository/nvim/.config/nvim/pack/nvim/start/nvim-lspconfig.git"]
 	path = repository/nvim/.config/nvim/pack/nvim/start/nvim-lspconfig.git
 	url = git@github.com:neovim/nvim-lspconfig.git
+[submodule "repository/nvim/.config/nvim/pack/nvim/start/gruvbox.git"]
+	path = repository/nvim/.config/nvim/pack/nvim/start/gruvbox.git
+	url = https://github.com/morhetz/gruvbox.git

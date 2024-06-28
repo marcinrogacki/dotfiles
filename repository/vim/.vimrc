@@ -126,7 +126,7 @@ nmap <leader>b :TagbarOpenAutoClose<cr>
 "" vim-airline.git
 set laststatus=2
 let g:airline_powerline_fonts = 0
-let g:airline_theme='papercolor'
+let g:airline_theme='gruvbox'
 " Extension slows greatly the vim on large files
 let g:airline#extensions#tagbar#enabled = 0
 
