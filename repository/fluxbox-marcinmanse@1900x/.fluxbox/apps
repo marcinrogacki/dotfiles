@@ -8,9 +8,6 @@
   [Workspace] {1}
   [Maximized] {yes}
 [end]
-[app] (name=authy desktop) {1}
-  [Workspace] {4}
-[end]
 [app] (name=fbrun)
   [Position]	(CENTER)	{0 0}
   [Layer]	{2}
