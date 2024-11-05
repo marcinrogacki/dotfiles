@@ -1,5 +1,6 @@
-new-session -s 3_project -n vim -c $project 
+new-session -s 3_project -n vim -c $project
 new-window -n console -c $project
-new-window -n tests -c $project 
-new-window -n deploy -c $project 
+new-window -n tests -c $project
+new-window -n deploy -c $project
+new-window -n logs -c $project
 select-window -t console

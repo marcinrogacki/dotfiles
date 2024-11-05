@@ -190,6 +190,7 @@ let g:vim_markdown_folding_disabled = 1
 let g:mw_no_mappings = 1
 " keep useful mappings
 nmap <unique> <Leader>m <Plug>MarkSet
+vmap <unique> <Leader>m <Plug>MarkSet
 
 "" https://github.com/github/copilot.vim
 " Don't use <Tab> to accept Github copilot suggestion.

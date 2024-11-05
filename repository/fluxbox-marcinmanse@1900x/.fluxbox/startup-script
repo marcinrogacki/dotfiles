@@ -4,9 +4,9 @@
 # where Fluxbox will start whenever any app here will fail.
 
 firefox &
-authy &
+1password --silent &
 
 # To enable transparency in urxvt, initiate the wallpaper first and wait for it
 # to complete
-feh --no-fehbg --bg-scale '/home/robak/.fluxbox/styles/llama/wallpaper'
+feh --no-fehbg --bg-scale '/home/marcinmanse/.fluxbox/styles/toxic-flowers/wallpaper'
 urxvt &
