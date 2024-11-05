@@ -27,4 +27,4 @@ if [[ ! -f  "$sound_file" ]]; then
     exit
 fi
 
-play $sound_file 2>/dev/null
+play $sound_file 2>/dev/null &
