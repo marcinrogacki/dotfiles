@@ -97,6 +97,51 @@ map <C-s> :w <Enter>
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
+" Close all tabs
+function! CloseAllTabs()
+  " Close all tabs one by one
+  while tabpagenr('$') > 1
+    execute 'tabclose'
+  endwhile
+  " Close last tab and by making it empty
+  execute 'enew'
+endfunction
+command! GitTabs call OpenGitEditedFilesInTabs()
+
+" Opens git files. Close current tabs.
+" Usage:
+" GitTab - opens new and edited files listed by git status
+" GitTab HEAD^..HEAD - opens files listed between given revision or commits
+function! OpenGitFilesInTabs(diff_range)
+  " First close all tabs
+  call CloseAllTabs()
+
+  if a:diff_range == ""
+    " Default to current changes (git status)
+    let files = systemlist("git status --short | awk '$1 ~ /^M|A|U|??/ {print $2}'")
+  else
+    " Use the provided argument as a git diff range
+    let files = systemlist("git diff --name-only " . a:diff_range)
+  endif
+
+   " Filter out non-existent files
+  let valid_files = filter(files, 'filereadable(v:val)')
+
+  if len(valid_files) > 0
+    if bufname('') == '' && line('$') == 1 && line('.') == 1
+      " If the current buffer is empty, edit the first valid file here
+      execute 'edit ' . remove(valid_files, 0)
+    endif
+    " Open remaining valid files in new tabs
+    for file in valid_files
+      execute 'tabedit ' . file
+    endfor
+  else
+    echo "No valid files found for the specified range."
+  endif
+endfunction
+command! -nargs=? GitTabs call OpenGitFilesInTabs(<q-args>)
+
 " Language specifics
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
