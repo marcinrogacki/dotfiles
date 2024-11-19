@@ -16,7 +16,6 @@
 	sync = !~/.gitglobal/subcommand/sync
 	hooks = !~/.gitglobal/subcommand/hooks
 	submodulerm = !~/.gitglobal/subcommand/submodulerm
-    nvim = !$EDITOR -p $(git status --short | awk '$1 ~ /^M|A|U/ {print $2}')
 [diff]
 	tool = nvim -d
 [merge]
