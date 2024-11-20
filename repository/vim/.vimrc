@@ -110,9 +110,9 @@ command! CloseAllTabs call CloseAllTabs()
 
 " Opens git files. Close current tabs.
 " Usage:
-" OpenGitFilesInTabs - opens new and edited files listed by git status
-" OpenGitFilesInTabs HEAD^..HEAD - opens files listed between given revision or commits
-function! OpenGitFilesInTabs(diff_range)
+" GitOpenChanges - opens new and edited files listed by git status
+" GitOpenChanges HEAD^..HEAD - opens files listed between given revision or commits
+function! GitOpenChanges(diff_range)
   " First close all tabs
   call CloseAllTabs()
 
@@ -140,7 +140,52 @@ function! OpenGitFilesInTabs(diff_range)
     echo "No valid files found for the specified range."
   endif
 endfunction
-command! -nargs=? OpenGitFilesInTabs call OpenGitFilesInTabs(<q-args>)
+command! -nargs=? GitOpenChanges call GitOpenChanges(<q-args>)
+
+" Open the current file in GitHub page.
+" File is opened with blame view on current cursor line number in the default browser.
+function! GitOpenFileInBrowser()
+  " Check if a file is open
+  if expand('%') == '' || !filereadable(expand('%'))
+    echo "No file is open or the file does not exist."
+    return
+  endif
+
+  " Get the current file path relative to the Git repository root
+  let l:git_root = system('git rev-parse --show-toplevel')
+  let l:git_root = substitute(l:git_root, '\n$', '', '') " Remove newline
+
+  if v:shell_error
+    echo "Not a Git repository"
+    return
+  endif
+
+  let l:file_path = expand('%')
+  let l:relative_path = substitute(l:file_path, l:git_root . '/', '', '')
+
+  " Get the remote URL
+  let l:remote_url = system('git remote get-url upstream')
+  let l:remote_url = substitute(l:remote_url, '\n$', '', '') " Remove newline
+
+  " Transform the remote URL to a GitHub HTTPS URL
+  if l:remote_url =~ 'git@'
+    " git@github.com:Royaltiz/platform.git => git@github.com/Royaltiz/platform.git
+    let l:remote_url = substitute(l:remote_url, ':', '/', '')
+    " git@github.com/Royaltiz/platform.git => https://github.com/Royaltiz/platform.git
+    let l:remote_url = substitute(l:remote_url, 'git@', 'https://', '')
+  endif
+    " https://github.com/Royaltiz/platform.git => https://github.com/Royaltiz/platform
+  let l:remote_url = substitute(l:remote_url, '.git$', '', '') " Remove .git suffix
+
+  " Construct the GitHub URL
+  let l:line_number = line('.')
+  let l:url = l:remote_url . '/blame/master/' . l:relative_path . '\#L' . l:line_number
+
+  " Open the URL in the default browser
+  silent execute '!xdg-open ' . l:url
+endfunction
+
+command! GitOpenFileInBrowser call GitOpenFileInBrowser()
 
 
 " Language specifics
