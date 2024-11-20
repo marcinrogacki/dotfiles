@@ -91,6 +91,9 @@ nmap =json :%!python -m json.tool<CR>
 "" [o]pposite [d]elete in (v)isual mode
 vmap od ygg"_dGP
 
+command! CopyFileRelativePath let @+ = expand('%')
+nmap <leader>cf :CopyFileRelativePath<cr>
+
 " What is it?
 filetype on
 map <C-s> :w <Enter>
@@ -184,9 +187,7 @@ function! GitOpenFileInBrowser()
   " Open the URL in the default browser
   silent execute '!xdg-open ' . l:url
 endfunction
-
 command! GitOpenFileInBrowser call GitOpenFileInBrowser()
-
 
 " Language specifics
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
