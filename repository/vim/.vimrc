@@ -106,12 +106,12 @@ function! CloseAllTabs()
   " Close last tab and by making it empty
   execute 'enew'
 endfunction
-command! GitTabs call OpenGitEditedFilesInTabs()
+command! CloseAllTabs call CloseAllTabs()
 
 " Opens git files. Close current tabs.
 " Usage:
-" GitTab - opens new and edited files listed by git status
-" GitTab HEAD^..HEAD - opens files listed between given revision or commits
+" OpenGitFilesInTabs - opens new and edited files listed by git status
+" OpenGitFilesInTabs HEAD^..HEAD - opens files listed between given revision or commits
 function! OpenGitFilesInTabs(diff_range)
   " First close all tabs
   call CloseAllTabs()
@@ -140,7 +140,8 @@ function! OpenGitFilesInTabs(diff_range)
     echo "No valid files found for the specified range."
   endif
 endfunction
-command! -nargs=? GitTabs call OpenGitFilesInTabs(<q-args>)
+command! -nargs=? OpenGitFilesInTabs call OpenGitFilesInTabs(<q-args>)
+
 
 " Language specifics
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
