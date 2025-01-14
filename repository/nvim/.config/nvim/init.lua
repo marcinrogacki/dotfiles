@@ -16,6 +16,16 @@ vim.g.gruvbox_transparent_bg = 1
 -- Fix transparent background https://github.com/morhetz/gruvbox/issues/375
 vim.cmd("autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE")
 
+-- Plugin https://github.com/CopilotC-Nvim/CopilotChat.nvim
+-- Tags: git
+-- Reason: Enable Github Copilot chat
+-- Requirements:
+-- * https://github.com/nvim-lua/plenary.nvim (for curl, log and async functions)
+-- * https://aur.archlinux.org/packages/lua51-tiktoken-bin
+require("CopilotChat").setup {
+    -- Nothing to configure yet, just enable it
+}
+
 -- -- Plugin https://github.com/neovim/nvim-lspconfig
 -- -- Tags: typescript
 -- -- Reason: Enable inlay feature

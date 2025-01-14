@@ -101,3 +101,9 @@
 [submodule "repository/nvim/.config/nvim/pack/nvim/start/gruvbox.git"]
 	path = repository/nvim/.config/nvim/pack/nvim/start/gruvbox.git
 	url = https://github.com/morhetz/gruvbox.git
+[submodule "repository/nvim/.config/nvim/pack/github/start/CopilotChat.nvim"]
+	path = repository/nvim/.config/nvim/pack/github/start/CopilotChat.nvim
+	url = git@github.com:CopilotC-Nvim/CopilotChat.nvim.git
+[submodule "repository/nvim/.config/nvim/pack/github/start/plenary.nvim.git"]
+	path = repository/nvim/.config/nvim/pack/github/start/plenary.nvim.git
+	url = git@github.com:nvim-lua/plenary.nvim.git
