@@ -11,9 +11,6 @@
     path = repository/vim/.vim/bundle/vim-l9.git
     url = https://github.com/git-mirror/vim-l9.git
     ignore = dirty
-[submodule "repository/vim/.vim/bundle/nerdtree.git"]
-    path = repository/vim/.vim/bundle/nerdtree.git
-    url = https://github.com/scrooloose/nerdtree.git
 [submodule "repository/vim/.vim/bundle/vim-unimpaired.git"]
     path = repository/vim/.vim/bundle/vim-unimpaired.git
     url = https://github.com/tpope/vim-unimpaired.git
@@ -107,3 +104,6 @@
 [submodule "repository/nvim/.config/nvim/pack/github/start/plenary.nvim.git"]
 	path = repository/nvim/.config/nvim/pack/github/start/plenary.nvim.git
 	url = git@github.com:nvim-lua/plenary.nvim.git
+[submodule "repository/nvim/.config/nvim/pack/github/start/nvim-tree.lua"]
+	path = repository/nvim/.config/nvim/pack/github/start/nvim-tree.lua
+	url = https://github.com/nvim-tree/nvim-tree.lua/

@@ -199,19 +199,6 @@ autocmd FileType graphql setlocal shiftwidth=2 softtabstop=2
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"" nerdtree.git
-nmap <leader>t :NERDTreeFind<cr>
-let NERDTreeShowHidden=1
-" scroll horizontally by small amount of text char instead of half of page
-" (usefull for NERDTree)
-set sidescroll=1
-" enable line numbers
-let NERDTreeShowLineNumbers=1
-" make sure relative line numbers are used
-autocmd FileType nerdtree setlocal relativenumber
-" Don't show those files
-let NERDTreeIgnore = ['\.js$' , '\.d.ts$']
-
 "" tagbar.git
 nmap <leader>b :TagbarOpenAutoClose<cr>
 

@@ -8,6 +8,57 @@ vim.opt.packpath = vim.opt.runtimepath:get()
 -- Source the .vimrc file
 vim.cmd("source ~/.vimrc")
 
+--- Plugin: https://github.com/nvim-tree/nvim-tree.lua
+--- Reason: Supports ignoring files and directories defined in .gitignore
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+-- optionally enable 24-bit colour
+vim.opt.termguicolors = true
+-- OR setup with some options
+require("nvim-tree").setup({
+  sort = {
+    sorter = "case_sensitive",
+  },
+  view = {
+    width = 50,
+  },
+  renderer = {
+    group_empty = false,
+    icons = {
+      glyphs = {
+        default = "", -- Normal files
+        symlink = "",
+        folder = {
+          arrow_closed = ">",
+          arrow_open = "v",
+          default = "",
+          open = "",
+          empty = "",
+          empty_open = "",
+          symlink = "",
+          symlink_open = "",
+        },
+        git = {
+          unstaged = "!",
+          staged = "+",
+          unmerged = "✗",
+          renamed = "»",
+          deleted = "-",
+          untracked = "?",
+          ignored = "x"
+        }
+      },
+    }
+  },
+  update_focused_file = {
+    enable = true,
+    update_cwd = true,
+  },
+})
+-- Open current file in NvimTree
+vim.keymap.set("n", "<leader>t", ":NvimTreeFindFileToggle<CR>", { noremap = true, silent = true })
+
 -- Plugin: https://github.com/morhetz/gruvbox
 -- Tags: appearance
 -- Reason: Set the colorscheme
