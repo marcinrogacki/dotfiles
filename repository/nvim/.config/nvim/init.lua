@@ -17,44 +17,50 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 -- OR setup with some options
 require("nvim-tree").setup({
-  sort = {
-    sorter = "case_sensitive",
-  },
-  view = {
-    width = 50,
-  },
-  renderer = {
-    group_empty = false,
-    icons = {
-      glyphs = {
-        default = "", -- Normal files
-        symlink = "",
-        folder = {
-          arrow_closed = ">",
-          arrow_open = "v",
-          default = "",
-          open = "",
-          empty = "",
-          empty_open = "",
-          symlink = "",
-          symlink_open = "",
+    sort = {
+        sorter = "case_sensitive",
+    },
+    view = {
+        width = 50,
+    },
+    renderer = {
+        group_empty = true,
+        icons = {
+            git_placement = "after",
+            glyphs = {
+                default = "", -- Normal files
+                symlink = "",
+                folder = {
+                    arrow_closed = ">",
+                    arrow_open = "v",
+                    default = "",
+                    open = "",
+                    empty = "",
+                    empty_open = "",
+                    symlink = "",
+                    symlink_open = "",
+                },
+                git = {
+                    unstaged = "!",
+                    staged = "+",
+                    unmerged = "✗",
+                    renamed = "»",
+                    deleted = "-",
+                    untracked = "?",
+                    ignored = "x"
+                }
+            },
         },
-        git = {
-          unstaged = "!",
-          staged = "+",
-          unmerged = "✗",
-          renamed = "»",
-          deleted = "-",
-          untracked = "?",
-          ignored = "x"
-        }
-      },
+
+    },
+    actions = {
+        open_file = {
+            window_picker = {
+                -- Change from ABC. Used to pick a window from several opened already when opening a file.
+                chars = "123456789",
+            },
+        },
     }
-  },
-  update_focused_file = {
-    enable = true,
-    update_cwd = true,
-  },
 })
 -- Open current file in NvimTree
 vim.keymap.set("n", "<leader>t", ":NvimTreeFindFileToggle<CR>", { noremap = true, silent = true })
