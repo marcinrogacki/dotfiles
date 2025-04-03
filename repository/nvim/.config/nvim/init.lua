@@ -23,6 +23,13 @@ require("nvim-tree").setup({
     view = {
         width = 50,
     },
+    filters = {
+        git_ignored = true,
+        -- Always show those files even when defined in .gitignore
+        exclude = {
+            ".env"
+        },
+    },
     renderer = {
         group_empty = true,
         icons = {
