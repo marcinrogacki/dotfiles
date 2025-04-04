@@ -27,7 +27,8 @@ require("nvim-tree").setup({
         git_ignored = true,
         -- Always show those files even when defined in .gitignore
         exclude = {
-            ".env"
+            ".env",
+            ".roy"
         },
     },
     renderer = {
