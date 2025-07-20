@@ -2,51 +2,42 @@
 #
 display_usage() {
 cat << USAGE
-Usage: `basename $0` [SIGN] [VALUE] <PARAM>
+Usage: $(basename "$0") [SIGN] [VALUE] <PARAM>
 
-Increases or decreases display brightness by fiven VALUE
-
-SIGN
-    EIther "+" or "-". A program partial or full name.
+Increases or decreases display brightness by given VALUE using brightnessctl
 
 VALUE
-    A decimal value by which display brightness will be changed.
+    A decimal value (percentage) by which display brightness will be changed e.g. +10% or 5%-.
 
 PARAM
     -h|--help       display this message
 
 Examples
-    `basename $0` + 0.01
-    `basename $0` - 0.01
+    $(basename "$0") +10%
+    $(basename "$0") 5%-
 
 USAGE
 }
 
 for arg in "$@"; do
-    if [ "$arg" = "-h" -o "$arg" = "--help" ]; then
+    if [ "$arg" = "-h" ] || [ "$arg" = "--help" ]; then
         display_usage
-        exit
+        exit 0
     fi
 done
 
-sign="$1"
-value="$2"
-if [[ $sign != "+" &&  $sign != "-" ]]; then
-    >&2 echo "Invalid sign param. Either + or - accepted. Given: $sign"
-    exit 1
-fi
-if [[ ! "$value" =~ ^[0-9]+(\.[0-9]+)?$ ]]; then
-    >&2 echo "Invalid value param. Expected decimal value. Given: $value"
+value="$1"
+
+# Check if value is a number (integer or decimal)
+if ! echo "$value" | grep -Eq '^[+-]?[0-9]+%?$|^[0-9]+%?[+-]$'; then
+    >&2 echo "Invalid value param. Expected decimal or integer. Given: $value"
+    notify-send -r 999999999 "Invalid value param. Expected decimal or integer. Given: $value"
     exit 1
 fi
 
-current_brightness=`xrandr --verbose | grep Brightness | awk '{print $2}'`
-primary_display=`xrandr | grep 'connected primary' | awk '{print $1}'`
-if [ $sign == "+" ]; then
-    current_brightness=`echo $current_brightness+$value | bc`
-else
-    current_brightness=`echo $current_brightness-$value | bc`
-fi
-xrandr --output $primary_display --brightness $current_brightness
-# Use 999999999 as id for notification to replace it instead creating a new one
-notify-send -r 999999999 $current_brightness
+# Apply the brightness change
+brightnessctl set "${sign}${value}%"
+
+# Fetch and show current brightness level
+new_level=$(brightnessctl | grep -oP '\(\K[0-9]+(?=%\))')
+notify-send -r 999999999 -t 500 "Brightness: ${new_level}%"

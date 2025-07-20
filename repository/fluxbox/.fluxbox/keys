@@ -35,8 +35,8 @@ F8 :Exec bash ~/.slash/bin/poemapsclicker.sh 1
 F9 :Exec bash ~/.slash/bin/poemapsclicker.sh 2
 
 # Win+"=/-": Display brightness. If not work - use xev to find correct keycodes.
-Mod4 21 :Exec ~/.slash/bin/dbright + 0.01
-Mod4 20 :Exec ~/.slash/bin/dbright - 0.01
+Mod4 21 :Exec ~/.slash/bin/dbright +1%
+Mod4 20 :Exec ~/.slash/bin/dbright 1%-
 
 # Alt+*: Current window commands
 Mod1 F4 :Close
