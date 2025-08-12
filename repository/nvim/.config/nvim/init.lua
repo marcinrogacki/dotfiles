@@ -131,6 +131,3 @@ require("CopilotChat").setup {
 vim.api.nvim_create_user_command("E", function(opts)
   require("file_opener").edit_with_position(opts.args)
 end, { nargs = 1, complete = "file" })
-
--- Replace :e with our :E
-vim.cmd("cabbrev e E")
