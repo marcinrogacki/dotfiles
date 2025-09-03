@@ -22,3 +22,5 @@
 	tool = nvim -d
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[color "diff"]
+	meta = black blue italic
