@@ -5,7 +5,6 @@
 
 firefox &
 authy &
-xrandr --output eDP --brightness 0.4 &
 
 # To enable transparency in urxvt, initiate the wallpaper first and wait for it
 # to complete

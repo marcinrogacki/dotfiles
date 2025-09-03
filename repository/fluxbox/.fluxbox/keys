@@ -14,7 +14,9 @@ OnTitlebar Move1  :StartMoving
 # Right click on the titlebar for a menu of options
 OnTitlebar Mouse3 :WindowMenu
 
-# Alt+Tab
+# Win+Tab
+#Mod1 Tab :Workspace 1
+#Mod1 Tab :Exec bash ~/Documents/boosteroid-block-alt-tab.sh
 Mod1 Tab :NextWindow {groups} (workspace=[current])
 Mod1 Shift Tab :PrevWindow {groups} (workspace=[current]i)
 
