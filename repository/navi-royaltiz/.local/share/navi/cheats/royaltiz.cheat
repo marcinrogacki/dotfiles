@@ -1,0 +1,15 @@
+% crdb
+#? Log into dev/works/prod EKS Cockroachdb
+kubectl exec -it cockroachdb-main-0 -n services --  sql --certs-dir=/cockroach/cockroach-certs
+
+#? Log into local Cockroachdb
+docker exec -it services-cockroachdb-1 cockroach sql --insecure
+
+#? Start local Dockerized databases for running services e2e tests
+systemctl start docker.service --user && cd packages/services/ && docker-compose -f compose.test.yml up -d
+
+#? Run services e2e tests with specific test file
+yarn run test:e2e --testPathPattern 'purchase.e2e-spec.ts'
+
+#? Run services database Cockroachdb migration
+yarn run migrate up
