@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
@@ -8,16 +8,16 @@ env_path="${2%/}"
 
 display_usage() {
 cat << USAGE
-Usage: sh `basename $0` WHAT WHERE
+Usage: sh `basename $0` REPO ENV
 
 Link dotfiles from repository into given environment.
 Main purpose of this script is to manages dependencies. Recursively links other
 dotfiles which must be added into environment.
 
-WHAT
+REPO
     One of subdirectory (config set) from repository directory.
 
-WHERE
+ENV
     One from subdirectory from environment directory.
 
 COMMAND
@@ -36,15 +36,37 @@ for arg in "$@"; do
     fi
 done
 
-repo_full_path="$SCRIPT_DIR/$repo_path"
-if [ ! -d "$repo_full_path" ]; then
-    >&2 echo "Not existing repository. Directory does not exists $repo_full_path"
+if [ -z "$repo_path" ]; then
+    >&2 echo "Error: REPO arguments is required"
     exit 1
 fi
 
-env_full_path="$SCRIPT_DIR/$env"
+if [ -z "$env_path" ]; then
+    >&2 echo "Error: ENV arguments is required"
+    exit 1
+fi
+
+repo_full_path="$SCRIPT_DIR/$repo_path"
+if [ ! -d "$repo_full_path" ]; then
+    >&2 echo "Error: REPO argument invalid. Directory does not exists $repo_full_path"
+    exit 1
+fi
+
+env_full_path="$SCRIPT_DIR/$env_path"
 if [ ! -d "$env_full_path" ]; then
-    >&2 echo "Not existing environment. Directory does not exists $env_full_path"
+    >&2 echo "Error: ENV argument invalid. Directory does not exists $env_full_path"
+    exit 1
+fi
+
+# Prevent using the root repository directory
+if [ "$repo_full_path" = "$SCRIPT_DIR/repository" ]; then
+    >&2 echo "Error: REPO argument invalid. Need to provide a subdirectory from repository/"
+    exit 1
+fi
+
+# Prevent using the root environment directory
+if [ "$env_full_path" = "$SCRIPT_DIR/environment" ]; then
+    >&2 echo "Error: ENV argument invalid. Need to provide a subdirectory from environment/"
     exit 1
 fi
 
