@@ -1,2 +1,0 @@
-#? Disable window key
-xmodmap -e "keycode 133 = NoSymbol" -e "keycode 134 = NoSymbol"                                                                                                    │
