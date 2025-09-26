@@ -4,7 +4,7 @@ yarn run migrate up
 
 % crdb, docker
 #? Run query from file Cockroachdb
-docker exec -i services-cockroachdb-1 cockroach sql --url "postgresql://dev:local@127.0.0.1:26257/local?sslmode=require" < /tmp/query.sql
+docker exec -i services-cockroachdb-1 cockroach sql --url "postgresql://dev:local@127.0.0.1:26257/local?sslmode=require" --format table < /tmp/query.sql
 #? Log into local Cockroachdb
 docker exec -it services-cockroachdb-1 cockroach sql --insecure
 
