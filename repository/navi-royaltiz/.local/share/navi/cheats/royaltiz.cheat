@@ -2,6 +2,14 @@
 #? Run services database Cockroachdb migration
 yarn run migrate up
 
+% eks
+#? Update eks config
+roy --env dev.env exec aws eks update-kubeconfig --name workloads
+
+% test
+#? Run services e2e tests with specific test file
+yarn run test:e2e --testPathPattern 'purchase.e2e-spec.ts'
+
 % crdb, docker
 #? Run query from file Cockroachdb
 docker exec -i services-cockroachdb-1 cockroach sql --url "postgresql://dev:local@127.0.0.1:26257/local?sslmode=require" --format table < /tmp/query.sql
@@ -10,11 +18,7 @@ docker exec -it services-cockroachdb-1 cockroach sql --insecure
 
 % crdb, eks
 #? Log into dev/works/prod EKS Cockroachdb
-kubectl exec -it cockroachdb-main-0 -n services --  sql --certs-dir=/cockroach/cockroach-certs
-
-% test
-#? Run services e2e tests with specific test file
-yarn run test:e2e --testPathPattern 'purchase.e2e-spec.ts'
+roy --env dev.env exec kubectl exec -it cockroachdb-main-0 -c db -n services -- cockroach sql --certs-dir=/cockroach/cockroach-certs
 
 % test, docker
 #? Start local Dockerized databases for running services e2e tests
