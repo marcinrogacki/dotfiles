@@ -8,23 +8,23 @@ env_path="${2%/}"
 
 display_usage() {
 cat << USAGE
-Usage: sh `basename $0` REPO ENV
+Usage: sh `basename $0` ENV REPO
 
-Link dotfiles from repository into given environment.
+Link into environment a given dotfiles from repository.
 Main purpose of this script is to manages dependencies. Recursively links other
 dotfiles which must be added into environment.
 
-REPO
-    One of subdirectory (config set) from repository directory.
-
 ENV
     One from subdirectory from environment directory.
+
+REPO
+    One of subdirectory (config set) from repository directory.
 
 COMMAND
     -h|--help   Display this message.
 
 Example
-    sh `basename $0` repository/bashrc environment/mrogacki@homepc
+    sh `basename $0` environment/mrogacki@homepc repository/bashrc
     sh `basename $0` -h
 USAGE
 }
