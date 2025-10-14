@@ -10,6 +10,10 @@ roy --env dev.env exec aws eks update-kubeconfig --name workloads
 #? Run services e2e tests with specific test file
 yarn run test:e2e --testPathPattern 'purchase.e2e-spec.ts'
 
+% yarn
+#? Build NestJS shared services
+cd $project/packages/services/shared/ && yarn build:lib && cd $project/packages/services/royaltiz/
+
 % crdb, docker
 #? Run query from file Cockroachdb
 docker exec -i services-cockroachdb-1 cockroach sql --url "postgresql://dev:local@127.0.0.1:26257/local?sslmode=require" --format table < /tmp/query.sql
