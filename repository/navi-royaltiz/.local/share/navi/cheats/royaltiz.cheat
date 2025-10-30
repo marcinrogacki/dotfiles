@@ -19,6 +19,8 @@ cd $project/packages/services/shared/ && yarn build:lib && cd $project/packages/
 docker exec -i services-cockroachdb-1 cockroach sql --url "postgresql://dev:local@127.0.0.1:26257/local?sslmode=require" --format table < /tmp/query.sql
 #? Log into local Cockroachdb
 docker exec -it services-cockroachdb-1 cockroach sql --insecure
+#? Log into local Timescaledb
+docker exec -it services-timescaledb-1 psql -U dev -d timeseries
 
 % crdb, eks
 #? Log into dev/works/prod EKS Cockroachdb
