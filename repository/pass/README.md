@@ -3,14 +3,14 @@
 ## Cheatsheet
 
 ```sh
-# Generate a primary key
+# Generate a primary key (one line command - no user action needed)
 gpg --quick-generate-key "Joe (Comment here) <joe@example.com>" ed25519 cert 1y
 
 # Generate a subkey (used by pass for encryption)
 gpg --quick-add-key E2390357F706AF728D3541368470DDB9B8591B1D cv25519 encr 1y
 
 # Create a new storage. Pass key fingerprint as param
-pass init E2390357F706AF728D3541368470DDB9B8591B1D -p subfolder
+pass init E2390357F706AF728D3541368470DDB9B8591B1D -p work
 
 # Get fingerprint/ids of the keys
 gpg --list-keys --keyid-format=long joe@example.com
@@ -33,7 +33,16 @@ gpg --import joe.key
 # Re-encrypt storage with a new key. Use when:
 # * a new private key or subkey need to be used (old is compromised)
 # * a private key or subkey has expired 
-pass init E2390357F706AF728D3541368470DDB9B8591B1D -p subfolder
+pass init E2390357F706AF728D3541368470DDB9B8591B1D -p work
+
+# Create encrypted directory to hide file names created by pass
+gocryptfs -init ~/.password-store-encrypted/
+
+# Mount encrypted storage
+gocryptfs ~/.password-store-encrypted ~/.password-store
+
+# Unmount encrypted storage
+fusermount3 -u ~/.password-store
 ```
 
 Details:
@@ -45,7 +54,25 @@ Details:
 * cert              - key usage: sign/certify 
 * encr              - key usage: encryption
 * 1y                - expiry time (1 year)
-* -p subfolder      - define storage subfolder
+* -p work           - define storage (subdirectory) called "work"
+* --armor           - Human-readable text format using Base64 encoding 
+
+## Tree structure 
+
+```
+~/.pass-storage/            # decrypted view (used by pass)
+└── work/                   # substore with its own key
+    ├── .gpg-id                 # GPG key fingerprint(s) used for encryption
+    └── example.com.gpg           # encrypted password entry
+
+~/.pass-storage-encrypted/  # encrypted physical storage (gocryptfs backend)
+├── gocryptfs.conf          # encryption parameters (cipher, hash, KDF)
+├── gocryptfs.diriv         # directory IV for root
+└── ZXCV3210.../            # encrypted folder name for work/
+    ├── gocryptfs.diriv     # IV for work folder
+    ├── WERF2390...         # encrypted example.com.gpg
+    └── TGJU4561...         # encrypted .gpg-id
+```
 
 ## Q&A
 
@@ -55,7 +82,7 @@ encryption-only key without a parent — it must belong to an identity (a primar
 key).
 
 ### Which subkey will be used when there will be more for given primary key?
-Pass uses file ~/.password-store/.gpg-id to determine it.
+pass uses file ~/.password-store/.gpg-id to determine it.
 
 ### What if encryption key will expire?
 Storage can be read, but no more entries can be inserted. Expired key is not 
