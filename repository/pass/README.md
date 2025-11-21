@@ -43,6 +43,9 @@ gocryptfs ~/.password-store-encrypted ~/.password-store
 
 # Unmount encrypted storage
 fusermount3 -u ~/.password-store
+
+# Copy password to new directory. Re-encrypt when a new directory uses different GPG key.
+pass cp work/test.com personal/
 ```
 
 Details:
@@ -74,6 +77,12 @@ Details:
     └── TGJU4561...         # encrypted .gpg-id
 ```
 
+## Android
+
+Install F-Droid https://f-droid.org/en/ 
+Install Password Store via F-Droid (see https://github.com/agrahn/Android-Password-Store)
+Export GPG subkeys and import them Password Store on Android
+
 ## Q&A
 
 ### Why having primary key and subkey matters?
@@ -87,3 +96,4 @@ pass uses file ~/.password-store/.gpg-id to determine it.
 ### What if encryption key will expire?
 Storage can be read, but no more entries can be inserted. Expired key is not 
 listed in gpg keyring. Generate a new key/subkey and re-encrypt the storage. 
+
