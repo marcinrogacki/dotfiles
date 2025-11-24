@@ -82,6 +82,7 @@ Details:
 Install F-Droid https://f-droid.org/en/ 
 Install Password Store via F-Droid (see https://github.com/agrahn/Android-Password-Store)
 Export GPG subkeys and import them Password Store on Android
+Import storage by using Setting -> Repository -> Import Repository. Do not setup repository url. 
 
 ## Q&A
 
