@@ -1,31 +1,49 @@
-% crdb
-#? Run services database Cockroachdb migration
+% chain
+#? nestjs
+cd ~/workspace/royaltiz/platform/packages/services/shared/ && yarn build:lib && cd -
+#? nestjs local services up
+systemctl start docker.service --user && cd ~/workspace/royaltiz/platform/packages/services/ && docker-compose -f compose.test.yml up -d && cd -
+#? nestjs local services down
+cd ~/workspace/royaltiz/platform/packages/services/ && docker-compose -f compose.test.yml down && cd -
+#? generate types
+cd ~/workspace/royaltiz/packages/shared/types && yarn build && yarn build:lib && cd -
+
+% db
+#? nestjs
 yarn run migrate up
+#? nestjs script local
+docker exec -i services-cockroachdb-1 cockroach sql --url "postgresql://dev:local@127.0.0.1:26257/local?sslmode=require" --format table < /tmp/query.sql
+#? log local
+docker exec -it services-cockroachdb-1 cockroach sql --insecure
+#? log local
+docker exec -it services-timescaledb-1 psql -U dev -d timeseries
+#? log remote
+aws-valut dev -- exec kubectl exec -it cockroachdb-main-0 -c db -n services -- cockroach sql --certs-dir=/cockroach/cockroach-certs
+
+% dir
+#? project
+cd ~/workspace/royaltiz/platform
+#? nestjs
+cd ~/workspace/royaltiz/packages/services/royaltiz
+#? nestjs
+cd ~/workspace/royaltiz/packages/services/shared
+#? nestjs compose
+cd ~/workspace/royaltiz/packages/services
+#? Types
+cd ~/workspace/royaltiz/packages/shared/types
 
 % eks
-#? Update eks config
-roy --env dev.env exec aws eks update-kubeconfig --name workloads
+#? remote
+aws-vault dev -- aws eks update-kubeconfig --name workloads
+
+% git
+#? commit
+git commit --amend --no-edit
 
 % test
-#? Run services e2e tests with specific test file
+#? nestjs
 yarn run test:e2e --testPathPattern 'purchase.e2e-spec.ts'
-
-% yarn
-#? Build NestJS shared services
-cd $project/packages/services/shared/ && yarn build:lib && cd $project/packages/services/royaltiz/
-
-% crdb, docker
-#? Run query from file Cockroachdb
-docker exec -i services-cockroachdb-1 cockroach sql --url "postgresql://dev:local@127.0.0.1:26257/local?sslmode=require" --format table < /tmp/query.sql
-#? Log into local Cockroachdb
-docker exec -it services-cockroachdb-1 cockroach sql --insecure
-#? Log into local Timescaledb
-docker exec -it services-timescaledb-1 psql -U dev -d timeseries
-
-% crdb, eks
-#? Log into dev/works/prod EKS Cockroachdb
-roy --env dev.env exec kubectl exec -it cockroachdb-main-0 -c db -n services -- cockroach sql --certs-dir=/cockroach/cockroach-certs
-
-% test, docker
-#? Start local Dockerized databases for running services e2e tests
-systemctl start docker.service --user && cd packages/services/ && docker-compose -f compose.test.yml up -d
+#? lambda
+roy --env dev.env test integration --grep ''
+#? lambda logs
+cat /tmp/pino.log | grep "" | ./node_modules/.bin/pino-pretty -H

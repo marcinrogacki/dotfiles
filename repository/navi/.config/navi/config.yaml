@@ -1,10 +1,10 @@
 style:
   tag:
-    width_percentage: 2
-    min_width: 4
-  comment:
-    width_percentage: 3
+    width_percentage: 5
     min_width: 5
+  comment:
+    width_percentage: 5
+    min_width: 30
   snippet:
-    width_percentage: 95
+    width_percentage: 90
     min_width: 120
