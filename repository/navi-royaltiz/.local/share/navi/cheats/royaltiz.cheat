@@ -6,7 +6,7 @@ systemctl start docker.service --user && cd ~/workspace/royaltiz/platform/packag
 #? nestjs local services down
 cd ~/workspace/royaltiz/platform/packages/services/ && docker-compose -f compose.test.yml down && cd -
 #? generate types
-cd ~/workspace/royaltiz/packages/shared/types && yarn build && yarn build:lib && cd -
+cd ~/workspace/royaltiz/platform/packages/shared/types && yarn build && yarn build:lib && cd -
 
 % db
 #? nestjs
@@ -18,27 +18,29 @@ docker exec -it services-cockroachdb-1 cockroach sql --insecure
 #? log local
 docker exec -it services-timescaledb-1 psql -U dev -d timeseries
 #? log remote
-aws-valut dev -- exec kubectl exec -it cockroachdb-main-0 -c db -n services -- cockroach sql --certs-dir=/cockroach/cockroach-certs
+aws-vault exec dev -- kubectl exec -it cockroachdb-main-0 -c db -n services -- cockroach sql --certs-dir=/cockroach/cockroach-certs
 
 % dir
 #? project
 cd ~/workspace/royaltiz/platform
 #? nestjs
-cd ~/workspace/royaltiz/packages/services/royaltiz
+cd ~/workspace/royaltiz/platform/packages/services/royaltiz
 #? nestjs
-cd ~/workspace/royaltiz/packages/services/shared
+cd ~/workspace/royaltiz/platform/packages/services/shared
 #? nestjs compose
-cd ~/workspace/royaltiz/packages/services
+cd ~/workspace/royaltiz/platform/packages/services
 #? Types
-cd ~/workspace/royaltiz/packages/shared/types
+cd ~/workspace/royaltiz/platform/shared/types
 
 % eks
 #? remote
-aws-vault dev -- aws eks update-kubeconfig --name workloads
+aws-vault exec dev -- aws eks update-kubeconfig --name workloads
 
 % git
-#? commit
+#? overwrite local
 git commit --amend --no-edit
+#? overwrite remote
+git commit --amend --no-edit && git push upstream HEAD -f
 
 % test
 #? nestjs
