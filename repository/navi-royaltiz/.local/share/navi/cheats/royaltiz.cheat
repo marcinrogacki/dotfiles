@@ -13,12 +13,12 @@ aws-vault exec dev -- aws eks update-kubeconfig --name workloads && aws-vault ex
 % db
 #? nestjs
 yarn run migrate up
-#? nestjs script local
-docker exec -i services-cockroachdb-1 cockroach sql --url "postgresql://dev:local@127.0.0.1:26257/local?sslmode=require" --format table < /tmp/query.sql
-#? log local
-docker exec -it services-cockroachdb-1 cockroach sql --insecure
 #? log local
 docker exec -it services-timescaledb-1 psql -U dev -d timeseries
+#? log local
+docker exec -it services-cockroachdb-1 cockroach sql --insecure
+#? nestjs local script
+docker exec -i services-cockroachdb-1 cockroach sql --url "postgresql://dev:local@127.0.0.1:26257/local?sslmode=require" --format table < /tmp/query.sql
 #? log remote
 aws-vault exec dev -- kubectl exec -it cockroachdb-main-0 -c db -n services -- cockroach sql --certs-dir=/cockroach/cockroach-certs
 
