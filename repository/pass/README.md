@@ -12,6 +12,9 @@ gpg --quick-add-key E2390357F706AF728D3541368470DDB9B8591B1D cv25519 encr 1y
 # Create a new storage. Pass key fingerprint as param
 pass init E2390357F706AF728D3541368470DDB9B8591B1D -p work
 
+# Enable git
+PASSWORD_STORE_DIR=/home/user/.password-store/work/ pass git init
+
 # Get fingerprint/ids of the keys
 gpg --list-keys --keyid-format=long joe@example.com
 
@@ -60,6 +63,11 @@ Details:
 * -p work           - define storage (subdirectory) called "work"
 * --armor           - Human-readable text format using Base64 encoding 
 
+## Docs
+
+https://git.zx2c4.com/password-store/about/
+* Environment variables
+
 ## Tree structure 
 
 ```
@@ -87,14 +95,17 @@ Import storage by using Setting -> Repository -> Import Repository. Do not setup
 ## Q&A
 
 ### Why having primary key and subkey matters?
+
 The pass only needs encryption capability. But OpenPGP doesn’t allow a bare 
 encryption-only key without a parent — it must belong to an identity (a primary 
 key).
 
 ### Which subkey will be used when there will be more for given primary key?
+
 pass uses file ~/.password-store/.gpg-id to determine it.
 
 ### What if encryption key will expire?
+
 Storage can be read, but no more entries can be inserted. Expired key is not 
 listed in gpg keyring. Generate a new key/subkey and re-encrypt the storage. 
 
