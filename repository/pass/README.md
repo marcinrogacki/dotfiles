@@ -13,7 +13,7 @@ gpg --quick-add-key E2390357F706AF728D3541368470DDB9B8591B1D cv25519 encr 1y
 pass init E2390357F706AF728D3541368470DDB9B8591B1D -p work
 
 # Enable git
-PASSWORD_STORE_DIR=/home/user/.password-store/work/ pass git init
+PASSWORD_STORE_DIR=~/.password-store/work pass git init
 
 # Get fingerprint/ids of the keys
 gpg --list-keys --keyid-format=long joe@example.com
