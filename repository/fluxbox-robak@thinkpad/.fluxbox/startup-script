@@ -6,7 +6,7 @@
 
 firefox &
 remmina &
-signal-desktop --start-in-tray --password-store="gnome-libsecret" &
+signal-desktop --start-in-tray &
 
 # To enable transparency in urxvt, initiate the wallpaper first and wait for it
 # to complete
