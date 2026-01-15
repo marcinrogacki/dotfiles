@@ -1,0 +1,6 @@
+new-session -s 4_worktree -n vim -c $worktree
+new-window -n console -c $worktree
+new-window -n tests -c $worktree
+new-window -n deploy -c $worktree
+new-window -n logs -c $worktree
+select-window -t console

@@ -24,7 +24,7 @@ aws-vault exec dev -- kubectl exec -it cockroachdb-main-0 -c db -n services -- c
 
 % dir
 #? project
-cd ~/workspace/royaltiz/platform
+cd ~/workspace/royaltiz/platform-root
 #? worktree
 cd ~/workspace/royaltiz/platform-worktree
 #? nestjs
