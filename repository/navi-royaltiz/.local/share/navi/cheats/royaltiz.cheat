@@ -7,20 +7,22 @@ systemctl start docker.service --user && cd packages/services/ && docker-compose
 cd packages/services/ && docker-compose -f compose.test.yml down && cd -
 #? generate types
 cd packages/shared/types && yarn build && yarn build:lib && cd -
-#? k9s
-aws-vault exec dev -- aws eks update-kubeconfig --name workloads && aws-vault exec dev -- k9s
+#? remote
+assume dev --exec -- aws eks update-kubeconfig --name workloads && assume dev --exec -- k9s
 
 % db
-#? nestjs
+#? nestjs local
 yarn run migrate up
-#? log local
+#? nestjs local
 docker exec -it services-timescaledb-1 psql -U dev -d timeseries
-#? log local
+#? nestjs local
 docker exec -it services-cockroachdb-1 cockroach sql --insecure
 #? nestjs local script
 docker exec -i services-cockroachdb-1 cockroach sql --url "postgresql://dev:local@127.0.0.1:26257/local?sslmode=require" --format table < /tmp/query.sql
-#? log remote
-aws-vault exec dev -- kubectl exec -it cockroachdb-main-0 -c db -n services -- cockroach sql --certs-dir=/cockroach/cockroach-certs
+#? nestjs remote
+assume dev --exec -- kubectl exec -it cockroachdb-main-0 -c db -n services -- cockroach sql --certs-dir=/cockroach/cockroach-certs
+#? nestjs remote
+assume dev --exec -- kubectl exec -it royaltiz-b6d4bd98-5gdjd -n services -- yarn migrate down 2
 
 % dir
 #? project
@@ -38,9 +40,9 @@ cd shared/types
 
 % eks
 #? remote
-aws-vault exec dev -- aws eks update-kubeconfig --name workloads
+assume dev --exec -- aws eks update-kubeconfig --name workloads
 #? k9s
-aws-vault exec dev -- k9s
+assume dev --exec -- k9s
 
 % git
 #? overwrite local
