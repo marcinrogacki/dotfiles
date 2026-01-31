@@ -1,2 +1,2 @@
 #!/bin/sh
-WINEPREFIX=~/Games/pobc/ wine=~/Games/pobc/drive_c/users/robak/AppData/Roaming/Path\ of\ Building\ Community/Path\ of\ Building.exe
+WINEPREFIX=~/Games/pobc/ wine ~/Games/pobc/drive_c/users/robak/AppData/Roaming/Path\ of\ Building\ Community/Path\ of\ Building.exe
