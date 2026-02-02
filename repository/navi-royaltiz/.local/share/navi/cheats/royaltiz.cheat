@@ -1,59 +1,61 @@
 % chain
-#? nestjs
+#? nestjs ptxpjA
 cd packages/services/shared/ && yarn build:lib && cd -
-#? nestjs local services up
+#? nestjs local services up nkTAbA
 systemctl start docker.service --user && cd packages/services/ && docker-compose -f compose.test.yml up -d && cd -
-#? nestjs local services down
+#? nestjs local services down FTzELw
 cd packages/services/ && docker-compose -f compose.test.yml down && cd -
-#? generate types
+#? generate types YNKePw
 cd packages/shared/types && yarn build && yarn build:lib && cd -
-#? remote
+#? remote DMy26A
 assume dev --exec -- aws eks update-kubeconfig --name workloads && assume dev --exec -- k9s
 
 % db
-#? nestjs local
+#? nestjs local 4VFoLg
 yarn run migrate up
-#? nestjs local
-docker exec -it services-timescaledb-1 psql -U dev -d timeseries
-#? nestjs local
+#? nestjs local JlKxEQ
 docker exec -it services-cockroachdb-1 cockroach sql --insecure
-#? nestjs local script
+#? nestjs local script QirVBQ
 docker exec -i services-cockroachdb-1 cockroach sql --url "postgresql://dev:local@127.0.0.1:26257/local?sslmode=require" --format table < /tmp/query.sql
-#? nestjs remote
+#? nestjs local Hf0Beg
+docker exec -it services-timescaledb-1 psql -U dev -d timeseries
+#? nestjs local script k8hS2l
+docker exec -i services-timescaledb-1 psql -U dev -d timeseries < /tmp/query.sql
+#? nestjs remote ckV0ag
 assume dev --exec -- kubectl exec -it cockroachdb-main-0 -c db -n services -- cockroach sql --certs-dir=/cockroach/cockroach-certs
-#? nestjs remote
+#? nestjs remote zT5Log
 assume dev --exec -- kubectl exec -it royaltiz-b6d4bd98-5gdjd -n services -- yarn migrate down 2
 
 % dir
-#? project
+#? project feWuzA
 cd ~/workspace/royaltiz/platform-root
-#? worktree
+#? worktree trmoHw
 cd ~/workspace/royaltiz/platform-worktree
-#? nestjs
+#? nestjs idWzug
 cd packages/services/royaltiz
-#? nestjs
+#? nestjs 9oefxA
 cd packages/services/shared
-#? nestjs compose
+#? nestjs compose 471Wsg
 cd packages/services
-#? Types
+#? Types ja2jKA
 cd shared/types
 
 % eks
-#? remote
+#? remote MEsloQ
 assume dev --exec -- aws eks update-kubeconfig --name workloads
-#? k9s
+#? k9s 8tKzug
 assume dev --exec -- k9s
 
 % git
-#? overwrite local
+#? overwrite local aOfYoA
 git commit --amend --no-edit
-#? overwrite remote
+#? overwrite remote KAOW8Q
 git commit --amend --no-edit && git push upstream HEAD -f
 
 % test
-#? nestjs
+#? nestjs YzDVNQ
 yarn run test:e2e --testPathPattern 'purchase.e2e-spec.ts'
-#? lambda
+#? lambda AEvpYw
 roy --env dev.env test integration --grep ''
-#? lambda logs
+#? lambda logs vu5fMg
 cat /tmp/pino.log | grep "" | ./node_modules/.bin/pino-pretty -H
