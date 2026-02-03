@@ -1,0 +1,7 @@
+% git
+#? force local aOfYoA
+git commit --amend --no-edit
+#? force remote KAOW8Q
+git commit --amend --no-edit && git push upstream HEAD -f
+#? session kjg8fh
+eval `ssh-agent` && ssh-add ~/.ssh/ida_rsa_github

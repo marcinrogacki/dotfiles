@@ -19,10 +19,12 @@ docker exec -it services-cockroachdb-1 cockroach sql --insecure
 docker exec -i services-cockroachdb-1 cockroach sql --url "postgresql://dev:local@127.0.0.1:26257/local?sslmode=require" --format table < /tmp/query.sql
 #? nestjs local Hf0Beg
 docker exec -it services-timescaledb-1 psql -U dev -d timeseries
-#? nestjs local script k8hS2l
+#? nestjs local k8hS2l
 docker exec -i services-timescaledb-1 psql -U dev -d timeseries < /tmp/query.sql
 #? nestjs remote ckV0ag
-assume dev --exec -- kubectl exec -it cockroachdb-main-0 -c db -n services -- cockroach sql --certs-dir=/cockroach/cockroach-certs
+assume dev --exec -- kubectl exec -it cockroachdb-main-0 -c db -n services -- cockroach sql -d defaultdb --certs-dir=/cockroach/cockroach-certs
+#? nestjs remote k8ghd2
+assume dev --exec -- kubectl exec -it cockroachdb-main-0 -c db -n services -- cockroach sql -d defaultdb --format table --certs-dir=/cockroach/cockroach-certs < /tmp/query.sql
 #? nestjs remote zT5Log
 assume dev --exec -- kubectl exec -it royaltiz-b6d4bd98-5gdjd -n services -- yarn migrate down 2
 
@@ -45,12 +47,6 @@ cd shared/types
 assume dev --exec -- aws eks update-kubeconfig --name workloads
 #? k9s 8tKzug
 assume dev --exec -- k9s
-
-% git
-#? overwrite local aOfYoA
-git commit --amend --no-edit
-#? overwrite remote KAOW8Q
-git commit --amend --no-edit && git push upstream HEAD -f
 
 % test
 #? nestjs YzDVNQ
