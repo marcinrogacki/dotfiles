@@ -1,5 +1,3 @@
-#? Disable window key
+% bug
+#? Disable window key jf8sj2
 xmodmap -e "keycode 133 = NoSymbol" -e "keycode 134 = NoSymbol"
-
-#? github session
-eval `ssh-agent` && ssh-add ~/.ssh/ida_rsa_github
