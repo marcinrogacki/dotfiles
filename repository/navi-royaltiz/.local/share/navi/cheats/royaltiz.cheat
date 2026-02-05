@@ -47,6 +47,10 @@ cd shared/types
 assume dev --exec -- aws eks update-kubeconfig --name workloads
 #? k9s 8tKzug
 assume dev --exec -- k9s
+#? remote jg87st
+assume dev --exec -- kubectl logs -n services -l app=royaltiz -c royaltiz --since=200h --tail=1000
+#? remote nocolor 8j8svbv
+assume dev --exec -- kubectl logs -n services -l app=royaltiz -c royaltiz --since=200h --tail=1000 | sed -r "s/\x1B\[[0-9;]*[mK]//g"
 
 % test
 #? nestjs YzDVNQ
