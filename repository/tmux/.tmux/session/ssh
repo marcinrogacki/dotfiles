@@ -1,4 +1,0 @@
-new-session -s vim -n vim
-new-window -n console
-new-window -n db
-select-window -t console
