@@ -1,46 +1,40 @@
-% chain
-#? nestjs ptxpjA
-cd packages/services/shared/ && yarn build:lib && cd -
-#? nestjs local services up nkTAbA
-systemctl start docker.service --user && cd packages/services/ && docker-compose -f compose.test.yml up -d && cd -
-#? nestjs local services down FTzELw
-cd packages/services/ && docker-compose -f compose.test.yml down && cd -
-#? generate types YNKePw
-cd packages/shared/types && yarn build && yarn build:lib && cd -
-#? remote DMy26A
-assume dev --exec -- aws eks update-kubeconfig --name workloads && assume dev --exec -- k9s
+% once
+#? nkTAbA
+systemctl start docker.service --user
 
 % db
 #? nestjs local 4VFoLg
-yarn run migrate up
+yarn run migrate:cockroachdb up
+#? nestjs local 4VFoLg
+yarn run migrate:timescaledb up
+#? nestjs remote zT5Log
+assume dev --exec -- kubectl exec -it royaltiz-b6d4bd98-5gdjd -n services -- yarn migrate:cockroachdb down 1000
+#? nestjs remote zT5Log
+assume dev --exec -- kubectl exec -it royaltiz-b6d4bd98-5gdjd -n services -- yarn migrate:timescaledb down 1000
 #? nestjs local JlKxEQ
-docker exec -it services-cockroachdb-1 cockroach sql --insecure
+docker exec -it services-cockroachdb-1 cockroach sql --insecure --format table
 #? nestjs local script QirVBQ
 docker exec -i services-cockroachdb-1 cockroach sql --url "postgresql://dev:local@127.0.0.1:26257/local?sslmode=require" --format table < /tmp/query.sql
+#? nestjs remote k8ghd2
+assume dev --exec -- kubectl exec -it cockroachdb-main-0 -c db -n services -- cockroach sql -d defaultdb --format table --certs-dir=/cockroach/cockroach-certs
 #? nestjs local Hf0Beg
 docker exec -it services-timescaledb-1 psql -U dev -d timeseries
-#? nestjs local k8hS2l
-docker exec -i services-timescaledb-1 psql -U dev -d timeseries < /tmp/query.sql
-#? nestjs remote ckV0ag
-assume dev --exec -- kubectl exec -it cockroachdb-main-0 -c db -n services -- cockroach sql -d defaultdb --certs-dir=/cockroach/cockroach-certs
-#? nestjs remote k8ghd2
-assume dev --exec -- kubectl exec -it cockroachdb-main-0 -c db -n services -- cockroach sql -d defaultdb --format table --certs-dir=/cockroach/cockroach-certs < /tmp/query.sql
-#? nestjs remote zT5Log
-assume dev --exec -- kubectl exec -it royaltiz-b6d4bd98-5gdjd -n services -- yarn migrate down 2
+#? nestjs remote Hf0Beg
+assume dev --exec -- kubectl exec -it timescaledb-main-0 -c db -n services -c timescaledb -- psql -d timeseries -U platform
+#? nestjs chain ptxpjA
+cd $PROJECT/packages/services/shared/ && yarn build:lib && cd -
+
+% gql
+#? chain YNKePw
+cd $PROJECT/packages/shared/types && yarn build && yarn build:lib && cd -
 
 % dir
-#? project feWuzA
-cd ~/workspace/royaltiz/platform-root
-#? worktree trmoHw
-cd ~/workspace/royaltiz/platform-worktree
 #? nestjs idWzug
-cd packages/services/royaltiz
+cd $PROJECT/packages/services/royaltiz
 #? nestjs 9oefxA
-cd packages/services/shared
-#? nestjs compose 471Wsg
-cd packages/services
-#? Types ja2jKA
-cd shared/types
+cd $PROJECT/packages/services/shared
+#? gql ja2jKA
+cd $PROJECT/shared/types
 
 % eks
 #? remote MEsloQ
@@ -54,8 +48,12 @@ assume dev --exec -- kubectl logs -n services -l app=royaltiz -c royaltiz --sinc
 
 % test
 #? nestjs YzDVNQ
-yarn run test:e2e --testPathPattern 'purchase.e2e-spec.ts'
+yarn run test:e2e --testPathPattern '.e2e-spec.ts'
 #? lambda AEvpYw
 roy --env dev.env test integration --grep ''
 #? lambda logs vu5fMg
 cat /tmp/pino.log | grep "" | ./node_modules/.bin/pino-pretty -H
+#? nestjs local chain FTzELw
+cd $PROJECT/packages/services/ && docker-compose -f compose.test.yml up -d && cd -
+#? nestjs local chain FTzELw
+cd $PROJECT/packages/services/ && docker-compose -f compose.test.yml down && cd -
