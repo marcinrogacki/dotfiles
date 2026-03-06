@@ -3,22 +3,28 @@
 systemctl start docker.service --user
 
 % db
-#? nestjs local 4VFoLg
-yarn run migrate:cockroachdb up
-#? nestjs local 4aFoLg
-yarn run migrate:timescaledb up
+#? nestjs local chain aVFoLg
+cd $PROJECT/packages/services/royaltiz && yarn run migrate:cockroachdb up && cd -
+#? nestjs local chain bVFoLg
+cd $PROJECT/packages/services/royaltiz && yarn run migrate:cockroachdb down && cd -
+#? nestjs local chain caFoLg
+cd $PROJECT/packages/services/royaltiz && yarn run migrate:timescaledb up && cd -
+#? nestjs local chain daFoLg
+cd $PROJECT/packages/services/royaltiz && yarn run migrate:timescaledb down && cd -
 #? nestjs remote zT5Log
 assume dev --exec -- kubectl exec -it royaltiz-b6d4bd98-5gdjd -n services -- yarn migrate:cockroachdb down 1000
 #? nestjs remote aT5Log
 assume dev --exec -- kubectl exec -it royaltiz-b6d4bd98-5gdjd -n services -- yarn migrate:timescaledb down 1000
 #? nestjs local JlKxEQ
-docker exec -it services-cockroachdb-1 cockroach sql --insecure --format table
-#? nestjs local script QirVBQ
-docker exec -i services-cockroachdb-1 cockroach sql --url "postgresql://dev:local@127.0.0.1:26257/local?sslmode=require" --format table < /tmp/query.sql
+docker exec -it -e PGPASSWORD=local services-cockroachdb-1 cockroach sql --insecure -u dev -d local
+#? nestjs local QirVBQ
+docker exec -i -e PGPASSWORD=local services-cockroachdb-1 cockroach sql --insecure -u dev -d local --format table < /tmp/query.sql
 #? nestjs remote k8ghd2
 assume dev --exec -- kubectl exec -it cockroachdb-main-0 -c db -n services -- cockroach sql -d defaultdb --format table --certs-dir=/cockroach/cockroach-certs
 #? nestjs local Hf0Beg
 docker exec -it services-timescaledb-1 psql -U dev -d timeseries
+#? nestjs local Hf0Beg
+docker exec -it services-timescaledb-1 psql -U dev -d timeseries < /tmp/query.sql
 #? nestjs remote af0Beg
 assume dev --exec -- kubectl exec -it timescaledb-main-0 -c db -n services -c timescaledb -- psql -d timeseries -U platform
 #? nestjs chain ptxpjA
