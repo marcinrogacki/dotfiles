@@ -5,11 +5,11 @@ systemctl start docker.service --user
 % db
 #? nestjs local 4VFoLg
 yarn run migrate:cockroachdb up
-#? nestjs local 4VFoLg
+#? nestjs local 4aFoLg
 yarn run migrate:timescaledb up
 #? nestjs remote zT5Log
 assume dev --exec -- kubectl exec -it royaltiz-b6d4bd98-5gdjd -n services -- yarn migrate:cockroachdb down 1000
-#? nestjs remote zT5Log
+#? nestjs remote aT5Log
 assume dev --exec -- kubectl exec -it royaltiz-b6d4bd98-5gdjd -n services -- yarn migrate:timescaledb down 1000
 #? nestjs local JlKxEQ
 docker exec -it services-cockroachdb-1 cockroach sql --insecure --format table
@@ -19,7 +19,7 @@ docker exec -i services-cockroachdb-1 cockroach sql --url "postgresql://dev:loca
 assume dev --exec -- kubectl exec -it cockroachdb-main-0 -c db -n services -- cockroach sql -d defaultdb --format table --certs-dir=/cockroach/cockroach-certs
 #? nestjs local Hf0Beg
 docker exec -it services-timescaledb-1 psql -U dev -d timeseries
-#? nestjs remote Hf0Beg
+#? nestjs remote af0Beg
 assume dev --exec -- kubectl exec -it timescaledb-main-0 -c db -n services -c timescaledb -- psql -d timeseries -U platform
 #? nestjs chain ptxpjA
 cd $PROJECT/packages/services/shared/ && yarn build:lib && cd -
@@ -53,7 +53,7 @@ yarn run test:e2e --testPathPattern '.e2e-spec.ts'
 roy --env dev.env test integration --grep ''
 #? lambda logs vu5fMg
 cat /tmp/pino.log | grep "" | ./node_modules/.bin/pino-pretty -H
-#? nestjs local chain FTzELw
+#? nestjs local chain aTzELw
 cd $PROJECT/packages/services/ && docker-compose -f compose.test.yml up -d && cd -
-#? nestjs local chain FTzELw
+#? nestjs local chain FTzzLw
 cd $PROJECT/packages/services/ && docker-compose -f compose.test.yml down && cd -
