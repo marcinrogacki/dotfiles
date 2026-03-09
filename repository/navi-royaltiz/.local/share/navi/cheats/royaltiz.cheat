@@ -1,6 +1,8 @@
-% once
+% custom
 #? nkTAbA
 systemctl start docker.service --user
+#? blank klsf89
+assume dev --exec --
 
 % db
 #? nestjs local chain aVFoLg
@@ -51,6 +53,8 @@ assume dev --exec -- k9s
 assume dev --exec -- kubectl logs -n services -l app=royaltiz -c royaltiz --since=200h --tail=1000
 #? remote nocolor 8j8svbv
 assume dev --exec -- kubectl logs -n services -l app=royaltiz -c royaltiz --since=200h --tail=1000 | sed -r "s/\x1B\[[0-9;]*[mK]//g"
+#? remote galowiu
+assume dev --exec -- kubectl get pod -n services -l app=royaltiz
 
 % test
 #? nestjs YzDVNQ
