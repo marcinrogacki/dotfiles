@@ -28,7 +28,7 @@ docker exec -it services-timescaledb-1 psql -U dev -d timeseries
 #? nestjs local Hf0Beg
 docker exec -it services-timescaledb-1 psql -U dev -d timeseries < /tmp/query.sql
 #? nestjs remote af0Beg
-assume dev --exec -- kubectl exec -it timescaledb-main-0 -c db -n services -c timescaledb -- psql -d timeseries -U platform
+assume dev --exec -- kubectl exec -it timescaledb-main-0 -c db -n services -c timescaledb -- psql -d timeseries -U tsdb_platform
 #? nestjs chain ptxpjA
 cd $PROJECT/packages/services/shared/ && yarn build:lib && cd -
 
@@ -55,6 +55,8 @@ assume dev --exec -- kubectl logs -n services -l app=royaltiz -c royaltiz --sinc
 assume dev --exec -- kubectl logs -n services -l app=royaltiz -c royaltiz --since=200h --tail=1000 | sed -r "s/\x1B\[[0-9;]*[mK]//g"
 #? remote galowiu
 assume dev --exec -- kubectl get pod -n services -l app=royaltiz
+#? remote kgjuuyt
+assume dev --exec -- kubectl exec -it royaltizPodName -n services -- /bin/sh
 
 % test
 #? nestjs YzDVNQ
