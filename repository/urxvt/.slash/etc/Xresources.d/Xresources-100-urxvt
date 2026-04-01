@@ -18,8 +18,11 @@ URxvt*font: xft:DejaVu Sans Mono:pixelsize=18
 !URxvt*letterSpace: -1
 !Larger history limit
 URxvt.saveLines: 1000000
-!ext
-URxvt.perl-ext-common: resize-font
+!default,clipboard - added to handle ctrl+shift+v to paste from browser
+URxvt.perl-ext-common: default,clipboard,resize-font
 !resize-font config
 URxvt.resize-font.bigger: C-Up
 URxvt.resize-font.smaller: C-Down
+! Allow use ctrl+shift+v to paste from browser
+URxvt.iso14755: false
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
