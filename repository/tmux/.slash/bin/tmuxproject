@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+PROJECTS_DIR="${HOME}/.tmux/projects"
+
+# --- helpers ---
+_tmuxproject_list() {
+    find "$PROJECTS_DIR" -maxdepth 1 -name 'tmux.*.conf' 2>/dev/null \
+        | sed 's|.*/tmux\.||; s|\.conf$||' \
+        | sort
+}
+
+# --- main ---
+if [[ $# -ne 1 ]]; then
+    echo "Usage: tmuxproject <project>" >&2
+    echo "Available projects:" >&2
+    _tmuxproject_list | sed 's/^/  /' >&2
+    exit 1
+fi
+
+PROJECT="$1"
+CONF="${PROJECTS_DIR}/tmux.${PROJECT}.conf"
+
+if [[ ! -f "$CONF" ]]; then
+    echo "tmuxproject: project '${PROJECT}' not found (${CONF} does not exist)" >&2
+    exit 1
+fi
+
+exec tmux -2 -L "$PROJECT" -f "$CONF" attach -t 0_cli

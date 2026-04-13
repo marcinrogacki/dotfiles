@@ -1,2 +1,0 @@
-#!/bin/sh
-tmux -2 attach-session -t 1_terminal -d
