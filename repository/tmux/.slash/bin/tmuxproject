@@ -25,4 +25,4 @@ if [[ ! -f "$CONF" ]]; then
     exit 1
 fi
 
-exec tmux -2 -L "$PROJECT" -f "$CONF" attach -t 0_cli
+exec tmux -2 -L "$PROJECT" -f "$CONF" attach
