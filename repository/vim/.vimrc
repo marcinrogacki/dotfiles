@@ -94,6 +94,22 @@ vmap od ygg"_dGP
 command! CopyFileRelativePath let @+ = expand('%')
 nmap <leader>cf :CopyFileRelativePath<cr>
 
+" [c]opy [l]ine - Copy file path with line number
+command! CopyFileLine let @+ = expand('%') . ':' . line('.')
+nmap <leader>cl :CopyFileLine<cr>
+
+" [c]opy [l]ine - Copy file path with range of line numbers from visual selection
+function! s:CopyFileLineRange() range
+  let path = expand('%')
+  if a:firstline == a:lastline
+    let @+ = path . ':' . a:firstline
+  else
+    " Reduce lastline number to mimic only fully selected block when using "j" or "k" keys.
+    let @+ = path . ':' . a:firstline . '-' . (a:lastline - 1)
+  endif
+endfunction
+xnoremap <silent> <leader>cl :call <SID>CopyFileLineRange()<CR>
+
 " What is it?
 filetype on
 map <C-s> :w <Enter>
