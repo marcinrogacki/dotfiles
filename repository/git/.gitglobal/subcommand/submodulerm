@@ -1,5 +1,5 @@
 #!/bin/bash
-# get lates branches from upstream and delete localy merged branches
+# get lates branches from origin and delete localy merged branches
 
 submodule_path="${1%/}"
 
