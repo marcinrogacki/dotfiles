@@ -7,10 +7,9 @@
       "Shell(find)",
       "Shell(grep)",
       "Shell(ag)",
-      "Mcp(linear:get_issue)",
-      "Mcp(linear:get_team)",
-      "Mcp(linear:save_issue)",
-      "Shell(yarn --version)",
+      "Shell(which)",
+      "Shell(git diff)",
+      "Mcp(linear:*)",
       "WebFetch(google.com)"
     ],
     "deny": [
