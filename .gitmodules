@@ -77,12 +77,6 @@
     path = repository/vim/.vim/bundle/kotlin-vim.git
     url = git@github.com:udalov/kotlin-vim.git
     ignore = dirty
-[submodule "repository/vim/.vim/bundle/copilot.vim.git"]
-	path = repository/vim/.vim/bundle/copilot.vim.git
-	url = git@github.com:github/copilot.vim.git
-[submodule "repository/nvim/.config/nvim/pack/github/start/copilot.vim"]
-	path = repository/nvim/.config/nvim/pack/github/start/copilot.vim
-	url = https://github.com/github/copilot.vim
 [submodule "repository/vim/.vim/bundle/coc.nvim"]
 	path = repository/vim/.vim/bundle/coc.nvim
 	url = https://github.com/neoclide/coc.nvim
