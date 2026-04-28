@@ -24,6 +24,11 @@ URxvt.perl-ext-common: default,-confirm-paste,clipboard,resize-font
 !resize-font config
 URxvt.resize-font.bigger: C-Up
 URxvt.resize-font.smaller: C-Down
-! Allow use ctrl+shift+v to paste from browser
-URxvt.iso14755: false
+! Ease paste into urxvt from browser, nvim, etc
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-P: eval:paste_primary
+! Avoid urxvt to use ISO 14755 Unicode entry on Ctrl+Shift+ key chords. With
+! iso14755 those chords are handled as “Unicode compose” input rather than
+! normal bindings. That interfere with Shift-Control-V, Shift-Control-P sending
+! unicode chars instead.
+URxvt.iso14755: false
