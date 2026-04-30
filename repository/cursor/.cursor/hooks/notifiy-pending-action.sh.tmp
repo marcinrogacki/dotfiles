@@ -3,13 +3,21 @@
 # Safe/read-only commands are allowed silently.
 
 input_json=$(cat)
+echo "$input_json" >> /tmp/1
 conversation_id=$(jq -r '(.conversation_id)' <<< "$input_json")
 chat_db="`find $HOME/.cursor -name "$conversation_id" | grep chats`/store.db"
+
+printf '%s\n' "sqlite3 \"$chat_db\" \"SELECT CAST(data AS TEXT) AS payload FROM blobs;\" | grep -a '\"role\":\"assistant\"' | tail -n 1" >> /tmp/cursor.log
+sqlite3 "$chat_db" "SELECT CAST(data AS TEXT) AS payload FROM blobs;" \
+    | grep -a '"role":"assistant"' \
+    | tail -n 1 \
+    >> /tmp/cursor.log
+
 # Check whether tool need approval
 if sqlite3 "$chat_db" "SELECT CAST(data AS TEXT) AS payload FROM blobs;" \
     | grep -a '"role":"assistant"' \
     | tail -n 1 \
-    | grep -a -q "pendingToolCallStartedAtMs"
+    | grep -a -q "required_permissions"
 then
   notify-send \
     --app-name="Cursor" \

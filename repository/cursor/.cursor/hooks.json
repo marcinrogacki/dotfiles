@@ -3,12 +3,17 @@
     "hooks": {
         "preToolUse": [
             {
-                "command": "./hooks/schedule-notifiy.sh"
+                "command": "./hooks/schedule-notify.sh"
+            }
+        ],
+        "postToolUse": [
+            {
+                "command": "./hooks/cancel-notify.sh"
             }
         ],
         "postToolUseFailure": [
             {
-                "command": "./hooks/notify-failure.sh"
+                "command": "./hooks/cancel-notify.sh"
             }
         ],
         "stop": [

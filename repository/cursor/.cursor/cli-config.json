@@ -3,6 +3,7 @@
     "allow": [
       "Shell(cd)",
       "Shell(rg)",
+      "Shell(ls)",
       "Shell(head)",
       "Shell(find)",
       "Shell(grep)",
@@ -46,7 +47,8 @@
     "composer-1.5": [],
     "claude-4.6-sonnet-medium": [],
     "gpt-5.3-codex-low": [],
-    "composer-2": []
+    "composer-2": [],
+    "claude-4.6-opus-high": []
   },
   "selectedModel": {
     "modelId": "composer-1.5",
@@ -55,7 +57,7 @@
   "privacyCache": {
     "ghostMode": true,
     "privacyMode": 2,
-    "updatedAt": 1777532144182
+    "updatedAt": 1777565791994
   },
   "serverConfigCache": {
     "backendUrl": "https://api2.cursor.sh",
@@ -66,7 +68,7 @@
       "agentnUrl": "https://agentn.global.api5.cursor.sh"
     },
     "cliSandboxDefaultEnabled": false,
-    "updatedAt": 1777532139687
+    "updatedAt": 1777565533592
   },
   "authInfo": {
     "email": "marcin@royaltiz.com",
