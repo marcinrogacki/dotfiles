@@ -1,0 +1,25 @@
+{
+    "version": 1,
+    "hooks": {
+        "preToolUse": [
+            {
+                "command": "./hooks/schedule-notifiy.sh"
+            }
+        ],
+        "postToolUseFailure": [
+            {
+                "command": "./hooks/notify-failure.sh"
+            }
+        ],
+        "stop": [
+            {
+                "command": "./hooks/notify-stop.sh"
+            }
+        ],
+        "preCompact": [
+            {
+                "command": "./hooks/notify-context-compact.sh"
+            }
+        ]
+    }
+}
