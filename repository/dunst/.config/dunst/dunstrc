@@ -45,6 +45,9 @@
     # split notifications into multiple lines if they don't fit into geometry
     word_wrap = yes
 
+    # width range in px
+    width = (0, 600)
+
     # ignore newlines '\n' in notifications
     ignore_newline = no
 
@@ -109,7 +112,7 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the '#' and following  would be interpreted as a comment.
     background = "#44a0ba"
-    foreground = "#888888"
+    foreground = "#ffffff"
     timeout = 10
 
 [urgency_normal]
